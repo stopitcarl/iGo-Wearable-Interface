@@ -1,0 +1,34 @@
+body {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    color: green;
+}
+
+h2 {
+    margin: 0.4em 0.5em auto;
+}
+
+#people-list {
+    margin: auto;
+    width: 25%;
+}
+
+.person-1 {
+    width: 98%;
+}
+
+.person-2 {
+    width: 100%;
+}
+
+.person-3 {
+    width: 87%;
+}
+
+.no-padding{
+    padding: 0rem;
+}
