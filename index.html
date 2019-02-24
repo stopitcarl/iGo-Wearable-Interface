@@ -78,7 +78,7 @@
     <div class="card-deck-wrapper" style="width:25rem; margin: auto;">
       <div class="card-group">
         <div class="card">
-          <img src="assets/student1.png" class="card-img-top person-1" alt="...">
+          <img src="assets/student1.png" class="card-img-top person-1" alt="..." onclick="changeImage(this, 'assets/neves.jpeg')">
           <div class="card-body no-padding">
             <h5 class="card-title">Miguel Neves</h5>
           </div>
@@ -87,7 +87,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="assets/student2.png" class="card-img-top person-2" alt="...">
+          <img src="assets/student2.png" class="card-img-top person-2" alt="..." onclick="changeImage(this, 'assets/porto.jpeg')">
           <div class="card-body no-padding">
             <h5 class="card-title">João Porto</h5>
           </div>
@@ -96,7 +96,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="assets/student3.png" class="card-img-top person-3" alt="...">
+          <img src="assets/student3.png" class="card-img-top person-3" alt="..." onclick="changeImage(this, 'assets/coutinho.jpeg')">
           <div class="card-body no-padding">
             <h5 class="card-title">João Coutinho</h5>
           </div>
@@ -152,5 +152,13 @@
     </p>
   </div>
 </body>
+
+<script>
+
+function changeImage(element, source) {
+    element.src = source;
+}
+
+</script>
 
 </html>
