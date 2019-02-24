@@ -14,21 +14,33 @@ h2 {
 
 #people-list {
     margin: auto;
-    width: 25%;
+    width: 50%;
 }
 
-.person-1 {
-    width: 98%;
+#links {
+    text-align: left;
+    padding-left: 100px;
 }
 
+.person-img {
+    width: 100%;
+    height: 9em;
+}
+
+.round-corners {
+    border-radius: 1rem 1rem 1rem 1rem;    
+    padding: 0.5em 0.5em;    
+}
+
+/*
 .person-2 {
     width: 100%;
 }
 
 .person-3 {
-    width: 87%;
+    width: 100%;
 }
-
-.no-padding{
+*/
+.no-padding {
     padding: 0rem;
 }

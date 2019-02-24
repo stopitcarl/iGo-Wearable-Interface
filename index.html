@@ -19,8 +19,7 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
@@ -28,8 +27,6 @@
 
   <!-- Custom Javascript -->
   <script language="javascript" type="text/javascript" src="scripts/main.js"></script>
-
-
 
   <title>IPM</title>
 </head>
@@ -49,23 +46,17 @@
         <li class="nav-item">
           <a class="nav-link" href="#links">Project <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            Stages
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Preview</a> <!-- rick roll -->
+            <a class="dropdown-item disabled" href="#">Prototype (to be added)</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item disabled" href="#">Final version (to be added)</a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
       <a class="mx-auto nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Grupo 00 - Turno
@@ -75,10 +66,11 @@
 
   <!-- People list -->
   <div class="container-fluid" style="margin-top: 1.25rem;">
-    <div class="card-deck-wrapper" style="width:25rem; margin: auto;">
+    <div class="card-deck-wrapper" style="width:35rem; margin: auto;">
       <div class="card-group">
-        <div class="card">
-          <img src="assets/student1.png" class="card-img-top person-1" alt="..." onclick="changeImage(this, 'assets/neves.jpeg')">
+        <!-- Miguel Neves -->
+        <div class="card mx-4 border rounded">
+          <img src="assets/student1.png" class="card-img-top person-img" alt="...">
           <div class="card-body no-padding">
             <h5 class="card-title">Miguel Neves</h5>
           </div>
@@ -86,8 +78,9 @@
             <small class="text-muted">89512</small>
           </div>
         </div>
-        <div class="card">
-          <img src="assets/student2.png" class="card-img-top person-2" alt="..." onclick="changeImage(this, 'assets/porto.jpeg')">
+        <!-- João Porto -->
+        <div class="card mx-4 border rounded">
+          <img src="assets/student2.png" class="card-img-top person-img" alt="...">
           <div class="card-body no-padding">
             <h5 class="card-title">João Porto</h5>
           </div>
@@ -95,8 +88,9 @@
             <small class="text-muted">89472</small>
           </div>
         </div>
-        <div class="card">
-          <img src="assets/student3.png" class="card-img-top person-3" alt="..." onclick="changeImage(this, 'assets/coutinho.jpeg')">
+        <!-- João Coutinho -->
+        <div class="card mx-4 border rounded">
+          <img src="assets/student3.png" class="card-img-top person-img" alt="...">
           <div class="card-body no-padding">
             <h5 class="card-title">João Coutinho</h5>
           </div>
@@ -109,11 +103,9 @@
   </div>
 
 
-  <!-- Project table -->
-
-  <div id="links" class="list-group list-group-flush" style="text-align: left; padding-left: 100px;">
+  <!-- Project Index -->
+  <div id="links" class="list-group list-group-flush">
     <p>
-
       <div id="at" class="section list-group-item">
         <h2 class="section">Análise de Tarefas</h2>
         <div id="at_inner" class="inner_section">
@@ -123,8 +115,6 @@
           <a href="at2.html">An&aacute;lise de tarefas + Funcionalidades (melhorados)</a> <br />
         </div>
       </div>
-
-
 
       <div id="proto" class="section list-group-item">
         <h2 class="section">Protótipos</h2>
@@ -152,13 +142,5 @@
     </p>
   </div>
 </body>
-
-<script>
-
-function changeImage(element, source) {
-    element.src = source;
-}
-
-</script>
 
 </html>
