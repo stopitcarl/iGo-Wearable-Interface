@@ -17,7 +17,7 @@ $(function () {
         // Animate transition
         $(this).fadeOut(250, function () {
             $(this).attr('src', new_src).bind('onreadystatechange load', function () {
-                $(this).addClass('round-corners');
+                $(this).addClass('alt-img');
                 if (this.complete) $(this).fadeIn(250);
             });
         });

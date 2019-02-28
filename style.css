@@ -1,6 +1,6 @@
 body {
     font-family: Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1,25rem;
+    font-size: 1, 25rem;
     text-align: center;
     scroll-behavior: smooth;
 }
@@ -24,14 +24,17 @@ h2 {
 }
 
 .person-img {
-    width: 100%;
-    height: auto;
-    height: 9em;
+    margin: auto;
+    max-height: 10rem;
+    width: auto;    
 }
 
-.round-corners {
-    border-radius: 1rem 1rem 1rem 1rem;    
-    padding: 0.5em 0.5em;    
+.alt-img {
+    border-radius: 1rem 1rem 1rem 1rem;
+    max-height: 19rem;
+    width: auto;
+    margin: 1.5em auto;
+
 }
 
 /*
@@ -44,5 +47,7 @@ h2 {
 }
 */
 .no-padding {
+    display: block;
     padding: 0rem;
+    min-width: 10rem;
 }
