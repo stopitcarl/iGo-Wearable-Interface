@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Onde estudar?</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="rooms.js"></script>
+  <script src="lab2.js"></script>
+</head>
+
+<body onload="displayDate(); displaySchedule();">
+  <div id="main">
+
+    <div id="alertsuccess" class="alert success">
+      A sala que subscreveste já se encontra livre.
+      <a>
+        <span class="closebtn" onclick="closeAlert()">x</span>
+      </a>
+    </div>
+
+
+    <h1>Onde estudar?</h1>
+
+    <div id="currentRoom">Sala: </div>
+    <div id="date"></div>
+    <div id="schedule">
+      <div class="row">
+        <div id="hours">
+        </div>
+        <div id="classes">
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <button type="button" onclick="goBack()">Voltar</button>
+      <button type="button" onclick="notifyON()">Alertar quando sala estiver livre</button>
+    </div>
+  </div>
+</body>
+
+</html>

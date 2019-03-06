@@ -23,10 +23,19 @@ h2 {
     padding-left: 100px;
 }
 
+.card {
+    -webkit-transition-duration: 0.2s; /* Safari */    
+    transition-duration: 0.4s;
+}
+
+.card:hover {    
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .person-img {
     margin: auto;
     max-height: 10rem;
-    width: auto;    
+    width: auto;
 }
 
 .alt-img {
