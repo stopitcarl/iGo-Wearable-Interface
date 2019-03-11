@@ -39,7 +39,7 @@ h2 {
 }
 
 .alt-img {
-    border-radius: 1rem 1rem 1rem 1rem;
+    border-radius: 1rem !important;
     max-height: 19rem;
     width: auto;
     margin: 1.5em auto;
