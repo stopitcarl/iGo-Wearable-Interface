@@ -70,3 +70,12 @@
     top: 0.38cm;
     right: 0.9cm;
 }
+
+.option-img {
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    top: 2cm;
+    left: 1.7cm;
+    height: 2cm;
+}
