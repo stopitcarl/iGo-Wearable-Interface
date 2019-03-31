@@ -39,9 +39,6 @@
     width: 5.4cm;
     height: 0.2cm;
     top: 0.1cm;
-    left: 0;
-    right: 0;
-    bottom: 0;
     text-align: center;
 }
 
@@ -53,10 +50,21 @@
     width: 5.4cm;
     height: 0.3cm;
     top: 0.6cm;
-    left: 0;
-    right: 0;
-    bottom: 0;
     text-align: center;
 }
 
+#BatteryIcon {
+    width: 0.5cm;
+    height: auto;
+    position: absolute;
+    top: 0.25cm;
+    right: 0.3cm;
+}
 
+#batteryLevel {
+    position: absolute;
+    font-size: 0.2cm;
+    color: white;
+    top: 0.36cm;
+    right: 0.9cm;
+}
