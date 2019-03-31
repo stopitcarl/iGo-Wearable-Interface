@@ -1,0 +1,62 @@
+.main {
+    width: 5.4cm;
+    height: 5.4cm;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: black;
+}
+
+#mainBackgroundImage {
+    object-fit: cover;
+    width: 5.4cm;
+    height: 5.4cm;
+    opacity: 0.3;
+}
+
+#border {
+    width: 5.4cm;
+    height: 5.4cm;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border: 0.4cm;
+    border-color: black;
+    border-style: solid;
+}
+
+#time {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.45cm;
+    position: absolute;
+    color: white;
+    width: 5.4cm;
+    height: 0.2cm;
+    top: 0.1cm;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+#date {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.2cm;
+    position: absolute;
+    color: white;
+    width: 5.4cm;
+    height: 0.3cm;
+    top: 0.6cm;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+
