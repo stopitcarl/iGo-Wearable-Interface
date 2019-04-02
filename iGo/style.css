@@ -97,7 +97,7 @@
 }
 
 .back-button {
-    padding: 0.5em 0.5em auto;    
+    padding: 0.5em 0.5em auto;
     background-image: url("images/arrow-icon.png");
     background-color: rgba(255, 255, 255, 0.4);
     background-size: 100% 100%;
@@ -109,7 +109,7 @@
     border-radius: 30%;
 }
 
-.back-button:hover {    
+.back-button:hover {
     background-blend-mode: difference;
 }
 
@@ -123,9 +123,7 @@ a.button1 {
     transition: all 0.2s;
 }
 
-a.button1:hover {
-    
-}
+a.button1:hover {}
 
 .container {
     display: grid;
@@ -158,19 +156,25 @@ a.button1:hover {
     grid-area: top-right;
 }
 
+.grid-top-center-right {
+    grid-area: top-center-right;
+}
+
 .grid-top-left {
     grid-area: top-left;
 }
 
-.grid-top-center-right {
-    grid-area: top-center-right;
+.grid-top-center-left {
+    grid-area: top-center-left;
 }
+
+
 
 .grid-footer {
     grid-area: footer;
 }
 
-/* Animation shit */
+/* ###################### Animation shit ###################### */
 .bouncy {
     animation: bouncy 5s infinite linear;
     position: relative;
