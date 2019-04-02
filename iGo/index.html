@@ -11,20 +11,36 @@
 </head>
 
 <body onload="updateTime()">
-    <div id="border">
-        <div class="main">
-            <img src="images/MainBackground.jpg" alt="BackgroundImage" id="mainBackgroundImage">
-            <div id="time"></div>
-            <div id="date"></div>
-            <img src="images/battery.png" alt="BatteryImage" id="BatteryIcon">
-            <div id="batteryLevel">42%</div>
-            <div id="icons">
-                <a href="translater.html">
-                    <img src="images/icon-translation.svg" class="option-img">
-                </a>
-            </div>
+
+    <div class="main container border">
+        <!-- <img src="images/MainBackground.jpg" alt="BackgroundImage" id="mainBackgroundImage">-->
+        <div id="time" class="grid-top"></div>
+        <div id="date" class="grid-top"></div>
+        <img src="images/battery.png" alt="BatteryImage" id="BatteryIcon" class="grid-top-right">
+        <div id="batteryLevel" class="grid-top-center-right">42%</div>
+
+        <!-- Top option -->
+        <div class="option-top">
+            <a href="translater.html">
+                <img src="images/ticketIcon.png" class="option-secondary option-secondary-top">
+            </a>
+        </div>
+
+        <!-- Middle option -->
+        <div class="grid-center">
+            <a href="translater.html">
+                <img src="images/icon-translation.svg" class="option-main">
+            </a>
+        </div>
+
+        <!-- Bottom option -->
+        <div class="option-bottom">
+            <a href="translater.html">
+                <img src="images/mapsicon.png" class="option-secondary">
+            </a>
         </div>
     </div>
+
 </body>
 
 </html>

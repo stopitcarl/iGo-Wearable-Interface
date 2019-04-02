@@ -5,4 +5,8 @@ function updateTime() {
 
 }
 
-setInterval(updateDate, 60000);
+function rotateDown() {
+    $('.wrapper').toggleClass('tiny');
+}
+
+setInterval(updateTime, 60000);

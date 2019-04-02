@@ -1,115 +1,91 @@
 .main {
-    width: 5.4cm;
-    height: 5.4cm;
-    margin: 0em 0em;
+    width: 5.65cm;
+    height: 5.65cm;
     margin: auto;
-    border-radius: 6%;
-    background-color: gray;
-}
-
-#mainBackgroundImage {
-    object-fit: cover;
-    width: 5.4cm;
-    height: 5.4cm;
-    border-radius: 6%;
-    opacity: 0.4;
-}
-
-#border {
-    width: 5.4cm;
-    height: 5.4cm;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    margin: auto;
+    background-color: gray;
+    background-image: url('images/shutterstock.jpg');
+    background-size: 100% 100%;
+    background-blend-mode: soft-light;
+}
+
+.border {
     border: 0.25cm;
     border-radius: 10%;
     border-color: black;
     border-style: solid;
-    grid-template-columns: 25% auto 25%;
-    grid-template-rows: 20% auto 20%;
 }
 
-#icons {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    width: 3em;
-}
 
 #time {
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.45cm;
-    position: absolute;
     color: white;
-    width: 5.4cm;
-    height: 0.2cm;
-    top: 0.1cm;
     text-align: center;
+    display: block;
 }
 
 #date {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 0.2cm;
-    position: absolute;
+    font-size: 0.28cm;
     color: white;
-    width: 5.4cm;
-    height: 0.3cm;
-    top: 0.6cm;
     text-align: center;
+    margin: auto;
+    margin-top: 1.8em;
+
 }
 
 #BatteryIcon {
     width: 0.5cm;
     height: auto;
-    position: absolute;
-    top: 0.25cm;
-    right: 0.3cm;
+    margin: auto;
 }
 
 #batteryLevel {
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 0.01cm;
-    position: absolute;
-    font-size: 0.2cm;
+    font-size: 0.25cm;
     color: white;
-    top: 0.38cm;
-    right: 0.9cm;
+    height: auto;
+    margin: auto;
+    padding-left: 0.3em;
 }
 
-.option-img {
+.option-main {
     background-color: orange;
     border-radius: 30%;
-    position: absolute;
-    left: 1.5cm;
-    top: 1.5cm;
-    margin: auto;
-    height: 2.6cm;
+    width: 90%;
+    margin-left: 0.3em;
+    margin-top: 0.6em;
+    align-self: center;
+
 }
 
-#top {
-    z-index: 1;
-    background-color: white;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    text-align: center;
-    width: 100%;
-    height: 15%;
+.option-secondary {
+    border-radius: 50%;
+    background-color: antiquewhite;
+    width: 120%;
 }
 
-#bottom {
-    z-index: 1;
-    background-color: white;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    text-align: center;
-    width: 100%;
-    height: 15%;
+
+.option-top {
+    transform: translate(-1em, -1em);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.option-bottom {
+    transform: translate(-1em, 0.5em);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
 }
 
 #language {
@@ -120,10 +96,112 @@
     height: 90%;
 }
 
-#back {
+.back-button {
+    padding: 0.5em 0.5em auto;    
+    background-image: url("images/arrow-icon.png");
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 100% 100%;
+    padding: 0.5em 0.5em auto;
+    background-repeat: no-repeat;
+    margin: 0.3em 0.3em;
+    width: 100%;
+    height: 80%;
+    border-radius: 30%;
+}
+
+.back-button:hover {    
+    background-blend-mode: difference;
+}
+
+a.button1 {
     display: inline-block;
-    width: 50px;
-    height: 30px;
-    color: yellow;
-    text-align: left;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+a.button1:hover {
+    
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 18% 6% auto 6% 18%;
+    grid-template-rows: 18% 6% auto 6% 18%;
+    grid-template-areas: "top-left top-center-left header top-center-right top-right"
+        ". . . . ."
+        "left-main left-center main right-center-main right-main"
+        ". . . . ."
+        ". footer footer footer .";
+    overflow: hidden;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.grid-center {
+    grid-area: main;
+}
+
+.grid-top {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-top-right {
+    grid-area: top-right;
+}
+
+.grid-top-left {
+    grid-area: top-left;
+}
+
+.grid-top-center-right {
+    grid-area: top-center-right;
+}
+
+.grid-footer {
+    grid-area: footer;
+}
+
+/* Animation shit */
+.bouncy {
+    animation: bouncy 5s infinite linear;
+    position: relative;
+}
+
+@keyframes bouncy {
+    0% {
+        top: 0em
+    }
+
+    40% {
+        top: 0em
+    }
+
+    43% {
+        top: -0.9em
+    }
+
+    46% {
+        top: 0em
+    }
+
+    48% {
+        top: -0.4em
+    }
+
+    50% {
+        top: 0em
+    }
+
+    100% {
+        top: 0em;
+    }
 }

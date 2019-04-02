@@ -2,25 +2,29 @@
 <html>
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>iGo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <script src="main.js"></script>
+
+    <!-- Custom Javascript -->
+    <script language="javascript" type="text/javascript" src="main.js"></script>
+
+    <title>iGo</title>
 </head>
 
 <body onload="updateTime()">
-    <div id="border">
-        <div class="main">
-            <div id="top">
-                <button id="back" type="button" onclick="alert('sup bitcheeeees');">Back</button>
-                <button type="button" id="language">Try me!</button>
-            </div>
-            <div id="bottom">
-                <button type="button" id="language">Try me!</button>
-            </div>
-        </div>
+    <div class="main container border">
+        <div class="back-button grid-top-left"
+            onclick="alert('sup bitcheeeees');"></div>
+
+        <div id="time" class="grid-top"></div>
+        <div id="date" class="grid-top"></div>
+
+        <button type="button" id="language">Try me!</button>
+    </div>
     </div>
 </body>
 
