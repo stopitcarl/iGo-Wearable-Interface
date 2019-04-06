@@ -79,8 +79,8 @@ body {
 .option-bottom {
   transition: all 2s;
   position: absolute;
-  top:4.6cm;
-  left: -0.4cm;  
+  top: 4.6cm;
+  left: -0.4cm;
   width: 1.5cm;
 }
 
@@ -91,7 +91,7 @@ body {
   left: 1.3cm;
   width: 2.8cm;
   border-radius: 36%;
-  background-color:#e9a154; 
+  background-color: #e9a154;
 }
 
 .option-settings {
@@ -137,8 +137,7 @@ a.button1 {
   transition: all 0.2s;
 }
 
-a.button1:hover {
-}
+a.button1:hover {}
 
 .container {
   display: grid;
@@ -208,40 +207,4 @@ a.button1:hover {
 
 .grid-footer {
   grid-area: footer;
-}
-
-/* ###################### Animation shit ###################### */
-.bouncy {
-  animation: bouncy 5s infinite linear;
-  position: relative;
-}
-
-@keyframes bouncy {
-  0% {
-    top: 0em;
-  }
-
-  40% {
-    top: 0em;
-  }
-
-  43% {
-    top: -0.9em;
-  }
-
-  46% {
-    top: 0em;
-  }
-
-  48% {
-    top: -0.4em;
-  }
-
-  50% {
-    top: 0em;
-  }
-
-  100% {
-    top: 0em;
-  }
 }

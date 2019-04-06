@@ -1,6 +1,6 @@
 function updateTime() {
     var now = new Date();
-    document.getElementById("time").innerHTML = now.toLocaleTimeString().substring(0, 5);
+    // document.getElementById("time").innerHTML = now.toLocaleTimeString().substring(0, 5);
     document.getElementById("date").innerHTML = now.toLocaleDateString();
 
 }
@@ -14,15 +14,15 @@ var Positions = {
 
 // Model options in objects (because fuck me, that's why)
 class Options {
-    constructor(id, pos, width, isRound, link) {
+    constructor(id, pos, width, isRound, urlLink) {
         this.id = id;
         this.position = pos;
         this.width = width;
         this.isRound = isRound;
-        this.link = "translater.html";
+        this.urlLink = urlLink;
 
         $("#" + id).click(function () {
-            alert("opening " + this.link);
+            window.open(urlLink, "_blank");
         });
     }
 
@@ -58,19 +58,17 @@ class Options {
         console.log(this.id, "translating", x, "and", y);
         var attr = "translate(" + x + "cm," + y + "cm)";
         $("#" + this.id).css("transform", attr);
-
-
-
     }
+
 }
 
 var options = [];
 
 function init() {
-    options.push(new Options("option-1", Positions.top, 1.5, true, "translator.html"))
-    options.push(new Options("option-2", Positions.center, 2.8, false, "translator.html"))
-    options.push(new Options("option-3", Positions.bottom, 2.8, true, "translator.html"))
-    options.push(new Options("option-4", Positions.out, 2.8, true, "translator.html"))
+    options.push(new Options("option-1", Positions.top, 1.5, true, "translater.html"))
+    options.push(new Options("option-2", Positions.center, 2.8, false, "translater.html"))
+    options.push(new Options("option-3", Positions.bottom, 2.8, true, "translater.html"))
+    options.push(new Options("option-4", Positions.out, 2.8, true, "translater.html"))
 }
 
 var scroll = 0;
@@ -81,17 +79,6 @@ function scrolla() {
     });
 }
 
-window.addEventListener('scroll', function (e) {
-    console.log("listener activated");
-    last_known_scroll_position = window.scrollY;
-    if (!ticking) {
-        window.requestAnimationFrame(function () {
-            doSomething(last_known_scroll_position);
-            ticking = false;
-        });
-    }
-    ticking = true;
-});
 
 function rotateDown() {
     $('.wrapper').toggleClass('tiny');
