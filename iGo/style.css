@@ -58,43 +58,48 @@ body {
 .option-main {
   background-color: orange;
   border-radius: 30%;
-  width: 90%;
-  margin-left: 0.3em;
-  margin-top: 0.6em;
+  width: 2.6cm;
   align-self: center;
-}
-
-.option {
-  -o-transition: all 2s;
-  -moz-transition: all 2s;
-  -webkit-transition: all 2s;
   transition: all 2s;
 }
 
-.option-secondary {
+.option {
   border-radius: 50%;
-  background-color: antiquewhite;
-  width: 120%;
+  transition: all 2s;
 }
 
 .option-top {
-  transform: translate(-1em, -1em);
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  transition: all 2s;
+  position: absolute;
+  top: -0.4cm;
+  left: -0.4cm;
+  width: 1.5cm;
 }
 
 .option-bottom {
-  transform: translate(-1em, 0.3em);
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 4;
-  grid-row-end: 6;
+  transition: all 2s;
+  position: absolute;
+  top:4.6cm;
+  left: -0.4cm;  
+  width: 1.5cm;
 }
 
 .option-center {
-  grid-area: main;
+  transition: all 2s;
+  position: absolute;
+  top: 1.45cm;
+  left: 1.3cm;
+  width: 2.8cm;
+  border-radius: 36%;
+  background-color:#e9a154; 
+}
+
+.option-settings {
+  transition: all 2s;
+  position: absolute;
+  top: 2.7cm;
+  left: -2.7cm;
+  width: 1.5cm;
 }
 
 #language {
@@ -146,18 +151,26 @@ a.button1:hover {
     ". . . . ."
     ". footer footer footer .";
   overflow: hidden;
-  -o-transition: all 2s;
+  /*-o-transition: all 2s;
   -moz-transition: all 2s;
-  -webkit-transition: all 2s;
+  -webkit-transition: all 2s;*/
   transition: all 2s;
 }
 
 .anim1 {
-  transform: translate(3cm, 3cm);
+  transform: translate(2.7cm, 2.7cm);
 }
 
 .anim2 {
-  transform: translate(-50%, 50%);
+  transform: translate(0cm, 5.4cm);
+}
+
+.anim3 {
+  transform: translate(-2.7cm, -2.7cm);
+}
+
+.anim4 {
+  transform: translate(2.7cm, -2.7cm);
 }
 
 .grid-center {

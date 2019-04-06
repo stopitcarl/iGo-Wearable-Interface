@@ -18,35 +18,30 @@
     <title>iGo - Grupo 13</title>
 </head>
 
-<body onload="updateTime()">
+<body onload="updateTime(), init()">
 
     <div class="main container border">
         <!-- <img src="images/MainBackground.jpg" alt="BackgroundImage" id="mainBackgroundImage">-->
         <div id="time" class="grid-top"></div>
         <div id="date" class="grid-top"></div>
         <img src="images/battery.png" alt="BatteryImage" id="BatteryIcon" class="grid-top-right">
-        <div id="batteryLevel" class="grid-top-center-right">42%</div>
+        <div id="batteryLevel" class="grid-top-center-right">48%</div>
 
         <!-- Top option -->
-        <div id="option-1" class="option option-top">
-            <a href="translater.html">
-                <img src="images/ticketIcon.png" id="option-1-image" class=" option-secondary">
-            </a>
-        </div>
+        <img src="images/ticketIcon.png" id="option-1" class=" option option-top" />
 
         <!-- Middle option -->
-        <div id="option-2" class="option option-center">
-            <a href="translater.html">
-                <img src="images/icon-translation.svg" id="option-2-image" class="option-main">
-            </a>
-        </div>
+        <img src="images/icon-translation.svg" id="option-2" class="option option-center" />
 
         <!-- Bottom option -->
-        <div id="option-3" class="option option-bottom">
-            <a href="translater.html">
-                <img src="images/mapsicon.png" id="option-3-image" class="option-secondary">
-            </a>
-        </div>
+        <img src="images/mapsicon.png" id="option-3" class="option option-bottom" />
+
+        <!-- Settings option -->
+        <img src="images/settings.png" id="option-4" class="option option-settings" />
+
+        
+
+    </div>
     </div>
 
 </body>
