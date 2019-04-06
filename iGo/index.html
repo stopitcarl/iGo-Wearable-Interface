@@ -9,10 +9,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
     <!-- Custom Javascript -->
     <script language="javascript" type="text/javascript" src="main.js"></script>
-	
-	<title>iGo - Grupo 13</title>
+
+    <title>iGo - Grupo 13</title>
 </head>
 
 <body onload="updateTime()">
@@ -25,23 +28,23 @@
         <div id="batteryLevel" class="grid-top-center-right">42%</div>
 
         <!-- Top option -->
-        <div class="option-top">
+        <div id="option-1" class="option option-top">
             <a href="translater.html">
-                <img src="images/ticketIcon.png" class="option-secondary option-secondary-top">
+                <img src="images/ticketIcon.png" id="option-1-image" class=" option-secondary">
             </a>
         </div>
 
         <!-- Middle option -->
-        <div class="grid-center">
+        <div id="option-2" class="option option-center">
             <a href="translater.html">
-                <img src="images/icon-translation.svg" class="option-main">
+                <img src="images/icon-translation.svg" id="option-2-image" class="option-main">
             </a>
         </div>
 
         <!-- Bottom option -->
-        <div class="option-bottom">
+        <div id="option-3" class="option option-bottom">
             <a href="translater.html">
-                <img src="images/mapsicon.png" class="option-secondary">
+                <img src="images/mapsicon.png" id="option-3-image" class="option-secondary">
             </a>
         </div>
     </div>
