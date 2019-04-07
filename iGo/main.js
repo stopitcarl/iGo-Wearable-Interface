@@ -180,11 +180,11 @@ function prepareWindow() {
 
     if (language1 != "") {
         type = 1;
-        updateLanguage(lang1);
+        updateLanguage(language1);
     }
     if (language2 != "") {
         type = 2;
-        updateLanguage(lang2);
+        updateLanguage(language2);
     }
 }
 
