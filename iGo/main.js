@@ -1,9 +1,9 @@
 function updateTime() {
     var now = new Date();
-    // document.getElementById("time").innerHTML = now.toLocaleTimeString().substring(0, 5);
+    document.getElementById("time").innerHTML = now.toLocaleTimeString().substring(0, 4);
     document.getElementById("date").innerHTML = now.toLocaleDateString();
-
 }
+setInterval(updateTime, 60000);
 
 var Positions = {
     top: [-0.4, -0.4],
@@ -84,4 +84,46 @@ function rotateDown() {
     $('.wrapper').toggleClass('tiny');
 }
 
-setInterval(updateTime, 60000);
+var isRecording = false;
+
+function changeTranslateScreen(curScreen, targetScreen) {
+
+    if (isRecording)
+        toggleRecording();
+
+    $('#' + targetScreen).hide().fadeIn("slow", function () {
+        // Animation complete.
+        console.log("got in");
+    });
+    $('#' + curScreen).fadeOut("slow", function () {
+        // Animation complete.
+
+        console.log("got out");
+    });
+}
+
+function toggleRecording() {
+    if (!isRecording) {
+        console.log("Recording");
+        $('#microphone-button').addClass("Rec");
+    } else {
+        $('#microphone-button').removeClass("Rec");
+        $('#speaking').delay(500).fadeIn("fast", function () {
+            $('#speaking').delay(3000).fadeOut("fast", function () {});
+        });
+    }
+    isRecording = isRecording ? false : true;
+}
+
+function selectLanguage() {
+    $('#language-table').modal();
+
+    //appending modal background inside the bigform-content
+    $('.modal-backdrop').appendTo('.main-container');
+    //removing body classes to enable click events    
+    //$('body').removeClass();
+
+    $("#language-table").on("hidden.bs.modal", function () {
+        $(".fade").fadeOut("fast", function () {});
+    });
+}

@@ -16,6 +16,8 @@
     </script>
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 
     <!-- Custom Javascript -->
@@ -24,30 +26,65 @@
     <title>iGo - Translator</title>
 </head>
 
-<body onscroll="scrolla()">
-    <div class="main-container grid-container  clock-border" id="translator-main-screen">
-        <div class="back-button grid-top-left" onclick="window.history.back()"></div>
-        <button type="button" id="language1" class="language-button">Português</button>
-        <button type="button" id="language2" class="language-button">English (US)</button>
-        <button type="button" id="camera-translate" class="translation-type" onclick="">Try me!</button>
-        <button type="button" id="voice-translate" class="translation-type" onclick="">Try me!</button>
+<body>
+
+    <!-- Translator main screen -->
+    <div class="ninja-wrapper" id="translator-main-screen">
+        <div class="main-container grid-container  clock-border">
+            <div class="back-button grid-top-left" onclick="window.history.back()"></div>
+            <button type="button" id="language1" class="language-button" onclick="selectLanguage()">Português</button>
+            <button type="button" id="language2" class="language-button" onclick="selectLanguage()">English</button>
+            <button type="button" id="camera-translate" class="translation-type language-button"
+                onclick="changeTranslateScreen('translator-main-screen', 'translater-by-text')"></button>
+            <button type="button" id="voice-translate" class="translation-type language-button"
+                onclick="changeTranslateScreen('translator-main-screen', 'translater-by-voice')"></button>
+
+
+            <!-- Modal -->            
+            <div class="modal fade bd-example-modal-sm" id="language-table" tabindex="-1" role="dialog"
+                aria-labelledby="mySmallModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <ul>
+                            <li>Português</li>
+                            <li>English</li>
+                            <li>Punjabi</li>
+                            <li>German</li>
+                            <li>French</li>
+                            <li>Swedish</li>
+                            <li>Czech</li>    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
-    <!--Translator by text screen-->
-    <div class="main-container grid-container  clock-border" id="translater-by-text">
-        <div class="back-button grid-top-left" onclick="window.history.back()"></div>
-        <div class="language-description-from"></div>
-        <div class="language-description-to"></div>
-        <img src="" id="camera-simulation" />
-        <img src="" id="camera-simulation-translated" />
+    <!-- Translator by text screen -->
+    <div class="ninja-wrapper" id="translater-by-text">
+        <div class="main-container grid-container  clock-border">
+            <div class="back-button grid-top-left"
+                onclick="changeTranslateScreen('translater-by-text', 'translator-main-screen')"></div>
+            <div class="language-description-from">Neves failed</div>
+            <div class="language-description-to">Coutinho spotted the error</div>
+            <img src="" id="camera-simulation" />
+            <img src="" id="camera-simulation-translated" />
+        </div>
     </div>
 
-    <!--Translator by voice screen-->
-    <div class="main-container grid-container  clock-border" id="translater-by-voice">
-        <div class="back-button grid-top-left" onclick="window.history.back()"></div>
-        <div class="language-description-from"></div>
-        <div class="language-description-to"></div>
-        <img src="images/microphone.png" id="microphone" onclick="highligth()"/>
+    <!-- Translator by voice screen -->
+    <div class="ninja-wrapper" id="translater-by-voice">
+        <div class="main-container grid-container  clock-border">
+            <img src="images/personspeaking.png" id="speaking">
+            <div class="language-description"><span class="vertical-align">Português - English</span></div>
+            <div class="back-button grid-top-left"
+                onclick="changeTranslateScreen('translater-by-voice', 'translator-main-screen')"></div>
+            <img src="images/microphone.png" id="microphone-button" class="language-button"
+                onclick="toggleRecording()" />
+        </div>
     </div>
 </body>
 
