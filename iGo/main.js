@@ -180,15 +180,15 @@ function prepareWindow() {
 
     if (language1 != "") {
         type = 1;
-        updateLanguage(language1);
+        updateLanguage2(language1);
     }
     if (language2 != "") {
         type = 2;
-        updateLanguage(language2);
+        updateLanguage2(language2);
     }
 }
 
-function updateLanguage(language) {
+function updateLanguage2(language) {
     let language1 = document.getElementById("language1").innerHTML;
     let language2 = document.getElementById("language2").innerHTML;
     if (type == 1) {
@@ -208,6 +208,10 @@ function updateLanguage(language) {
     language1 = document.getElementById("language1").innerHTML;
     language2 = document.getElementById("language2").innerHTML;
     document.getElementById("languages").innerHTML = language1 + " - " + language2;
+}
+
+function updateLanguage(language) {
+    updateLanguage2(language);
     $('#language-table').modal("toggle");
 }
 
