@@ -26,7 +26,7 @@ body {
 }
 
 .clock-border {
-  border: 0.25cm;
+  border: 0.18cm;
   border-radius: 10%;
   border-color: black;
   border-style: solid;
@@ -40,8 +40,7 @@ body {
 }
 
 #date {
-  font-size: 0.3cm;
-  font-weight: bold;
+  font-size: 0.3cm;  
   color: white;
   text-align: center;
   transform: translateY(1.7em);
@@ -54,9 +53,8 @@ body {
   grid-area: top-right;
   margin: 0;
   position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: 0.2cm;
+  left: 0.7cm;
 }
 
 #batteryLevel {
@@ -68,15 +66,14 @@ body {
 }
 
 .option-main {
-  background-color: orange;
-  border-radius: 30%;
-  width: 2.6cm;
+  border-radius: 16% !important;
+  width: 2.6cm !important;
   align-self: center;
-  transition: all 2s;
 }
 
 .option {
   border-radius: 50%;
+  width: 1.5cm;
   transition: all 2s;
 }
 
@@ -84,38 +81,29 @@ body {
   cursor: pointer;
 }
 
-.option-top {
-  transition: all 2s;
+.option-top {  
   position: absolute;
   top: -0.4cm;
   left: -0.4cm;
-  width: 1.5cm;
 }
 
-.option-bottom {
-  transition: all 2s;
+.option-bottom {  
   position: absolute;
-  top: 4.6cm;
-  left: -0.4cm;
-  width: 1.5cm;
+  top: 4.2cm;
+  left: -0.4cm;  
 }
 
-.option-center {
-  transition: all 2s;
+.option-center {  
   position: absolute;
   top: 1.45cm;
-  left: 1.3cm;
-  width: 2.8cm;
-  border-radius: 36%;
+  left: 1.3cm;  
   background-color: #e9a154;
 }
 
-.option-settings {
-  transition: all 2s;
+.option-settings {  
   position: absolute;
   top: 1.45cm;
-  left: -1.3cm;
-  width: 1.5cm;
+  left: -3.3cm;  
 }
 
 #language1 {
@@ -153,7 +141,8 @@ body {
 }
 
 .back-button:hover {
-  background-blend-mode: difference;
+  background-blend-mode: lighten;
+  cursor: pointer;
 }
 
 
@@ -326,7 +315,7 @@ body {
 
 .vertical-align {
   position: relative;
-  top: 0.2cm;
+  top: 0.18cm;
   left: 0;
 }
 
@@ -346,10 +335,15 @@ body {
   position: absolute !important;
 }
 
+.modal-content {
+  border-radius: 3% !important;
+  /*transform: translateY(1cm);*/
+}
+
 
 .Rec {
   animation-name: pulse;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   border-color: rgba(224, 44, 44, 0.9) !important;
@@ -369,18 +363,97 @@ body {
   }
 }
 
-#language-table {
-  overflow: hidden;
+.language-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 4cm !important;
+  max-height: 4cm !important;
+  list-style-type: none;
+  margin: 0em 0em auto;
+  border-radius: 3% !important;
 }
 
 #camera-simulation {
-  width: 4.3cm;
-  height: 4.3cm;
   grid-column-start: 1;
   grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 6;
-  transform: translate(0.4cm, 0.4cm);
-  border: 3px solid black;
-  border-radius: 20%
+  width: 100%;
+  height: 100%;
 }
+
+#camera-border {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.1cm;
+  max-height: 2cm;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  height: 90%;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(121, 120, 120);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #383838;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  background: #fff;
+}
+
+li {
+  display: block;
+  padding: 9px 10px 5px 10px;
+  border-bottom: 1px solid #E7E7E7;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+li:hover,
+li:active {
+  cursor: pointer;
+  /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1fb8f5af), color-stop(100%rgba(21, 102, 224, 0.685)e6));*/
+  background: -webkit-linear-gradient(top, #008fee86 0%, #44a7f8b6 100%);
+  /*background: linear-gradient(top, #1fb8f5af 0%, #015de6b6 100%);*/
+  color: #fff;
+}
+
+li:after {
+  float: right;
+  font-weight: bold;
+  color: #808080;
+  font-size: 10px;
+  text-shadow: 1px 0 1px #808080;
+}
+
+li:hover:after,
+li:hover:after {
+  color: #fff;
+  text-shadow: 1px 0 1px #fff;

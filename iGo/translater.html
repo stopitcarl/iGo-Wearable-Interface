@@ -40,20 +40,19 @@
                 onclick="changeTranslateScreen('translator-main-screen', 'translater-by-voice')"></button>
 
 
-            <!-- Modal -->            
+            <!-- Modal -->
             <div class="modal fade bd-example-modal-sm" id="language-table" tabindex="-1" role="dialog"
-                aria-labelledby="mySmallModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-sm">
+                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
                     <div class="modal-content">
                         <ul class="language-list">
-                            <li>Português</li>
+                            <li>Czech</li>
                             <li>English</li>
-                            <li>Punjabi</li>
-                            <li>German</li>
                             <li>French</li>
+                            <li>German</li>
+                            <li>Português</li>
+                            <li>Punjabi</li>
                             <li>Swedish</li>
-                            <li>Czech</li>    
                         </ul>
                     </div>
                 </div>
@@ -63,12 +62,13 @@
         </div>
     </div>
 
-    <!-- Translator by text screen -->
+    <!-- Translator by camera screen -->
     <div class="ninja-wrapper" id="translater-by-text">
         <div class="main-container grid-container  clock-border">
             <div class="back-button grid-top-left"
                 onclick="changeTranslateScreen('translater-by-text', 'translator-main-screen');swapImage(1);"></div>
-            <img src="images/warning-chinese.png" id="camera-simulation"/>
+            <img src="images/warning-chinese.png" id="camera-simulation" />
+            <img src="images/cameraborder.png" id="camera-border" />
         </div>
     </div>
 

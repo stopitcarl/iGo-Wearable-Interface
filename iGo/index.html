@@ -6,9 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -18,6 +15,12 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
+    <!-- Boostrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+
 
     <!-- Custom Javascript -->
     <script language="javascript" type="text/javascript" src="main.js"></script>
@@ -26,31 +29,29 @@
 </head>
 
 <body onload="updateTime(), init()">
-
-    <div class="main-container grid-container  clock-border">
-        <!-- <img src="images/MainBackground.jpg" alt="BackgroundImage" id="mainBackgroundImage">-->
-        <div id="time" class="grid-top"></div>
-        <div id="date" class="grid-top"></div>
-        <div id="batteryLevel" class="grid-top-center-right font-weight-bold">48%</div>
-        <img src="images/battery.png" id="BatteryIcon">
-        
-
-        <!-- Top option -->
-        <img src="images/ticketIcon.png" id="option-1" class=" option option-top" />
-
-        <!-- Middle option -->
-        <img src="images/icon-translation.svg" id="option-2" class="option option-center" />
-
-        <!-- Bottom option -->
-        <img src="images/mapsicon.png" id="option-3" class="option option-bottom" />
-
-        <!-- Settings option -->
-        <img src="images/settings.png" id="option-4" class="option option-settings" />
+    <div class="ninja-wrapper">
+        <div class="main-container grid-container  clock-border">
+            <!-- <img src="images/MainBackground.jpg" alt="BackgroundImage" id="mainBackgroundImage">-->
+            <div id="time" class="grid-top"></div>
+            <div id="date" class="grid-top"></div>
+            <div id="batteryLevel" class="grid-top-center-right font-weight-bold">48%</div>
+            <img src="images/battery.png" id="BatteryIcon">
 
 
+            <!-- Top option -->
+            <img src="images/ticketIcon.png" id="option-1" class=" option option-top" />
 
+            <!-- Middle option -->
+            <img src="images/icon-translation.svg" id="option-2" class="option option-main option-center" />
+
+            <!-- Bottom option -->
+            <img src="images/mapsicon.png" id="option-3" class="option option-bottom" />
+
+            <!-- Settings option -->
+            <!--<img src="images/settings.png" id="option-4" class="option option-settings" />-->
+
+        </div>
     </div>
-
 
 </body>
 

@@ -1,8 +1,20 @@
+function prettyDate2(time) {
+    var date = new Date(parseInt(time));
+    return date.toLocaleTimeString(navigator.language, {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
+
 function updateTime() {
     var now = new Date();
-    document.getElementById("time").innerHTML = now.toLocaleTimeString().substring(0, 4);
-    document.getElementById("date").innerHTML = now.toLocaleDateString();
+    var timeStr = now.toLocaleTimeString('pt-PT');
+
+    document.getElementById("time").innerHTML = timeStr.substring(0, 5);
+    document.getElementById("date").innerHTML = now.toLocaleDateString('pt-PT');
 }
+
+
 setInterval(updateTime, 60000);
 
 var Positions = {
@@ -60,6 +72,15 @@ class Options {
         $("#" + this.id).css("transform", attr);
     }
 
+    toggleRound() {
+        if (this.isRound) {
+            $("#" + this.id).addClass("option-main");
+        } else {
+            $("#" + this.id).removeClass("option-main");
+        }
+        this.isRound = this.isRound ? false : true;
+    }
+
 }
 
 var options = [];
@@ -72,8 +93,17 @@ function init() {
 }
 
 var scroll = 0;
+var current = 1;
 
 function scrolla() {
+    setTimeout(function () {
+        options[current].toggleRound();
+        current--;
+        if (current < 0)
+            current = 3;
+        options[current].toggleRound();
+
+    }, 2000)
     options.forEach(o => {
         o.rotate();
     });
@@ -117,12 +147,7 @@ function toggleRecording() {
 
 function selectLanguage() {
     $('#language-table').modal();
-
-    //appending modal background inside the bigform-content
     $('.modal-backdrop').appendTo('.main-container');
-    //removing body classes to enable click events    
-    //$('body').removeClass();
-
     $("#language-table").on("hidden.bs.modal", function () {
         $(".fade").fadeOut("fast", function () {});
     });
@@ -135,7 +160,7 @@ function swapImage(number) {
         }, 3000);
     } else {
         setTimeout(() => {
-            var id = window.setTimeout(function() {}, 0);
+            var id = window.setTimeout(function () {}, 0);
             while (id--) {
                 window.clearTimeout(id); // will do nothing if no timeout with id is present
             }
