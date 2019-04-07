@@ -194,12 +194,14 @@ function updateLanguage2(language) {
     if (type == 1) {
         if (language2 === language) {
             document.getElementById("language2").innerHTML = language1;
+            setCookie("lang2", language1, null);
         }
         setCookie("lang1", language, null);
         document.getElementById("language1").innerHTML = language;
     } else {
         if (language1 === language) {
             document.getElementById("language1").innerHTML = language2;
+            setCookie("lang1", language2, null);
         }
         setCookie("lang2", language, null);
         document.getElementById("language2").innerHTML = language;
