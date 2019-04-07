@@ -175,8 +175,8 @@ function swapImage(number) {
 
 function prepareWindow() {
 
-    let language1 = getCookie("language1");
-    let language2 = getCookie("language2");    
+    var language1 = getCookie("lang1");
+    var language2 = getCookie("lang2");    
 
     if (language1 != "")
         document.getElementById("language1").innerHTML = language1;
@@ -220,7 +220,7 @@ function setCookie(name, value, days) {
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
-function getCookie(cname) {
+function getCookie(cname) {    
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
@@ -230,8 +230,14 @@ function getCookie(cname) {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
+            console.log(c.substring(name.length, c.length));
             return c.substring(name.length, c.length);
         }
     }
     return "";
+}
+
+function getCookie2(cname){
+    let str = decodeURIComponent(document.cookie).match(cname + "=.*;")[0];
+    return str.substring(0, str.length-2);
 }
