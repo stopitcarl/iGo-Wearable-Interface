@@ -26,7 +26,7 @@
     <title>iGo - Translator</title>
 </head>
 
-<body>
+<body onload="prepareWindow()">
 
     <!-- Translator main screen -->
     <div class="ninja-wrapper" id="translator-main-screen">
@@ -46,6 +46,7 @@
                 aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm modal-dialog-centered">
                     <div class="modal-content">
+                        <img src="images/close.png" id="close-button" onclick="$('#language-table').modal('toggle');">
                         <ul class="language-list">
                             <li onclick="updateLanguage('Čeština')">Čeština</li>
                             <li onclick="updateLanguage('Deutsche')">Deutsche</li>

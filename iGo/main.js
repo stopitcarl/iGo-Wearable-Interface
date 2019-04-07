@@ -67,7 +67,7 @@ class Options {
             default:
                 break;
         }
-        console.log(this.id, "translating", x, "and", y);
+        // console.log(this.id, "translating", x, "and", y);
         var attr = "translate(" + x + "cm," + y + "cm)";
         $("#" + this.id).css("transform", attr);
     }
@@ -86,10 +86,11 @@ class Options {
 var options = [];
 
 function init() {
-    options.push(new Options("option-1", Positions.top, 1.5, true, "translater.html"))
-    options.push(new Options("option-2", Positions.center, 2.8, false, "translater.html"))
-    options.push(new Options("option-3", Positions.bottom, 2.8, true, "translater.html"))
-    options.push(new Options("option-4", Positions.out, 2.8, true, "translater.html"))
+    options.push(new Options("option-1", Positions.top, 1.5, true, "translater.html"));
+    options.push(new Options("option-2", Positions.center, 2.8, false, "translater.html"));
+    options.push(new Options("option-3", Positions.bottom, 2.8, true, "translater.html"));
+    options.push(new Options("option-4", Positions.out, 2.8, true, "translater.html"));
+
 }
 
 var scroll = 0;
@@ -172,6 +173,18 @@ function swapImage(number) {
     }
 }
 
+function prepareWindow() {
+
+    let language1 = getCookie("language1");
+    let language2 = getCookie("language2");    
+
+    if (language1 != "")
+        document.getElementById("language1").innerHTML = language1;
+    if (language2 != "")
+        document.getElementById("language2").innerHTML = language2;
+
+}
+
 function updateLanguage(language) {
     let language1 = document.getElementById("language1").innerHTML;
     let language2 = document.getElementById("language2").innerHTML;
@@ -179,17 +192,46 @@ function updateLanguage(language) {
         if (language2 === language) {
             document.getElementById("language2").innerHTML = language1;
         }
+        setCookie("lang1", language, null);
         document.getElementById("language1").innerHTML = language;
-    }
-    else {
+    } else {
         if (language1 === language) {
             document.getElementById("language1").innerHTML = language2;
         }
+        setCookie("lang2", language, null);
         document.getElementById("language2").innerHTML = language;
     }
+
     language1 = document.getElementById("language1").innerHTML;
     language2 = document.getElementById("language2").innerHTML;
     document.getElementById("languages").innerHTML = language1 + " - " + language2;
-    /*CLOSE MODAL WINDOW*/
     $('#language-table').modal("toggle");
+}
+
+function setCookie(name, value, days) {
+    console.log("Setting cookie")
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    console.log(name + "=" + (value || "") + expires + "; path=/");
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }

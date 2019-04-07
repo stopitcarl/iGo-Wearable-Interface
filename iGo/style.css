@@ -332,16 +332,13 @@ body {
 
 .modal,
 .modal-backdrop {
-  position: absolute !important;  
-  width: 110%;  
+  position: absolute !important;    
 }
 
 .modal-content {
   border-radius: 3% !important;    
   width: 3.8cm;
-  margin: 0em 0em auto;
-  overflow:hidden;  
-  transform: translateX(1.8cm);
+  margin: auto;  
 }
 
 
@@ -473,4 +470,16 @@ button:focus {
   left : 2.2cm;
   width: 0.9cm;
   height: 2.1cm;   
+}
+
+#close-button{
+  width: 1cm;
+  height: 1cm;
+  position: absolute;
+  top: -0.5cm;
+  left: 3cm;
+  border-radius: 30%;  
+}
+#close-button:hover{
+  cursor: pointer;
 }
