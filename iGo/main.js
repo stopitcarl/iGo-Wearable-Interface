@@ -145,12 +145,15 @@ function toggleRecording() {
     isRecording = isRecording ? false : true;
 }
 
-function selectLanguage() {
+var type = 0;
+
+function selectLanguage(t) {
     $('#language-table').modal();
     $('.modal-backdrop').appendTo('.main-container');
     $("#language-table").on("hidden.bs.modal", function () {
         $(".fade").fadeOut("fast", function () {});
     });
+    type = t;
 }
 
 function swapImage(number) {
@@ -167,4 +170,26 @@ function swapImage(number) {
             document.getElementById("camera-simulation").src = "images/warning-chinese.png";
         }, 1000);
     }
+}
+
+function updateLanguage(language) {
+    let language1 = document.getElementById("language1").innerHTML;
+    let language2 = document.getElementById("language2").innerHTML;
+    if (type == 1) {
+        if (language2 === language) {
+            document.getElementById("language2").innerHTML = language1;
+        }
+        document.getElementById("language1").innerHTML = language;
+    }
+    else {
+        if (language1 === language) {
+            document.getElementById("language1").innerHTML = language2;
+        }
+        document.getElementById("language2").innerHTML = language;
+    }
+    language1 = document.getElementById("language1").innerHTML;
+    language2 = document.getElementById("language2").innerHTML;
+    document.getElementById("languages").innerHTML = language1 + " - " + language2;
+    /*CLOSE MODAL WINDOW*/
+    $('#language-table').modal("toggle");
 }
