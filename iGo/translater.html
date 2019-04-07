@@ -35,7 +35,7 @@
             <button type="button" id="language1" class="language-button" onclick="selectLanguage()">Português</button>
             <button type="button" id="language2" class="language-button" onclick="selectLanguage()">English</button>
             <button type="button" id="camera-translate" class="translation-type language-button"
-                onclick="changeTranslateScreen('translator-main-screen', 'translater-by-text')"></button>
+                onclick="changeTranslateScreen('translator-main-screen', 'translater-by-text');swapImage(0);"></button>
             <button type="button" id="voice-translate" class="translation-type language-button"
                 onclick="changeTranslateScreen('translator-main-screen', 'translater-by-voice')"></button>
 
@@ -46,7 +46,7 @@
                 aria-hidden="true">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
-                        <ul>
+                        <ul class="language-list">
                             <li>Português</li>
                             <li>English</li>
                             <li>Punjabi</li>
@@ -67,11 +67,8 @@
     <div class="ninja-wrapper" id="translater-by-text">
         <div class="main-container grid-container  clock-border">
             <div class="back-button grid-top-left"
-                onclick="changeTranslateScreen('translater-by-text', 'translator-main-screen')"></div>
-            <div class="language-description-from">Neves failed</div>
-            <div class="language-description-to">Coutinho spotted the error</div>
-            <img src="" id="camera-simulation" />
-            <img src="" id="camera-simulation-translated" />
+                onclick="changeTranslateScreen('translater-by-text', 'translator-main-screen');swapImage(1);"></div>
+            <img src="images/warning-chinese.png" id="camera-simulation"/>
         </div>
     </div>
 

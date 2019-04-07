@@ -124,6 +124,7 @@ body {
   grid-row-start: 1;
   grid-row-end: 3;
   height: auto;
+  padding: 0;
   transform: translateY(0.2cm);
 }
 
@@ -133,6 +134,7 @@ body {
   grid-row-start: 4;
   grid-row-end: 6;
   height: auto;
+  padding: 0;
   transform: translateY(-0.2cm);
 }
 
@@ -147,6 +149,7 @@ body {
   width: 0.9cm;
   height: 0.87cm;
   border-radius: 30%;
+  z-index: 10;
 }
 
 .back-button:hover {
@@ -287,7 +290,7 @@ body {
   background-image: url("images/camera2.png");
   background-size: 100% 100%;
   grid-area: main;
-  transform: translate(-1cm, 0.7cm);
+  transform: translate(-1cm, 0.5cm);
   border-radius: 20%;
 }
 
@@ -295,7 +298,7 @@ body {
   background-image: url("images/microphone.png");
   background-size: 100% 100%;
   grid-area: main;
-  transform: translate(2.2cm, 0.7cm);
+  transform: translate(2cm, 0.5cm);
   border-radius: 20%;
 }
 
@@ -316,8 +319,9 @@ body {
   background-color: rgba(255, 255, 255, .5);
   font-weight: bold;
   text-align: center;
-  height: 90%;
+  height: 100%;
   overflow: visible;
+  z-index: 9;
 }
 
 .vertical-align {
@@ -363,4 +367,20 @@ body {
   90% {
     box-shadow: 0px 0px 5px 13px rgba(255, 0, 0, 0);
   }
+}
+
+#language-table {
+  overflow: hidden;
+}
+
+#camera-simulation {
+  width: 4.3cm;
+  height: 4.3cm;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  transform: translate(0.4cm, 0.4cm);
+  border: 3px solid black;
+  border-radius: 20%
 }

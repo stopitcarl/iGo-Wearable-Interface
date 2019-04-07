@@ -127,3 +127,19 @@ function selectLanguage() {
         $(".fade").fadeOut("fast", function () {});
     });
 }
+
+function swapImage(number) {
+    if (number == 0) {
+        setTimeout(() => {
+            document.getElementById("camera-simulation").src = "images/warning-english.png";
+        }, 3000);
+    } else {
+        setTimeout(() => {
+            var id = window.setTimeout(function() {}, 0);
+            while (id--) {
+                window.clearTimeout(id); // will do nothing if no timeout with id is present
+            }
+            document.getElementById("camera-simulation").src = "images/warning-chinese.png";
+        }, 1000);
+    }
+}
