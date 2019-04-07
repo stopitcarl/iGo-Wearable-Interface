@@ -7,9 +7,9 @@ function updateTime() {
 
 var Positions = {
     top: [-0.4, -0.4],
-    center: [1.7, 1.7],
-    bottom: [3, 0.3],
-    out: [-2, 2],
+    center: [1.3, 1.45],
+    bottom: [0.3, 5],
+    out: [-1.7, 1.7],
 }
 
 // Model options in objects (because fuck me, that's why)
@@ -22,7 +22,7 @@ class Options {
         this.urlLink = urlLink;
 
         $("#" + id).click(function () {
-            window.open(urlLink, "_blank");
+            window.open(urlLink, "_self");
         });
     }
 

@@ -6,6 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 
@@ -15,16 +24,30 @@
     <title>iGo - Translator</title>
 </head>
 
-<body onload="updateTime()" onscroll="scrolla()">
-    <div class="main container border">
-        <div class="back-button grid-top-left"
-            onclick="alert('sup bitcheeeees');"></div>
-
-        <div id="time" class="grid-top"></div>
-        <div id="date" class="grid-top"></div>
-
-        <button type="button" id="language">Try me!</button>
+<body onscroll="scrolla()">
+    <div class="main-container grid-container  clock-border" id="translator-main-screen">
+        <div class="back-button grid-top-left" onclick="window.history.back()"></div>
+        <button type="button" id="language1" class="language-button">Português</button>
+        <button type="button" id="language2" class="language-button">English (US)</button>
+        <button type="button" id="camera-translate" class="translation-type" onclick="">Try me!</button>
+        <button type="button" id="voice-translate" class="translation-type" onclick="">Try me!</button>
     </div>
+
+    <!--Translator by text screen-->
+    <div class="main-container grid-container  clock-border" id="translater-by-text">
+        <div class="back-button grid-top-left" onclick="window.history.back()"></div>
+        <div class="language-description-from"></div>
+        <div class="language-description-to"></div>
+        <img src="" id="camera-simulation" />
+        <img src="" id="camera-simulation-translated" />
+    </div>
+
+    <!--Translator by voice screen-->
+    <div class="main-container grid-container  clock-border" id="translater-by-voice">
+        <div class="back-button grid-top-left" onclick="window.history.back()"></div>
+        <div class="language-description-from"></div>
+        <div class="language-description-to"></div>
+        <img src="images/microphone.png" id="microphone" onclick="highligth()"/>
     </div>
 </body>
 
