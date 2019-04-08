@@ -481,6 +481,11 @@ button:focus {
   left: 3cm;
   border-radius: 30%;  
 }
+
 #close-button:hover{
   cursor: pointer;
+}
+
+#language-table {
+  overflow: hidden;
 }
