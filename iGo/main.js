@@ -37,21 +37,31 @@ class Options {
         this.position = pos;
         this.urlLink = urlLink;
         this.description = description;
+    }
 
-        $("#" + this.id).click(function () {
-            if (!urlLink) {
+    setListeners() {
+        var option = this;
+        $("#" + this.id).click(function () {            
+            if (option.position === 0) {
+                rotateScreen("up");
+                return;
+            } else if (option.position === 2) {
+                rotateScreen("down");
+                return;
+            }
+
+            if (!option.urlLink) {
                 $(this).addClass('shake').on("animationend", function () {
                     $(this).removeClass('shake');
                 });
             } else {
                 $(this).addClass('grow');
-                window.open(urlLink, "_self");
+                window.open(option.urlLink, "_self");
             }
         });
-
     }
 
-    rotate(dir) {
+    rotate(dir) {        
         var pos = this.position;
         var next_pos = 0;
 
@@ -93,6 +103,10 @@ function init() {
     options.push(new Options("option-2", 1, "Tradutor", "translater.html"));
     options.push(new Options("option-3", 2, "Mapa", null));
     options.push(new Options("option-4", 3, "Definições", null));
+
+    options.forEach(o => {
+        o.setListeners();;
+    });
 
     $(window).bind('mousewheel', function (e) {
         if (e.originalEvent.wheelDelta > 0) {
