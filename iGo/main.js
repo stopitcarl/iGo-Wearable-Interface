@@ -1,3 +1,14 @@
+var options = [];
+var Positions = [
+    "option-top",
+    "option-center",
+    "option-bottom",
+    "option-out"
+]
+var isRecording = false;
+var type = 0;
+var rotating = false;
+
 function prettyDate2(time) {
     var date = new Date(parseInt(time));
     return date.toLocaleTimeString(navigator.language, {
@@ -17,97 +28,76 @@ function updateTime() {
 
 setInterval(updateTime, 60000);
 
-var Positions = {
-    top: [-0.4, -0.4],
-    center: [1.3, 1.45],
-    bottom: [0.3, 5],
-    out: [-1.7, 1.7],
-}
+
 
 // Model options in objects (because fuck me, that's why)
 class Options {
-    constructor(id, pos, width, isRound, urlLink) {
+    constructor(id, pos, description, urlLink) {
         this.id = id;
         this.position = pos;
-        this.width = width;
-        this.isRound = isRound;
         this.urlLink = urlLink;
+        this.description = description;
 
-        $("#" + id).click(function () {
+        $("#" + this.id).click(function () {
             window.open(urlLink, "_self");
         });
     }
 
-    rotate() {
-        var x = 0
-        var y = 0
-        switch (this.position) {
-            case Positions.top:
-                x = Positions.center[0] - this.position[0];
-                y = Positions.center[1] - this.position[1];
-                this.position = Positions.center;
-                $("#" + this.id).css("width", "2.8cm");
-                break;
-            case Positions.center:
-                x = Positions.bottom[0] - this.position[0];
-                y = Positions.bottom[1] - this.position[1];
-                this.position = Positions.bottom;
-                $("#" + this.id).css("width", "1.5cm");
-                break;
-            case Positions.bottom:
-                x = Positions.out[0] - this.position[0];
-                y = Positions.out[1] - this.position[1];
-                this.position = Positions.out;
-                break;
-            case Positions.out:
-                x = Positions.top[0] - this.position[0];
-                y = Positions.top[1] - this.position[1];
-                this.position = Positions.top;
-                break;
-            default:
-                break;
-        }
-        // console.log(this.id, "translating", x, "and", y);
-        var attr = "translate(" + x + "cm," + y + "cm)";
-        $("#" + this.id).css("transform", attr);
-    }
+    rotate(dir) {
+        console.log("totatinng", dir);
+        var pos = this.position;
+        var next_pos = 0;
 
-    toggleRound() {
-        if (this.isRound) {
-            $("#" + this.id).addClass("option-main");
-        } else {
-            $("#" + this.id).removeClass("option-main");
+        if (dir == "up")
+            next_pos = (pos + 1) % 4;
+        else if (dir == "down")
+            next_pos = pos != 0 ? pos - 1 : 3;
+
+        console.log(this.id, "will be at", Positions[next_pos]);
+        $("#" + this.id).removeClass(Positions[pos]);
+        $("#" + this.id).addClass(Positions[next_pos]);
+        this.position = next_pos;
+
+        var desc = this.description;
+        if (this.position == 1) {
+            $('#description-content').fadeOut(100, function () {
+                console.log(desc);
+                $('#description-content').html(desc);
+                $('#description-content').fadeIn("fast");
+            });
+
         }
-        this.isRound = this.isRound ? false : true;
     }
 
 }
 
-var options = [];
+function rotateScreen(dir) {
+    if (rotating)
+        return;
+    rotating = true;
+    options.forEach(o => {
+        o.rotate(dir);
+    });
+    setTimeout(() => rotating = false, 600);
+}
+
+
 
 function init() {
-    options.push(new Options("option-1", Positions.top, 1.5, true, "translater.html"));
-    options.push(new Options("option-2", Positions.center, 2.8, false, "translater.html"));
-    options.push(new Options("option-3", Positions.bottom, 2.8, true, "translater.html"));
-    options.push(new Options("option-4", Positions.out, 2.8, true, "translater.html"));
+    options.push(new Options("option-1", 0, "Bilhetes", "translater.html"));
+    options.push(new Options("option-2", 1, "Tradutor", "translater.html"));
+    options.push(new Options("option-3", 2, "Mapa", "translater.html"));
+    options.push(new Options("option-4", 3, "Definições", "translater.html"));
 
-}
-
-var scroll = 0;
-var current = 1;
-
-function scrolla() {
-    setTimeout(function () {
-        options[current].toggleRound();
-        current--;
-        if (current < 0)
-            current = 3;
-        options[current].toggleRound();
-
-    }, 2000)
-    options.forEach(o => {
-        o.rotate();
+    $(window).bind('mousewheel', function (e) {
+        console.log(e.originalEvent.wheelDelta);
+        if (e.originalEvent.wheelDelta > 0) {
+            rotateScreen("down");
+        } else {
+            rotateScreen("up");
+        }
     });
+
 }
 
 
@@ -115,7 +105,7 @@ function rotateDown() {
     $('.wrapper').toggleClass('tiny');
 }
 
-var isRecording = false;
+
 
 function changeTranslateScreen(curScreen, targetScreen) {
 
@@ -146,7 +136,7 @@ function toggleRecording() {
     isRecording = isRecording ? false : true;
 }
 
-var type = 0;
+
 
 function selectLanguage(t) {
     $('#language-table').modal();
@@ -188,7 +178,7 @@ function prepareWindow() {
     }
 }
 
-function updateLanguage2(language) {    
+function updateLanguage2(language) {
     let language1 = document.getElementById("language1").innerHTML;
     let language2 = document.getElementById("language2").innerHTML;
     if (type == 1) {
