@@ -39,12 +39,19 @@ class Options {
         this.description = description;
 
         $("#" + this.id).click(function () {
-            window.open(urlLink, "_self");
+            if (!urlLink) {
+                $(this).addClass('shake').on("animationend", function () {
+                    $(this).removeClass('shake');
+                });
+            } else {
+                $(this).addClass('grow');
+                window.open(urlLink, "_self");
+            }
         });
+
     }
 
     rotate(dir) {
-        console.log("totatinng", dir);
         var pos = this.position;
         var next_pos = 0;
 
@@ -53,15 +60,13 @@ class Options {
         else if (dir == "down")
             next_pos = pos != 0 ? pos - 1 : 3;
 
-        console.log(this.id, "will be at", Positions[next_pos]);
         $("#" + this.id).removeClass(Positions[pos]);
         $("#" + this.id).addClass(Positions[next_pos]);
-        this.position = next_pos;
 
+        this.position = next_pos;
         var desc = this.description;
         if (this.position == 1) {
             $('#description-content').fadeOut(100, function () {
-                console.log(desc);
                 $('#description-content').html(desc);
                 $('#description-content').fadeIn("fast");
             });
@@ -84,13 +89,12 @@ function rotateScreen(dir) {
 
 
 function init() {
-    options.push(new Options("option-1", 0, "Bilhetes", "translater.html"));
+    options.push(new Options("option-1", 0, "Bilhetes", null));
     options.push(new Options("option-2", 1, "Tradutor", "translater.html"));
-    options.push(new Options("option-3", 2, "Mapa", "translater.html"));
-    options.push(new Options("option-4", 3, "Definições", "translater.html"));
+    options.push(new Options("option-3", 2, "Mapa", null));
+    options.push(new Options("option-4", 3, "Definições", null));
 
     $(window).bind('mousewheel', function (e) {
-        console.log(e.originalEvent.wheelDelta);
         if (e.originalEvent.wheelDelta > 0) {
             rotateScreen("down");
         } else {
@@ -99,13 +103,6 @@ function init() {
     });
 
 }
-
-
-function rotateDown() {
-    $('.wrapper').toggleClass('tiny');
-}
-
-
 
 function changeTranslateScreen(curScreen, targetScreen) {
 
@@ -123,9 +120,9 @@ function changeTranslateScreen(curScreen, targetScreen) {
     });
 }
 
+
 function toggleRecording() {
     if (!isRecording) {
-        console.log("Recording");
         $('#microphone-button').addClass("Rec");
     } else {
         $('#microphone-button').removeClass("Rec");
@@ -208,14 +205,12 @@ function updateLanguage(language) {
 }
 
 function setCookie(name, value, days) {
-    console.log("Setting cookie")
     var expires = "";
     if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
     }
-    console.log(name + "=" + (value || "") + expires + "; path=/");
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
@@ -229,7 +224,6 @@ function getCookie(cname) {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
-            console.log(c.substring(name.length, c.length));
             return c.substring(name.length, c.length);
         }
     }
