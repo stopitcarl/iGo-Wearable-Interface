@@ -333,6 +333,7 @@ body {
 .modal,
 .modal-backdrop {
   position: absolute !important;    
+  overflow: hidden;
 }
 
 .modal-content {

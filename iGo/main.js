@@ -188,8 +188,7 @@ function prepareWindow() {
     }
 }
 
-function updateLanguage2(language) {
-    debugger;
+function updateLanguage2(language) {    
     let language1 = document.getElementById("language1").innerHTML;
     let language2 = document.getElementById("language2").innerHTML;
     if (type == 1) {
