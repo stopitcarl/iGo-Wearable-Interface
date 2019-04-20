@@ -153,15 +153,45 @@ function addText(text) {
 
 }
 
+function getText(lang) {
+
+    let language = "";
+
+    if (lang == 1)
+        language = document.getElementById("language1").innerHTML;
+    else
+        language = document.getElementById("language2").innerHTML;
+
+    switch (language) {
+        case "Português":
+            return "Gostaria de um copo de água";
+        case "English":
+            return "I would like a glass of water";
+        case "Čeština":
+            return "Chtěl bych sklenici vody";
+        case "Deutsche":
+            return "Ich hätte gerne ein Glas Wasser";
+        case "Français":
+            return "Je voudrais un verre d'eau";
+        case "Svenska":
+            return "Jag skulle vilja ha ett glas vatten";
+        case "Swahili":
+            return "Ningependa glasi ya maji";
+        case "普通话":
+            return "我想要一杯水";
+    }
+
+}
+
 function toggleRecording() {
     if (!isRecording) {
         $('#microphone-button').addClass("Rec");
-        addText("Gostaria de um copo de água");
+        addText(getText(1));
 
     } else {
         $('#microphone-button').removeClass("Rec");
-        addText("I would like a glass of water");
-        $('#speaking').delay(500).fadeIn("fast", function () {            
+        addText(getText(2));
+        $('#speaking').delay(500).fadeIn("fast", function () {
             $('#speaking').delay(3000).fadeOut("fast", function () {});
         });
     }
@@ -263,9 +293,4 @@ function getCookie(cname) {
         }
     }
     return "";
-}
-
-function getCookie2(cname) {
-    let str = decodeURIComponent(document.cookie).match(cname + "=.*;")[0];
-    return str.substring(0, str.length - 2);
 }
