@@ -671,3 +671,44 @@ table {
 #tickets-scan {
   display: none;
 }
+
+/* EXTRA CSS FOR FIlTER MODAL */
+
+#filter-modal {
+  overflow: hidden;
+}
+
+.filter-table {
+  width: 4.2cm;
+  height: 4.2cm;
+  text-align: center;
+}
+
+.filter-icon {
+  width: 1cm;
+  height: 1cm;
+  border-radius: 10%;
+}
+
+.filter-icon:hover {
+  cursor: pointer;
+}
+
+.filter-modal-content {
+  width: 4.2cm !important;
+  height: 4.2cm !important;
+}
+
+
+.filter-close-button {
+  width: 1cm;
+  height: 1cm;
+  position: absolute;
+  top: -0.6cm;
+  left: 3.5cm;
+  border-radius: 30%;
+}
+
+.filter-close-button:hover {
+  cursor: pointer;
+}

@@ -249,6 +249,8 @@ function getCookie2(cname) {
     return str.substring(0, str.length - 2);
 }
 
+/* TICKETS */
+
 isOpen = 0;
 
 function toggleMenu() {
@@ -266,4 +268,12 @@ function toggleMenu() {
         }, 100);
         isOpen = 1;
     }
+}
+
+function selectFilter() {
+    $('#filter-modal').modal();
+    $('.modal-backdrop').appendTo('.ticket-container');
+    $("#filter-modal").on("hidden.bs.modal", function () {
+        $(".fade").fadeOut("fast", function () {});
+    });
 }

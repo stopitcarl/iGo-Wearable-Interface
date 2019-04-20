@@ -35,8 +35,54 @@
             <div class="option-menu grid-top-right" id="my-option-menu">
                 <div class="add-button" id="my-add-button"
                     onclick="changeTranslateScreen('tickets-main', 'tickets-scan')"></div>
-                <div class="filter-button" id="my-filter-button"></div>
+                <div class="filter-button" id="my-filter-button" onclick="selectFilter()"></div>
             </div>
+
+            <!-- MODAL WINDOW FOR FILTERS -->
+            <div class="modal fade bd-example-modal-sm" id="filter-modal" tabindex="-1" role="dialog"
+                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content filter-modal-content">
+                        <img src="images/close.png" class="filter-close-button" onclick="$('#filter-modal').modal('toggle');">
+                        <table class="filter-table">
+                            <tr>
+                                <td>
+                                    <img src="images/filters/transports.png" class="filter-icon">
+                                </td>
+                                <td>
+                                    <img src="images/filters/music.png" class="filter-icon">
+                                </td>
+                                <td>
+                                    <img src="images/filters/stadium.png" class="filter-icon">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/filters/einfell.png" class="filter-icon">
+                                </td>
+                                <td>
+                                    <img src="images/filters/cinema.png" class="filter-icon">
+                                </td>
+                                <td>
+                                    <img src="images/filters/airplane.png" class="filter-icon">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/filters/cocktail.png" class="filter-icon">
+                                </td>
+                                <td>
+                                    <img src="images/filters/star.png" class="filter-icon">
+                                </td>
+                                <td>
+                                    <b>ALL</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="ticket-container clock-border">
