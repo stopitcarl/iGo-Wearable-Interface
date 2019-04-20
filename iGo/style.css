@@ -660,7 +660,7 @@ table {
 .option-menu {
   position: absolute;
   transition: 0.5s;
-  width: 0 ;
+  width: 0;
   height: 0.87cm;
   z-index: 9;
   right: 15px;
@@ -699,7 +699,6 @@ table {
   height: 4.2cm !important;
 }
 
-
 .filter-close-button {
   width: 1cm;
   height: 1cm;
@@ -711,4 +710,39 @@ table {
 
 .filter-close-button:hover {
   cursor: pointer;
+}
+
+/* EXTRA CSS FOR TICKET INFO MODAL */
+
+#ticket-info-modal {
+  overflow: hidden;
+}
+
+.ticket-info-table {
+  width: 4.15cm;
+  height: 1.2cm;
+  border-bottom: solid grey;
+  border-width: thin;
+}
+
+.favorite-icon-cell {
+  text-align: center;
+  width: 30%;
+}
+
+.favorite-icon {
+  width: 1cm;
+  height: 1cm;
+}
+
+.header-cell {
+  width: 70%;
+  text-align: center;
+}
+
+.info-text {
+  margin-left: 5px;
+  margin-bottom: 2px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }

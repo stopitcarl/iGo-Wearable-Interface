@@ -30,11 +30,12 @@
     <div class="ninja-wrapper" id="tickets-main">
 
         <div class="ticket-container grid-container clock-border">
+
             <div class="back-button grid-top-left" onclick="window.history.back()"></div>
             <div class="option-button grid-top-right" onclick="toggleMenu()"></div>
             <div class="option-menu grid-top-right" id="my-option-menu">
                 <div class="add-button" id="my-add-button"
-                    onclick="changeTranslateScreen('tickets-main', 'tickets-scan')"></div>
+                    onclick="changeTicketsScreen('tickets-main', 'tickets-scan')"></div>
                 <div class="filter-button" id="my-filter-button" onclick="selectFilter()"></div>
             </div>
 
@@ -43,7 +44,8 @@
                 aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm modal-dialog-centered">
                     <div class="modal-content filter-modal-content">
-                        <img src="images/close.png" class="filter-close-button" onclick="$('#filter-modal').modal('toggle');">
+                        <img src="images/close.png" class="filter-close-button"
+                            onclick="$('#filter-modal').modal('toggle');">
                         <table class="filter-table">
                             <tr>
                                 <td>
@@ -75,10 +77,48 @@
                                     <img src="images/filters/star.png" class="filter-icon">
                                 </td>
                                 <td>
-                                    <b>ALL</b>
+                                    <b class="filter-icon">ALL</b>
                                 </td>
                             </tr>
                         </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL WINDOW FOR TICKET INFO -->
+            <div class="modal fade bd-example-modal-sm" id="ticket-info-modal" tabindex="-1" role="dialog"
+                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content filter-modal-content">
+                        <img src="images/close.png" class="filter-close-button"
+                            onclick="$('#ticket-info-modal').modal('toggle');">
+                        <table class="ticket-info-table">
+                            <tr>
+                                <td class="favorite-icon-cell">
+                                    <img src="images/star-empty.png" class="favorite-icon" onclick="favorite(this)">
+                                </td>
+                                <td class="header-cell">
+                                    Viva Viagem
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="info-text">
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p>asd</p>
+                            <p style="color:red;text-align: right">x apagar</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,7 +132,7 @@
                     <tr>
                         <td class="ticket-name">Viva Viagem</td>
                         <td class="ticket-information">
-                            <img src="images/information.png" class="ticket-information-image">
+                            <img src="images/information.png" class="ticket-information-image" onclick="checkInfo()">
                         </td>
                     </tr>
                 </table>
@@ -112,7 +152,7 @@
     </div>
     <div class="ninja-wrapper" id="tickets-scan">
         <div class="ticket-container grid-container clock-border">
-            <div class="back-button grid-top-left" onclick="changeTranslateScreen('tickets-scan', 'tickets-main')">
+            <div class="back-button grid-top-left" onclick="changeTicketsScreen('tickets-scan', 'tickets-main')">
             </div>
             <img src="images/tickets-camera.jpg" class="camera-simulation" />
             <img src="images/cameraborder.png" class="camera-border" />
