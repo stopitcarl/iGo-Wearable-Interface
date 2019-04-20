@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+
+    <!-- Custom Javascript -->
+    <script language="javascript" type="text/javascript" src="main.js"></script>
+
+    <title>iGo - Tickets</title>
+</head>
+
+<body>
+    <div class="ninja-wrapper" id="tickets-main">
+
+        <div class="ticket-container grid-container clock-border">
+            <div class="back-button grid-top-left" onclick="window.history.back()"></div>
+            <div class="option-button grid-top-right" onclick="toggleMenu()"></div>
+            <div class="option-menu grid-top-right" id="my-option-menu">
+                <div class="add-button" id="my-add-button"
+                    onclick="changeTranslateScreen('tickets-main', 'tickets-scan')"></div>
+                <div class="filter-button" id="my-filter-button"></div>
+            </div>
+        </div>
+
+        <div class="ticket-container clock-border">
+            <div class="polaroid">
+                <img src="images/tickets/viva-viagem.png" class="polaroid-image">
+                <table>
+                    <tr>
+                        <td class="ticket-name">Viva Viagem</td>
+                        <td class="ticket-information">
+                            <img src="images/information.png" class="ticket-information-image">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="polaroid">
+                <img src="images/tickets/sub-23.png" class="polaroid-image">
+                <table>
+                    <tr>
+                        <td class="ticket-name">Passe sub 23</td>
+                        <td class="ticket-information">
+                            <img src="images/information.png" class="ticket-information-image" onclick="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="ninja-wrapper" id="tickets-scan">
+        <div class="ticket-container grid-container clock-border">
+            <div class="back-button grid-top-left" onclick="changeTranslateScreen('tickets-scan', 'tickets-main')">
+            </div>
+            <img src="images/tickets-camera.jpg" class="camera-simulation" />
+            <img src="images/cameraborder.png" class="camera-border" />
+        </div>
+    </div>
+</body>
+
+</html>

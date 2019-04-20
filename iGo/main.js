@@ -99,7 +99,7 @@ function rotateScreen(dir) {
 
 
 function init() {
-    options.push(new Options("option-1", 0, "Bilhetes", null));
+    options.push(new Options("option-1", 0, "Bilhetes", "tickets.html"));
     options.push(new Options("option-2", 1, "Tradutor", "translater.html"));
     options.push(new Options("option-3", 2, "Mapa", null));
     options.push(new Options("option-4", 3, "Definições", null));
@@ -161,7 +161,7 @@ function selectLanguage(t) {
 function swapImage(number) {
     if (number == 0) {
         setTimeout(() => {
-            document.getElementById("camera-simulation").src = "images/warning-english.png";
+            document.getElementById("my-camera-simulation").src = "images/warning-english.png";
         }, 3000);
     } else {
         setTimeout(() => {
@@ -169,7 +169,7 @@ function swapImage(number) {
             while (id--) {
                 window.clearTimeout(id); // will do nothing if no timeout with id is present
             }
-            document.getElementById("camera-simulation").src = "images/warning-chinese.png";
+            document.getElementById("my-camera-simulation").src = "images/warning-chinese.png";
         }, 1000);
     }
 }
@@ -247,4 +247,23 @@ function getCookie(cname) {
 function getCookie2(cname) {
     let str = decodeURIComponent(document.cookie).match(cname + "=.*;")[0];
     return str.substring(0, str.length - 2);
+}
+
+isOpen = 0;
+
+function toggleMenu() {
+    if (isOpen) {
+        document.getElementById("my-option-menu").style.width = "0cm";
+        document.getElementById("my-add-button").style.width = "0cm";
+        document.getElementById("my-filter-button").style.width = "0cm";
+        isOpen = 0;
+    }
+    else {
+        document.getElementById("my-option-menu").style.width = "3cm";
+        setTimeout(function(){
+            document.getElementById("my-add-button").style.width = "0.9cm";
+            document.getElementById("my-filter-button").style.width = "0.9cm";
+        }, 100);
+        isOpen = 1;
+    }
 }
