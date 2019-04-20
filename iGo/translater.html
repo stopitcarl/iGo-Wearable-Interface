@@ -55,7 +55,7 @@
                             <li onclick="updateLanguage('Português')">Português</li>
                             <li onclick="updateLanguage('Svenska')">Svenska</li>
                             <li onclick="updateLanguage('Swahili')">Swahili</li>
-                            <li onclick="updateLanguage('普通话')">普通话</li>                            
+                            <li onclick="updateLanguage('普通话')">普通话</li>
                         </ul>
                     </div>
                 </div>
@@ -78,12 +78,30 @@
     <!-- Translator by voice screen -->
     <div class="ninja-wrapper" id="translater-by-voice">
         <div class="main-container grid-container  clock-border">
-            <img src="images/personspeaking.png" id="speaking">
-            <div class="language-description"><span class="vertical-align" id="languages">Português - English</span></div>
-            <div class="back-button grid-top-left"
-                onclick="changeTranslateScreen('translater-by-voice', 'translator-main-screen')"></div>
+            <!-- Top box -->
+            <div class="language-description background-light">
+                <div class="back-button grid-top-left"
+                    onclick="changeTranslateScreen('translater-by-voice', 'translator-main-screen')">
+                </div>
+                <span class="vertical-align" id="languages">
+                    Português<br>
+                    <hr>English
+                </span>
+                <div id="speaking-container">
+                    <img src="images/personspeaking.png" id="speaking">
+                </div>
+            </div>
+
+            <!-- Record button -->
             <img src="images/microphone.png" id="microphone-button" class="language-button"
                 onclick="toggleRecording()" />
+
+            <!-- Bottom box -->
+            <div class="language-text background-light">
+                <span id="translated-text"></span>
+            </div>
+
+
         </div>
     </div>
 </body>
