@@ -151,16 +151,25 @@ hr {
 }
 
 @keyframes shake {
-  10%, 90% {
+
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
-  20%, 80% {
+
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
-  30%, 50%, 70% {
+
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
-  40%, 60% {
+
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
 }
@@ -216,6 +225,7 @@ span {
   border-radius: 30%;
   margin: 0em 0em;
   padding: 0em 0em;
+  z-index: 10;
 }
 
 .back-button:hover {
@@ -227,7 +237,7 @@ span {
   display: grid;
   grid-template-columns: 18% 6% auto 6% 18%;
   grid-template-rows: 18% 6% auto 6% 18%;
-  grid-template-areas: "top-left top-left header top-right top-right" "top-left top-left . top-right top-right" "left-main left-center main right-center-main right-main" ". . . . ." ". footer footer footer .";
+  grid-template-areas: "top-left top-left header top-right top-right""top-left top-left . top-right top-right""left-main left-center main right-center-main right-main"". . . . ."". footer footer footer .";
   overflow: hidden;
   /*-o-transition: all 2s;
   -moz-transition: all 2s;
@@ -409,9 +419,9 @@ span {
 
 .vertical-align {
   position: relative;
-  top: -0.65cm;
+  top: 0.2cm;
   width: 3cm;
-  margin: auto;
+  margin: 0 0 auto;
   line-height: 28%;
 }
 
@@ -431,7 +441,8 @@ span {
   height: 100%;
 }
 
-.modal, .modal-backdrop {
+.modal,
+.modal-backdrop {
   position: absolute !important;
   overflow: hidden;
 }
@@ -454,9 +465,11 @@ span {
   0% {
     box-shadow: 0px 0px 5px 0px rgba(255, 0, 0, .8);
   }
+
   65% {
     box-shadow: 0px 0px 5px 13px rgba(255, 0, 0, .3);
   }
+
   90% {
     box-shadow: 0px 0px 5px 13px rgba(255, 0, 0, 0);
   }
@@ -538,7 +551,8 @@ li {
   color: #000;
 }
 
-li:hover, li:active {
+li:hover,
+li:active {
   cursor: pointer;
   /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1fb8f5af), color-stop(100%rgba(21, 102, 224, 0.685)e6));*/
   background: -webkit-linear-gradient(top, #008fee86 0%, #44a7f8b6 100%);
@@ -554,7 +568,8 @@ li:after {
   text-shadow: 1px 0 1px #808080;
 }
 
-li:hover:after, li:hover:after {
+li:hover:after,
+li:hover:after {
   color: #fff;
   text-shadow: 1px 0 1px #fff;
 }
