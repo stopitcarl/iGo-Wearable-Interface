@@ -3,6 +3,16 @@ body {
   padding: 0em;
 }
 
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
 .main-container {
   width: 5.65cm;
   height: 5.65cm;
@@ -122,7 +132,7 @@ body {
 }
 
 #option-1 {
-  background-color: #a2d4de;
+  background-color: #6CC077;
 }
 
 #description {
@@ -200,12 +210,12 @@ span {
   background-color: rgba(255, 255, 255, 0.4);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  margin-top: 0.5em;
-  margin-left: 0.5em;
+  transform: translate(0.3em, 0.2em);
   width: 0.9cm;
   height: 0.87cm;
-  border-radius: 20%;
-  z-index: 10;
+  border-radius: 30%;
+  margin: 0em 0em;
+  padding: 0em 0em;
 }
 
 .back-button:hover {
@@ -264,7 +274,10 @@ span {
 }
 
 .grid-top-left {
-  grid-area: top-left;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .grid-top-center-left {
@@ -352,42 +365,70 @@ span {
 }
 
 #microphone-button {
-  width: 2.7cm;
-  height: 2.7cm;
+  position: absolute;
+  top: 1.6cm;
+  left: 1.6cm;
+  width: 2.1cm;
+  height: 2.1cm;
   padding: 0em;
   border-radius: 50%;
-  grid-area: main;
+  margin: auto;
   border: solid 0.15cm grey;
 }
 
 .language-description {
   grid-column-start: 1;
   grid-column-end: 6;
-  grid-row-start: 5;
-  grid-row-end: 6;
-  background-color: rgba(255, 255, 255, .5);
+  grid-row-start: 1;
+  grid-row-end: 2;
   font-weight: bold;
-  text-align: center;
-  height: 100%;
+  height: 115%;
   overflow: visible;
   z-index: 9;
 }
 
+.language-text {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: -1;
+  grid-row-end: -2;
+  font-weight: bold;
+  color: white;
+  height: 115%;
+  line-height: 100%;
+}
+
+#translated-text {
+  font-style: normal;
+}
+
+.background-light {
+  background-color: rgba(255, 255, 255, .5);
+  text-align: center;
+}
+
 .vertical-align {
   position: relative;
-  top: 0.18cm;
-  left: 0;
+  top: -0.65cm;
+  width: 3cm;
+  margin: auto;
+  line-height: 28%;
+}
+
+#speaking-container {
+  position: absolute;
+  top: 0.2cm;
+  left: 4.3cm;
+  width: 0.8cm;
+  height: 0.8cm;
+  padding: 0em 0em;
 }
 
 #speaking {
   display: none;
-  grid-column-start: 4;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  width: 0.9cm;
-  height: 0.9cm;
-  transform: translateY(0.2cm);
+  margin: 0em 0em;
+  width: 100%;
+  height: 100%;
 }
 
 .modal, .modal-backdrop {

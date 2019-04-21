@@ -125,21 +125,72 @@ function changeTranslateScreen(curScreen, targetScreen) {
 
     $('#' + targetScreen).hide().fadeIn("slow", function () {
         // Animation complete.
-        console.log("got in");
+        //console.log("got in");
     });
     $('#' + curScreen).fadeOut("slow", function () {
         // Animation complete.
 
-        console.log("got out");
+        //console.log("got out");
     });
 }
 
+function addText(text) {
+    var words = text.split(" ");
+    var curText = "";
+    var time = 400;
+
+    words.forEach(word => {
+        setTimeout(function () {
+            curText += word;
+            $("#translated-text").text(curText);
+            curText += " ";
+        }, time);
+        let rand = Math.random() * 600;
+        time += rand > 100 ? rand : 300;
+    });
+
+
+
+}
+
+function getText(lang) {
+
+    let language = "";
+
+    if (lang == 1)
+        language = document.getElementById("language1").innerHTML;
+    else
+        language = document.getElementById("language2").innerHTML;
+
+    switch (language) {
+        case "Português":
+            return "Gostaria de um copo de água";
+        case "English":
+            return "I would like a glass of water";
+        case "Čeština":
+            return "Chtěl bych sklenici vody";
+        case "Deutsche":
+            return "Ich hätte gerne ein Glas Wasser";
+        case "Français":
+            return "Je voudrais un verre d'eau";
+        case "Svenska":
+            return "Jag skulle vilja ha ett glas vatten";
+        case "Swahili":
+            return "Ningependa glasi ya maji";
+        case "普通话":
+            return "我想要一杯水";
+    }
+
+}
 
 function toggleRecording() {
     if (!isRecording) {
         $('#microphone-button').addClass("Rec");
+        addText(getText(1));
+
     } else {
         $('#microphone-button').removeClass("Rec");
+        addText(getText(2));
         $('#speaking').delay(500).fadeIn("fast", function () {
             $('#speaking').delay(3000).fadeOut("fast", function () { });
         });
@@ -194,14 +245,14 @@ function updateLanguage2(language) {
     let language2 = document.getElementById("language2").innerHTML;
     if (type == 1) {
         if (language2 === language) {
-            document.getElementById("language2").innerHTML = language1;
+            language2 = language1;
             setCookie("lang2", language1, null);
         }
         setCookie("lang1", language, null);
         document.getElementById("language1").innerHTML = language;
     } else {
         if (language1 === language) {
-            document.getElementById("language1").innerHTML = language2;
+            language1 = language2;
             setCookie("lang1", language2, null);
         }
         setCookie("lang2", language, null);
@@ -210,7 +261,7 @@ function updateLanguage2(language) {
 
     language1 = document.getElementById("language1").innerHTML;
     language2 = document.getElementById("language2").innerHTML;
-    document.getElementById("languages").innerHTML = language1 + " - " + language2;
+    document.getElementById("languages").innerHTML = language1 + "<br><hr>" + language2;
 }
 
 function updateLanguage(language) {
@@ -242,12 +293,7 @@ function getCookie(cname) {
         }
     }
     return "";
-}
 
-function getCookie2(cname) {
-    let str = decodeURIComponent(document.cookie).match(cname + "=.*;")[0];
-    return str.substring(0, str.length - 2);
-}
 
 /* TICKETS */
 
