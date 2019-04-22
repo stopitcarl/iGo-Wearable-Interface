@@ -164,7 +164,7 @@ function getText(lang) {
 
     switch (language) {
         case "Português":
-            return "Gostaria de um copo de água";
+            return "Eu gostaria de um copo de água";
         case "English":
             return "I would like a glass of water";
         case "Čeština":
