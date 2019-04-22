@@ -245,22 +245,22 @@ function updateLanguage2(language) {
     let language2 = document.getElementById("language2").innerHTML;
     if (type == 1) {
         if (language2 === language) {
-            language2 = language1;
+            document.getElementById("language2").innerHTML = language1;
             setCookie("lang2", language1, null);
         }
         setCookie("lang1", language, null);
         document.getElementById("language1").innerHTML = language;
     } else {
         if (language1 === language) {
-            language1 = language2;
+            document.getElementById("language1").innerHTML = language2;
             setCookie("lang1", language2, null);
         }
         setCookie("lang2", language, null);
         document.getElementById("language2").innerHTML = language;
     }
 
-    language1 = document.getElementById("language1").innerHTML;
-    language2 = document.getElementById("language2").innerHTML;
+    //language1 = document.getElementById("language1").innerHTML;
+    //language2 = document.getElementById("language2").innerHTML;
     document.getElementById("languages").innerHTML = language1 + "<br><hr>" + language2;
 }
 
