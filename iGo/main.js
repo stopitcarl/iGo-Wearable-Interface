@@ -110,9 +110,9 @@ function init() {
 
     $(window).bind('mousewheel', function (e) {
         if (e.originalEvent.wheelDelta > 0) {
-            rotateScreen("down");
-        } else {
             rotateScreen("up");
+        } else {
+            rotateScreen("down");
         }
     });
 
@@ -259,8 +259,8 @@ function updateLanguage2(language) {
         document.getElementById("language2").innerHTML = language;
     }
 
-    //language1 = document.getElementById("language1").innerHTML;
-    //language2 = document.getElementById("language2").innerHTML;
+    language1 = document.getElementById("language1").innerHTML;
+    language2 = document.getElementById("language2").innerHTML;
     document.getElementById("languages").innerHTML = language1 + "<br><hr>" + language2;
 }
 
