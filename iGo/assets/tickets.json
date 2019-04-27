@@ -1,0 +1,57 @@
+[   {
+        "name": "Boa viagem",
+        "info": "This is good ticket\nLike the best ticket",
+        "img": "images/tickets/viva-viagem.png",
+        "isFav": true,
+        "tags": ["pub-transp"]
+    },
+    {
+        "name": "Passe Sub23",
+        "info": "This is the best ticket beacuase you dont pay",
+        "img": "images/tickets/sub-23.png",
+        "isFav": false,
+        "tags": ["pub-transp"]
+    },
+    {
+        "name": "Good Night cinema",
+        "info": "tony stark dies",
+        "img": "images/tickets/orange.png",
+        "isFav": false,
+        "tags": ["cinema"]
+    },
+    {
+        "name": "Louvre museum",
+        "info": "I spit on mona Lisa",
+        "img": "images/tickets/louvre.png",
+        "isFav": true,
+        "tags": ["culture"]
+    },
+    {
+        "name": "Dj Lorem Ypson",
+        "info": "Music is so fire my dick is on fire",
+        "img": "images/tickets/concert.png",
+        "isFav": false,
+        "tags": ["music"]
+    },
+    {
+        "name": "NEP vs DB",
+        "info": "American football is big gay",
+        "img": "images/tickets/sports.png",
+        "isFav": false,
+        "tags": ["sports"]
+    },
+    {
+        "name": "London - New York",
+        "info": "Tomato is the right pronunciation",
+        "img": "images/tickets/plane.png",
+        "isFav": false,
+        "tags": ["sports"]
+    },
+    {
+        "name": "Summer Party 2020",
+        "info": "Party e na casa do david",
+        "img": "images/tickets/party.png",
+        "isFav": false,
+        "tags": ["social-events"]
+    }
+]

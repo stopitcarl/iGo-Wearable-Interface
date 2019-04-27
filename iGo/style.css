@@ -1,5 +1,10 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("assets/SourceSansPro-Regular.ttf");
+}
+
 body {
-  font-family: Arial, Courier, monospace;
+  font-family: 'Source Sans Pro', Arial, Courier, monospace;
   padding: 0em;
 }
 
@@ -402,7 +407,6 @@ span {
   grid-column-end: 6;
   grid-row-start: -1;
   grid-row-end: -2;
-  font-weight: bold;
   color: white;
   height: 115%;
   line-height: 100%;
@@ -614,6 +618,9 @@ button:focus {
   right: 0;
   bottom: 0;
   left: 0;
+  background-size: 100% 100%;
+  background-color: rgb(230, 230, 230);
+  /*background-image: url("images/city.jpg");*/
   overflow: auto;
 }
 
@@ -682,6 +689,9 @@ button:focus {
   width: 90%;
   margin: 12px auto 10px auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /*border: solid white 0.12em;
+  border-radius: 4% 4% 4% 4% / 5%;
+  overflow: hidden;*/
 }
 
 table {
@@ -698,7 +708,7 @@ table {
   padding-left: 10px;
 }
 
-.ticket-information {
+.button-ticket-information {
   width: 20%;
 }
 
@@ -726,6 +736,11 @@ table {
 
 #tickets-scan {
   display: none;
+}
+
+.ticket-table {
+  background-color: white;
+  overflow: hidden;
 }
 
 /* EXTRA CSS FOR FIlTER MODAL */
@@ -801,4 +816,5 @@ table {
   margin-bottom: 2px;
   overflow-x: hidden;
   overflow-y: scroll;
+  height: 100%;
 }
