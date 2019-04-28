@@ -32,11 +32,12 @@ setInterval(updateTime, 60000);
 
 // Model options in objects (because fuck me, that's why)
 class Options {
-    constructor(id, pos, description, urlLink) {
+    constructor(id, pos, description, urlLink, img) {
         this.id = id;
         this.position = pos;
         this.urlLink = urlLink;
         this.description = description;
+        this.img = img;
     }
 
     setListeners() {
@@ -55,7 +56,8 @@ class Options {
                     $(this).removeClass('shake');
                 });
             } else {
-                $(this).addClass('grow');
+                localStorage.setItem("activeOptions",JSON.stringify(options));
+                $(this).addClass('grow'); // TODO: setTimeout to open window
                 window.open(option.urlLink, "_self");
             }
         });
@@ -99,13 +101,23 @@ function rotateScreen(dir) {
 
 
 function init() {
-    options.push(new Options("option-1", 0, "Bilhetes", "tickets.html"));
-    options.push(new Options("option-2", 1, "Tradutor", "translater.html"));
-    options.push(new Options("option-3", 2, "Mapa", null));
-    options.push(new Options("option-4", 3, "Definições", null));
+    options_cache = JSON.parse(localStorage.getItem("activeOptions"));
+    if (!options_cache) {  
+        options=[];      
+        options.push(new Options("option-1", 0, "Bilhetes", "tickets.html", "images/ticketIcon.png"));
+        options.push(new Options("option-2", 1, "Tradutor", "translater.html", "images/icon-translation.svg"));
+        options.push(new Options("option-3", 2, "Mapa", null, "images/mapsicon.png"));
+        options.push(new Options("option-4", 3, "Definições", null, "images/settings.png"));
+    } else {        
+        options_cache.forEach(o => {
+            options.push(new Options(o.id, o.position, o.description, o.urlLink, o.img));    
+        });
+    }
 
-    options.forEach(o => {
-        o.setListeners();;
+    options.forEach(o => {                
+        $('#rotating-screen').append('<img src="'+ o.img + '"id="'+ o.id + '" class="option ' +
+         Positions[o.position] + '"/>');
+        o.setListeners();
     });
 
     $(window).bind('mousewheel', function (e) {
@@ -192,7 +204,7 @@ function toggleRecording() {
         $('#microphone-button').removeClass("Rec");
         addText(getText(2));
         $('#speaking').delay(500).fadeIn("fast", function () {
-            $('#speaking').delay(3000).fadeOut("fast", function () {});
+            $('#speaking').delay(3000).fadeOut("fast", function () { });
         });
     }
     isRecording = isRecording ? false : true;
@@ -204,7 +216,7 @@ function selectLanguage(t) {
     $('#language-table').modal();
     $('.modal-backdrop').appendTo('.main-container');
     $("#language-table").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () {});
+        $(".fade").fadeOut("fast", function () { });
     });
     type = t;
 }
@@ -216,7 +228,7 @@ function swapImage(number) {
         }, 3000);
     } else {
         setTimeout(() => {
-            var id = window.setTimeout(function () {}, 0);
+            var id = window.setTimeout(function () { }, 0);
             while (id--) {
                 window.clearTimeout(id); // will do nothing if no timeout with id is present
             }

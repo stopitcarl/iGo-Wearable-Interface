@@ -24,22 +24,22 @@
     <script language="javascript" type="text/javascript" src="main.js"></script>
     <script language="javascript" type="text/javascript" src="ticket.js"></script>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="images/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <title>iGo - Tickets</title>
@@ -120,7 +120,7 @@
                         <table class="ticket-info-table">
                             <tr>
                                 <td class="favorite-icon-cell">
-                                    <img src="images/star-empty.png" id="ticket-isFav" class="favorite-icon"
+                                    <img src="images/filters/star-empty.png" id="ticket-isFav" class="favorite-icon"
                                         onclick="favorite(this)">
                                 </td>
                                 <td class="header-cell" id="ticket-title">
@@ -134,7 +134,7 @@
                             <p style="color:red;text-align: right">Apagar</p>
                         </div>
                         <div class="remove-ticket" onclick="remove()">
-                            <hr style="color: black;">X remove
+                            <hr style="color: black;">remover
                         </div>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                         <img src="images/close.png" class="filter-close-button"
                             onclick="$('#qr-code-modal').modal('toggle');">
                         <img src="images/tickets/qrcode.png" class="qr-code-image">
-                        <div class="warn-text">Please put your iGo close to the scanner</div>
+                        <div class="warn-text">Por favor aproxime o seu iGo do scanner</div>
                     </div>
                 </div>
             </div>

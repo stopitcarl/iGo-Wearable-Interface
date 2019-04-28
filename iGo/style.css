@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Source Sans Pro";
-  src: url("assets/SourceSansPro-Regular.ttf");
+  src: url("assets/HelveticaNeue-Medium.otf");
 }
 
 body {
@@ -827,6 +827,7 @@ table {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
+  font-size: 12px;
 }
 
 #found-ticket {
@@ -867,4 +868,16 @@ table {
   font-size: 0.3cm;
   text-align: center;
   padding-bottom: 0.5em;
+}
+
+#qr-code-modal {
+  overflow: hidden;
+}
+
+#no-tickets {
+  height: 5.4cm;
+  width: 80%;
+  text-align: center;
+  margin:auto;
+  padding-top: 41%;
 }

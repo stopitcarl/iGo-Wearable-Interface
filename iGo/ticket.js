@@ -3,8 +3,6 @@ var tickets = [];
 var activeTickets = JSON.parse(localStorage.getItem("activeTickets"));
 filtered_tickets = [];
 
-
-
 /* Load tickets */
 function loadTickets() {
 
@@ -39,10 +37,9 @@ function loadTickets() {
 }
 
 function createTicketHtml(ticket, id) {
-    fav = ticket.isFav ? '<td><img src="images/filters/star.png" class="filter-icon small"></td>' : '';
+    fav = ticket.isFav ? '<td><img src="images/filters/star.png" class="small"></td>' : '';
 
     console.log("creating ticket");
-    //let id = activeTickets.length;
     let ticketHTML = '<div id="ticket-' + id + '" class="polaroid">\
                         <img src="' + ticket.img + '" class="polaroid-image" onclick="useTicket()">\
                             <table class="ticket-table">\
@@ -58,6 +55,9 @@ function createTicketHtml(ticket, id) {
 function reloadTickets(new_tickets) {
     new_tickets.length > 1 ? $('#ticket-container-main').html("") : $('#ticket-container-main').html("<br>");
 
+    if ( new_tickets.length == 0)
+          $('#ticket-container-main').html("<div id='no-tickets'>Sem bilhetes para mostrar<div>");
+    
     let i = 0;
     new_tickets.forEach(t => {
         createTicketHtml(t, i++);
@@ -136,10 +136,10 @@ function changeTicketsScreen(curScreen, targetScreen) {
             // ADDS TICKET
             let i = activeTickets.length;
             if (i < tickets.length) {
-                active_filter = null;
                 createTicketHtml(tickets[i], i);
                 activeTickets.push(tickets[i]);
                 localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
+                applyFilter(null);
             }
         }, 1000);
 
@@ -187,6 +187,7 @@ function remove() {
     let i = activeTickets.indexOf(active_ticket);
     activeTickets.splice(i, 1);
     tickets.splice(i, 1);
+    active_ticket.isFav = false;
     tickets.push(active_ticket);
     localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
     applyFilter(active_filter);
