@@ -634,8 +634,8 @@ button:focus {
   background-color: rgba(255, 255, 255, 0.4);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  margin-top: 0.5em;
-  margin-left: 0.3em;
+  margin-top: 0.2em;
+  margin-left: 0.5em;
   width: 0.9cm;
   height: 0.87cm;
   border-radius: 20%;
@@ -645,6 +645,12 @@ button:focus {
 .option-button:hover {
   background-blend-mode: lighten;
   cursor: pointer;
+}
+
+.small {
+  margin-left: 0.2em;
+  width: 2.2em !important;
+  height: 2.2em !important;
 }
 
 .add-button {
@@ -730,8 +736,8 @@ table {
   height: 0.87cm;
   z-index: 9;
   right: 15px;
-  margin-top: 0.5em;
-  margin-left: 0.3em;
+  margin-top: 0.2em;
+  margin-left: 0.5em;
 }
 
 #tickets-scan {
@@ -763,6 +769,7 @@ table {
 
 .filter-icon:hover {
   cursor: pointer;
+  opacity: 0.55;
 }
 
 .filter-modal-content {
@@ -817,4 +824,14 @@ table {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
+}
+
+#found-ticket {
+  display: none;
+  margin: auto;
+  position: absolute;
+  top: 1.28cm;
+  left: 1.2cm;
+  width: 3cm;
+  height: auto;  
 }
