@@ -1,55 +1,55 @@
 [   {
         "name": "Boa viagem",
-        "info": "This is good ticket\nLike the best ticket<br><br><br>Apple > Google && Microsoft",
+        "info": "Transportes: metro<br>Zona: Lisboa<br>Número de viagens: 3",
         "img": "images/tickets/viva-viagem.png",
         "isFav": false,
         "tags": ["pub-transp"]
     },
     {
         "name": "Passe Sub23",
-        "info": "This is the best ticket beacuase you dont pay",
+        "info": "Transportes: metro, autocarro<br>Zona: Lisboa - Coroa 1<br>Data de expiração: 30/4/2019",
         "img": "images/tickets/sub-23.png",
         "isFav": false,
         "tags": ["pub-transp"]
     },
     {
-        "name": "Good Night cinema",
-        "info": "tony stark dies",
+        "name": "Good Night",
+        "info": "Cinema: Odeon<br>Filme: Good Night<br>Data: 3/2/2006<br>Hora: 11:15",
         "img": "images/tickets/orange.png",
         "isFav": false,
         "tags": ["cinema"]
     },
     {
-        "name": "Louvre museum",
-        "info": "I spit on mona Lisa",
+        "name": "Louvre",
+        "info": "Museu: Louvre<br>Data: 15/1/2003",
         "img": "images/tickets/louvre.png",
         "isFav": false,
         "tags": ["culture"]
     },
     {
-        "name": "Dj Lorem Ypson",
-        "info": "Music is so fire my dick is on fire",
+        "name": "Night Party",
+        "info": "Recinto: Art Center<br>Data: 31/8/2019<br>Hora: 20:00",
         "img": "images/tickets/concert.png",
         "isFav": false,
         "tags": ["music"]
     },
     {
         "name": "DEN @ NE",
-        "info": "American football is the best",
+        "info": "Competição: NFL época regular<br>Equipas: Denver Broncos @ New England Patriots<br>Data: 7/10/2012<br>Hora: 16:15",
         "img": "images/tickets/sports.png",
         "isFav": false,
         "tags": ["sports"]
     },
     {
         "name": "London - New York",
-        "info": "Tomato is the right pronunciation",
+        "info": "Transporte: avião<br>Passageiro: John Doe<br>Voo: NY-2356<br>Origem: London<br>Destino: New York<br>Porta: A24<br>Hora: 8:12<br>Lugar: 7A",
         "img": "images/tickets/plane.png",
         "isFav": false,
         "tags": ["travel"]
     },
     {
-        "name": "Summer Party 2020",
-        "info": "Party e na casa do david",
+        "name": "Summer Party",
+        "info": "Porta: 5<br>Fila: 2<br>Lugar: 10A<br>Data: 21/8/2020<br>Hora: 14:00",
         "img": "images/tickets/party.png",
         "isFav": false,
         "tags": ["social-events"]
