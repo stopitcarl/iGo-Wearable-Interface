@@ -10,8 +10,7 @@ body {
 
 hr {
   display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin:0em 0em;
   margin-left: auto;
   margin-right: auto;
   border-style: inset;
@@ -799,8 +798,8 @@ table {
 .ticket-info-table {
   width: 4.15cm;
   height: 1.2cm;
-  border-bottom: solid grey;
-  border-width: thin;
+  /*border-bottom: solid grey;
+  border-width: thin;*/
 }
 
 .favorite-icon-cell {
@@ -835,3 +834,16 @@ table {
   width: 3cm;
   height: auto;  
 }
+
+.remove-ticket {
+  color: red;
+  width: 100%;
+  text-align: center;  
+  line-height: 0.6cm;
+}
+
+.remove-ticket:hover {
+cursor: pointer;
+box-shadow: inset 1px -1px 180px -103px rgba(0,0,0,1);
+}
+

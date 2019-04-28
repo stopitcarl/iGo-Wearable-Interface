@@ -1,8 +1,8 @@
 [   {
         "name": "Boa viagem",
-        "info": "This is good ticket\nLike the best ticket",
+        "info": "This is good ticket\nLike the best ticket<br><br><br>Apple > Google && Microsoft",
         "img": "images/tickets/viva-viagem.png",
-        "isFav": true,
+        "isFav": false,
         "tags": ["pub-transp"]
     },
     {
@@ -23,7 +23,7 @@
         "name": "Louvre museum",
         "info": "I spit on mona Lisa",
         "img": "images/tickets/louvre.png",
-        "isFav": true,
+        "isFav": false,
         "tags": ["culture"]
     },
     {
@@ -34,7 +34,7 @@
         "tags": ["music"]
     },
     {
-        "name": "NE @ DEN",
+        "name": "DEN @ NE",
         "info": "American football is the best",
         "img": "images/tickets/sports.png",
         "isFav": false,

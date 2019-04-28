@@ -10,10 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -46,6 +46,7 @@
 </head>
 
 <body onload="loadTickets()">
+
     <div class="ninja-wrapper" id="tickets-main">
         <div class="ticket-container grid-container clock-border">
             <div class="back-button grid-top-left" onclick="window.history.back()"></div>
@@ -112,15 +113,20 @@
                         <table class="ticket-info-table">
                             <tr>
                                 <td class="favorite-icon-cell">
-                                    <img src="images/star-empty.png" id="ticket-isFav" class="favorite-icon" onclick="favorite(this)">
+                                    <img src="images/star-empty.png" id="ticket-isFav" class="favorite-icon"
+                                        onclick="favorite(this)">
                                 </td>
                                 <td class="header-cell" id="ticket-title">
                                     Viva Viagem
                                 </td>
-                            </tr>
+                            </tr>                                                        
                         </table>
+                        <span style="width: 100%;"><hr></span>
                         <div class="info-text" id="ticket-description">
                             <p style="color:red;text-align: right">Apagar</p>
+                        </div>
+                        <div class="remove-ticket" onclick="remove()">
+                            <hr style="color: black;">X remove
                         </div>
                     </div>
                 </div>
@@ -129,35 +135,13 @@
         </div>
 
         <div class="ticket-container clock-border" id="ticket-container-main">
-            <!--<div id="ticket-1" class="polaroid">
-                <img src="images/tickets/viva-viagem.png" class="polaroid-image">
-                <table >
-                    <tr>
-                        <td class="ticket-name">Viva Viagem</td>
-                        <td class="button-ticket-information">
-                            <img src="images/information.png" class="ticket-information-image" onclick="checkInfo()">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="ticket-2" class="polaroid">
-                <img src="images/tickets/sub-23.png" class="polaroid-image">
-                <table>
-                    <tr>
-                        <td class="ticket-name">Passe sub 23</td>
-                        <td class="button-ticket-information">
-                            <img src="images/information.png" class="ticket-information-image" onclick="">
-                        </td>
-                    </tr>
-                </table>
-            </div>-->
+            <!-- HERE GOES TICKET -->
         </div>
     </div>
 
     <div class="ninja-wrapper" id="tickets-scan">
         <div class="ticket-container grid-container clock-border">
-            <div class="back-button grid-top-left"
-                onclick="changeTicketsScreen('tickets-scan', 'tickets-main');makeTicket()">
+            <div class="back-button grid-top-left" onclick="changeTicketsScreen('tickets-scan', 'tickets-main')">
             </div>
             <img src="images/tickets/right.png" id="found-ticket" />
             <img src="images/tickets-camera.jpg" class="camera-simulation" />

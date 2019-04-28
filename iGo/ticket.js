@@ -1,40 +1,54 @@
 /* TICKETS */
 var tickets = [];
-var activeTickets = [];
+var activeTickets = JSON.parse(localStorage.getItem("activeTickets"));
+
+function loga(){
+    console.log(ioio);
+}
+
 /* Load tickets */
 function loadTickets() {
-    console.log("lamo");
+
+    console.log(activeTickets);
+
     $(document).ready(function () {
         $.ajax({
             type: 'GET',
             url: 'assets/tickets.json',
             success: function (data) {
                 tickets = data;
-                for (let i = 0; i < 5; i++) // Add only 2 tickets (naughty)
-                    createTicket(tickets[i]);
+                if (activeTickets == null) {
+                    console.log("criar do zero");
+                    activeTickets = [];
+                    for (let i = 0; i < 5; i++) {// Add only 2 tickets (naughty)
+                        activeTickets.push(tickets[i]);
+                        localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
+                        createTicketHtml(tickets[i], i);
+                    }
+                }
+                else {
+                    console.log("criar da local storage");
+                    for (let i = 0; i < activeTickets.length; i++) {
+                        createTicketHtml(activeTickets[i], i);
+                    }
+                }
             }
         });
     });
-
-
-
-
-    var myFunction = function (i) {
-        console.log(i);
-    }
+   
     let filters = document.getElementsByClassName("filter-icon");
     let i = 0;
     Array.from(filters).forEach(function (element) {
-        element.addEventListener('click', myFunction, i++);
+        element.addEventListener('click', loga);
     });
 
 }
 
-function createTicketHtml(ticket) {
+function createTicketHtml(ticket, id) {
     fav = ticket.isFav ? '<td><img src="images/filters/star.png" class="filter-icon small"></td>' : '';
 
     console.log("creating ticket");
-    let id = activeTickets.length;
+    //let id = activeTickets.length;
     let ticketHTML = '<div id="ticket-' + id + '" class="polaroid">\
                         <img src="' + ticket.img + '" class="polaroid-image">\
                             <table class="ticket-table">\
@@ -47,11 +61,7 @@ function createTicketHtml(ticket) {
     $('#ticket-container-main').append(ticketHTML);
 }
 
-function createTicket(ticket) {
-    activeTickets.push(ticket);
-    localStorage.setItem("tickets", JSON.stringify(activeTickets));
-    createTicketHtml(ticket);
-}
+
 
 var isOpen = 0;
 
@@ -75,14 +85,14 @@ function selectFilter() {
     $('#filter-modal').modal();
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#filter-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () {});
+        $(".fade").fadeOut("fast", function () { });
     });
 }
 
 function changeTicketsScreen(curScreen, targetScreen) {
 
     if (targetScreen === "tickets-main") {
-        var id = window.setTimeout(function () {}, 0);
+        var id = window.setTimeout(function () { }, 0);
         while (id--) {
             window.clearTimeout(id); // will do nothing if no timeout with id is present
         }
@@ -100,7 +110,14 @@ function changeTicketsScreen(curScreen, targetScreen) {
         // Insert the right icon
         setTimeout(function () {
             $("#found-ticket").fadeIn("fast"),
-                function () {}
+                function () { }
+            // ADDS TICKET
+            let i = activeTickets.length;
+            if (i < tickets.length) {
+                createTicketHtml(tickets[i], i);
+                activeTickets.push(tickets[i]);
+                localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
+            }
         }, 1000);
 
         // Change screen
@@ -108,7 +125,7 @@ function changeTicketsScreen(curScreen, targetScreen) {
         // Remove the right icon
         setTimeout(function () {
             $("#found-ticket").fadeOut("fast"),
-                function () {}
+                function () { }
         }, 2000);
     }
 }
@@ -116,8 +133,8 @@ function changeTicketsScreen(curScreen, targetScreen) {
 var active_ticket = null;
 
 function checkInfo(ticketId) {
-    // Fill modal with correct info    
-    active_ticket = tickets[ticketId - 1];
+    // Fill modal with correct info   
+    active_ticket = activeTickets[ticketId];
     $('#ticket-title').html(active_ticket.name);
     $('#ticket-description').html(active_ticket.info);
     $('#ticket-isFav').attr("src", active_ticket.isFav ? "images/filters/star.png" : "images/filters/star-empty.png");
@@ -125,7 +142,7 @@ function checkInfo(ticketId) {
     $('#ticket-info-modal').modal();
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#ticket-info-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () {});
+        $(".fade").fadeOut("fast", function () { });
     });
 }
 
@@ -138,7 +155,12 @@ function favorite(ticket) {
         active_ticket.isFav = false;
     }
     $('#ticket-container-main').html(""); // Clean ticket list
-    activeTickets.forEach(ticket => {
-        createTicketHtml(ticket);
-    });
+    for (let i = 0; i < activeTickets.length; i++) {
+        createTicketHtml(activeTickets[i], i);
+    }
+    localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
+}
+
+function remove() {
+    
 }
