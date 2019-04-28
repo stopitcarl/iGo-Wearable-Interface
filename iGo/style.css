@@ -10,7 +10,7 @@ body {
 
 hr {
   display: block;
-  margin:0em 0em;
+  margin: 0em 0em;
   margin-left: auto;
   margin-right: auto;
   border-style: inset;
@@ -136,7 +136,7 @@ hr {
 }
 
 #option-1 {
-  background-color: #85c78e;
+  background-color: #92df9e;
 }
 
 #description {
@@ -422,10 +422,10 @@ span {
 
 .vertical-align {
   position: relative;
-  top: 0.2cm;
+  top: 0cm;
   width: 3cm;
   margin: 0 0 auto;
-  line-height: 28%;
+  line-height: 120%;
 }
 
 #speaking-container {
@@ -707,6 +707,10 @@ table {
   width: 100%;
 }
 
+.polaroid-image:hover {
+  cursor: pointer;
+}
+
 .ticket-name {
   width: 80%;
   font-size: 13px;
@@ -832,18 +836,35 @@ table {
   top: 1.28cm;
   left: 1.2cm;
   width: 3cm;
-  height: auto;  
+  height: auto;
 }
 
 .remove-ticket {
   color: red;
   width: 100%;
-  text-align: center;  
-  line-height: 0.6cm;
+  text-align: center;
+  line-height: 0.8cm;
 }
 
 .remove-ticket:hover {
-cursor: pointer;
-box-shadow: inset 1px -1px 180px -103px rgba(0,0,0,1);
+  cursor: pointer;
+  background-color: #E7E7E7;
 }
 
+.warn-text {
+  width: 100%;
+  text-align: center;
+}
+
+.qr-code-image {
+  width: 2.8cm;
+  height: 2.8cm;
+  margin: auto;
+}
+
+.warn-text {
+  width: 100%;
+  font-size: 0.3cm;
+  text-align: center;
+  padding-bottom: 0.5em;
+}

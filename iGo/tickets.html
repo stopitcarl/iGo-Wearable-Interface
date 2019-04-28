@@ -10,10 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -67,35 +67,42 @@
                         <table class="filter-table">
                             <tr>
                                 <td>
-                                    <img src="images/filters/transports.png" class="filter-icon">
+                                    <img src="images/filters/transports.png" class="filter-icon"
+                                        onclick="setFilter('pub-transp')">
                                 </td>
                                 <td>
-                                    <img src="images/filters/music.png" class="filter-icon">
+                                    <img src="images/filters/music.png" class="filter-icon"
+                                        onclick="setFilter('music')">
                                 </td>
                                 <td>
-                                    <img src="images/filters/stadium.png" class="filter-icon">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/filters/einfell.png" class="filter-icon">
-                                </td>
-                                <td>
-                                    <img src="images/filters/cinema.png" class="filter-icon">
-                                </td>
-                                <td>
-                                    <img src="images/filters/airplane.png" class="filter-icon">
+                                    <img src="images/filters/stadium.png" class="filter-icon"
+                                        onclick="setFilter('sports')">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="images/filters/cocktail.png" class="filter-icon">
+                                    <img src="images/filters/einfell.png" class="filter-icon"
+                                        onclick="setFilter('culture')">
                                 </td>
                                 <td>
-                                    <img src="images/filters/star.png" class="filter-icon">
+                                    <img src="images/filters/cinema.png" class="filter-icon"
+                                        onclick="setFilter('cinema')">
                                 </td>
                                 <td>
-                                    <b class="filter-icon">ALL</b>
+                                    <img src="images/filters/airplane.png" class="filter-icon"
+                                        onclick="setFilter('travel')">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/filters/cocktail.png" class="filter-icon"
+                                        onclick="setFilter('social')">
+                                </td>
+                                <td>
+                                    <img src="images/filters/star.png" class="filter-icon" onclick="setFilter('fav')">
+                                </td>
+                                <td>
+                                    <b class="filter-icon" onclick="setFilter(null)">ALL</b>
                                 </td>
                             </tr>
                         </table>
@@ -119,9 +126,10 @@
                                 <td class="header-cell" id="ticket-title">
                                     Viva Viagem
                                 </td>
-                            </tr>                                                        
+                            </tr>
                         </table>
-                        <span style="width: 100%;"><hr></span>
+                        <span style="width: 100%;">
+                            <hr></span>
                         <div class="info-text" id="ticket-description">
                             <p style="color:red;text-align: right">Apagar</p>
                         </div>
@@ -132,10 +140,25 @@
                 </div>
             </div>
 
+            <!-- QR CODE MODAL WINDOW -->
+            <div class="modal fade bd-example-modal-sm" id="qr-code-modal" tabindex="-1" role="dialog"
+                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content filter-modal-content">
+                        <img src="images/close.png" class="filter-close-button"
+                            onclick="$('#qr-code-modal').modal('toggle');">
+                        <img src="images/tickets/qrcode.png" class="qr-code-image">
+                        <div class="warn-text">Please put your iGo close to the scanner</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="ticket-container clock-border" id="ticket-container-main">
-            <!-- HERE GOES TICKET -->
+        <div class="ticket-container clock-border">
+            <div id="ticket-container-main">
+                <!-- HERE GOES TICKET -->
+            </div>
         </div>
     </div>
 
@@ -147,7 +170,6 @@
             <img src="images/tickets-camera.jpg" class="camera-simulation" />
             <img src="images/cameraborder.png" class="camera-border" />
         </div>
-    </div>
     </div>
 </body>
 
