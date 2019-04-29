@@ -55,9 +55,9 @@ function createTicketHtml(ticket, id) {
 function reloadTickets(new_tickets) {
     new_tickets.length > 1 ? $('#ticket-container-main').html("") : $('#ticket-container-main').html("<br>");
 
-    if ( new_tickets.length == 0)
-          $('#ticket-container-main').html("<div id='no-tickets'>Sem bilhetes para mostrar<div>");
-    
+    if (new_tickets.length == 0)
+        $('#ticket-container-main').html("<div id='no-tickets'>Sem bilhetes para mostrar<div>");
+
     let i = 0;
     new_tickets.forEach(t => {
         createTicketHtml(t, i++);
@@ -163,11 +163,33 @@ function checkInfo(ticketId) {
     $('#ticket-description').html(active_ticket.info);
     $('#ticket-isFav').attr("src", active_ticket.isFav ? "images/filters/star.png" : "images/filters/star-empty.png");
 
-    $('#ticket-info-modal').modal();
+
+    var previousCss = $("#ticket-info-modal").attr("style");
+
+    $("#ticket-info-modal").css({
+        position: 'absolute', // Optional if #myDiv is already absolute
+        visibility: 'hidden',
+        display: 'block'
+    });
+
+
+    optionHeight = $("#ticket-description").height();
+
+    if ($('#ticket-description').height() < 80) {
+        $("#ticket-remover").addClass("stick-to-bottom");
+    } else {
+        $("#ticket-remover").removeClass("stick-to-bottom");
+    }
+
+    $("#ticket-info-modal").attr("style", previousCss ? previousCss : "");
+
+    $('#ticket-info-modal').modal("toggle", function () {});
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#ticket-info-modal").on("hidden.bs.modal", function () {
         $(".fade").fadeOut("fast", function () {});
     });
+
+
 }
 
 function favorite(ticket) {
