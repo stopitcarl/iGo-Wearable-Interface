@@ -1,22 +1,21 @@
 /* TICKETS */
-var tickets = [];
+var tickets = JSON.parse(localStorage.getItem("tickets"));;
 var activeTickets = JSON.parse(localStorage.getItem("activeTickets"));
 filtered_tickets = [];
 
 /* Load tickets */
 function loadTickets() {
 
-    console.log(activeTickets);
-
     $(document).ready(function () {
         $.ajax({
             type: 'GET',
             url: 'assets/tickets.json',
             success: function (data) {
-                tickets = data;
-                if (activeTickets == null) {
+                if (activeTickets == null || tickets == null) {
                     console.log("criar do zero");
                     activeTickets = [];
+                    tickets = data;
+                    localStorage.setItem("tickets", JSON.stringify(tickets));
                     for (let i = 0; i < 5; i++) { // Add only 2 tickets (naughty)
                         activeTickets.push(tickets[i]);
                         localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
@@ -30,6 +29,7 @@ function loadTickets() {
                         filtered_tickets.push(activeTickets[i]);
                     }
                 }
+                console.log(tickets);
             }
         });
     });
@@ -107,14 +107,14 @@ function selectFilter() {
     $('#filter-modal').modal();
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#filter-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () {});
+        $(".fade").fadeOut("fast", function () { });
     });
 }
 
 function changeTicketsScreen(curScreen, targetScreen) {
 
     if (targetScreen === "tickets-main") {
-        var id = window.setTimeout(function () {}, 0);
+        var id = window.setTimeout(function () { }, 0);
         while (id--) {
             window.clearTimeout(id); // will do nothing if no timeout with id is present
         }
@@ -132,7 +132,7 @@ function changeTicketsScreen(curScreen, targetScreen) {
         // Insert the right icon
         setTimeout(function () {
             $("#found-ticket").fadeIn("fast"),
-                function () {}
+                function () { }
             // ADDS TICKET
             let i = activeTickets.length;
             if (i < tickets.length) {
@@ -183,10 +183,10 @@ function checkInfo(ticketId) {
 
     $("#ticket-info-modal").attr("style", previousCss ? previousCss : "");
 
-    $('#ticket-info-modal').modal("toggle", function () {});
+    $('#ticket-info-modal').modal("toggle", function () { });
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#ticket-info-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () {});
+        $(".fade").fadeOut("fast", function () { });
     });
 
 
@@ -211,7 +211,10 @@ function remove() {
     tickets.splice(i, 1);
     active_ticket.isFav = false;
     tickets.push(active_ticket);
+    console.log(tickets);
+    console.log(activeTickets);
     localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
+    localStorage.setItem("tickets", JSON.stringify(tickets));
     applyFilter(active_filter);
     $('#ticket-info-modal').modal("toggle");
 }
@@ -220,6 +223,6 @@ function useTicket() {
     $('#qr-code-modal').modal();
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#qr-code-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () {});
+        $(".fade").fadeOut("fast", function () { });
     });
 }
