@@ -14,6 +14,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <!-- Boostrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -23,7 +25,8 @@
 
 
     <!-- Custom Javascript -->
-    <script language="javascript" type="text/javascript" src="main.js"></script>
+    <script language="javascript" type="text/javascript" src="map.js"></script>
+    <script language="javascript" type="text/javascript" src="scripts/directive.js"></script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
@@ -48,32 +51,17 @@
 
 </head>
 
-<body onload="updateTime(), init()">
+<body>
     <div class="ninja-wrapper">
-        <div class="main-container grid-container  clock-border">
-            <!-- <img src="images/MainBackground.jpg" alt="BackgroundImage" id="mainBackgroundImage">-->
-            <div id="time" class="grid-top"></div>
-            <div id="date" class="grid-top"></div>
-            <div id="batteryLevel" class="grid-top-center-right font-weight-bold">48%</div>
-            <img src="images/battery.png" id="BatteryIcon">
+        <div class="main-container grid-container clock-border" >
 
-            <div id="rotating-screen">
-                <!-- Top option 
-                <img src="images/ticketIcon.png" id="option-1" class="option option-top" />
+            <div class="zoom">
 
-                 Middle option 
-                <img src="images/icon-translation.svg" id="option-2" class="option option-center" />
-                -->
-                <div id="description"><span id="description-content"></span></div>
+                <img class="media"src="images/snazzy-image.png" usemap="#image-map" id="map" />
+                <!--<map name="image-map">
+                </map>-->
 
-                <!-- Bottom option 
-                <img src="images/mapsicon.png" id="option-3" class="option option-bottom" />
-
-                 Settings option 
-                <img src="images/settings.png" id="option-4" class="option option-out" />
-                -->
             </div>
-
 
         </div>
     </div>

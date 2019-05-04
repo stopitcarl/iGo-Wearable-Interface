@@ -189,7 +189,6 @@ function checkInfo(ticketId) {
         $(".fade").fadeOut("fast", function () { });
     });
 
-
 }
 
 function favorite(ticket) {
@@ -204,6 +203,15 @@ function favorite(ticket) {
     applyFilter(active_filter);
     localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
 }
+
+function tryRemove() {
+    console.log("asd");
+    $("#no-remove").addClass("pretty-sure").removeClass("not-sure");
+    $("#yes-remove").addClass("pretty-sure").removeClass("not-sure");
+    $("#try-remove").addClass("not-sure").removeClass("pretty-sure");
+
+}
+
 
 function remove() {
     let i = activeTickets.indexOf(active_ticket);

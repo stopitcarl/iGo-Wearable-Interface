@@ -1,0 +1,104 @@
+[   
+    {
+        "name": "Ali Baba",
+        "coord": "421,616,429,629",
+        "tag": "restaurant",
+        "shape": "rect"
+    },
+    {
+        "name": "Estação de metro Alameda",
+        "coord": "651,538,657,554",
+        "tag": "transport",
+        "shape": "rect"
+    },
+    {
+        "name": "Instituto Superior Técnico",
+        "coord": "433,518,445,570,445,629,561,601,567,538,537,514,487,504",
+        "tag": "interest",
+        "shape": "poly"
+    },
+    {
+        "name": "Arco do Cego",
+        "coord": "383,635,358,581",
+        "tag": "park",
+        "shape": "rect"
+    },
+    {
+        "name": "Restaurante Italiano",
+        "coord": "273,496,294,511",
+        "tag": "restaurant",
+        "shape": "rect"
+    },
+    {
+        "name": "Restaurante Chinês",
+        "coord": "169,769,181,776,173,786,163,781",
+        "tag": "restaurant",
+        "shape": "poly"
+    },
+    {
+        "name": "Hamburgueria 21",
+        "coord": "619,97,619,86,639,87,635,98",
+        "tag": "restaurant",
+        "shape": "poly"
+    },
+    {
+        "name": "Saldanha",
+        "coord": "283,727,297,724,312,737,281,756,275,740",
+        "tag": "interest",
+        "shape": "poly"
+    },
+    {
+        "name": "Estação de metro Entrecampos",
+        "coord": "113,259,105,230,94,233,101,264",
+        "tag": "transport",
+        "shape": "poly"
+    },
+    {
+        "name": "Praça de táxis",
+        "coord": "399,269,392,253,409,246,413,263",
+        "tag": "transport",
+        "shape": "poly"
+    },
+    {
+        "name": "Estação de autocarro",
+        "coord": "778,780,794,780,792,799,777,795",
+        "tag": "transport",
+        "shape": "poly"
+    },
+    {
+        "name": "Culturgest",
+        "coord": "651,213,643,196,659,196,665,213",
+        "tag": "music",
+        "shape": "poly"
+    },
+    {
+        "name": "Hotel Boa Nova",
+        "coord": "735,484,735,446,756,446,755,483",
+        "tag": "hotel",
+        "shape": "poly"
+    },
+    {
+        "name": "Hotel Atrium",
+        "coord": "307,712,342,738,335,698,307,698",
+        "tag": "hotel",
+        "shape": "poly"
+    },
+    {
+        "name": "Hotel Marques",
+        "coord": "131,343,135,375,107,388,103,369,111,351",
+        "tag": "hotel",
+        "shape": "poly"
+    },
+    {
+        "name": "Current Lucation",
+        "coord": "449,526,11",
+        "tag": "self-location",
+        "shape": "circle"
+    },
+    {
+        "name": "Comboio",
+        "coord": "134,244,127,220,150,207,174,204,176,222",
+        "tag": "transport",
+        "shape": "poly"
+    }
+]

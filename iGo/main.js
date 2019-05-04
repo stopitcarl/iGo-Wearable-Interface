@@ -21,12 +21,14 @@ function updateTime() {
     var now = new Date();
     var timeStr = now.toLocaleTimeString('pt-PT');
 
+    var previousCss = $("#batteryLevel").attr("style");
+
     document.getElementById("time").innerHTML = timeStr.substring(0, 5);
     document.getElementById("date").innerHTML = now.toLocaleDateString('pt-PT');
+
+    $("#batteryLevel").attr("style", previousCss ? previousCss : "");
 }
 
-
-setInterval(updateTime, 60000);
 
 
 
@@ -56,9 +58,9 @@ class Options {
                     $(this).removeClass('shake');
                 });
             } else {
-                localStorage.setItem("activeOptions",JSON.stringify(options));
-                $(this).addClass('grow'); // TODO: setTimeout to open window
-                window.open(option.urlLink, "_self");
+                sessionStorage.setItem("activeOptions", JSON.stringify(options));
+                window.open(option.urlLink, "_self")
+
             }
         });
     }
@@ -100,24 +102,26 @@ function rotateScreen(dir) {
 
 
 
-function init() {
-    options_cache = JSON.parse(localStorage.getItem("activeOptions"));
-    if (!options_cache) {  
-        options=[];      
+function init() {    
+    options_cache = JSON.parse(sessionStorage.getItem("activeOptions"));
+    if (!options_cache) {
+        options = [];
         options.push(new Options("option-1", 0, "Bilhetes", "tickets.html", "images/ticketIcon.png"));
         options.push(new Options("option-2", 1, "Tradutor", "translater.html", "images/icon-translation.svg"));
-        options.push(new Options("option-3", 2, "Mapa", null, "images/mapsicon.png"));
+        options.push(new Options("option-3", 2, "Mapa", "map.html", "images/mapsicon.png"));
         options.push(new Options("option-4", 3, "Definições", null, "images/settings.png"));
-    } else {        
+    } else {
         options_cache.forEach(o => {
-            options.push(new Options(o.id, o.position, o.description, o.urlLink, o.img));    
+            options.push(new Options(o.id, o.position, o.description, o.urlLink, o.img));
         });
     }
 
-    options.forEach(o => {                
-        $('#rotating-screen').append('<img src="'+ o.img + '"id="'+ o.id + '" class="option ' +
-         Positions[o.position] + '"/>');
+    options.forEach(o => {
+        $('#rotating-screen').append('<img src="' + o.img + '"id="' + o.id + '" class="option ' +
+            Positions[o.position] + '"/>');
         o.setListeners();
+        if (o.position === 1)
+            $('#description-content').text(o.description);
     });
 
     $(window).bind('mousewheel', function (e) {
@@ -128,6 +132,7 @@ function init() {
         }
     });
 
+    setInterval(updateTime, 60000);
 }
 
 function changeTranslateScreen(curScreen, targetScreen) {
@@ -204,7 +209,7 @@ function toggleRecording() {
         $('#microphone-button').removeClass("Rec");
         addText(getText(2));
         $('#speaking').delay(500).fadeIn("fast", function () {
-            $('#speaking').delay(3000).fadeOut("fast", function () { });
+            $('#speaking').delay(3000).fadeOut("fast", function () {});
         });
     }
     isRecording = isRecording ? false : true;
@@ -216,7 +221,7 @@ function selectLanguage(t) {
     $('#language-table').modal();
     $('.modal-backdrop').appendTo('.main-container');
     $("#language-table").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () { });
+        $(".fade").fadeOut("fast", function () {});
     });
     type = t;
 }
@@ -228,7 +233,7 @@ function swapImage(number) {
         }, 3000);
     } else {
         setTimeout(() => {
-            var id = window.setTimeout(function () { }, 0);
+            var id = window.setTimeout(function () {}, 0);
             while (id--) {
                 window.clearTimeout(id); // will do nothing if no timeout with id is present
             }
