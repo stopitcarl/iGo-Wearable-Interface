@@ -135,18 +135,24 @@
                             <div id="ticket-description"> </div>
                             <!-- Remove button -->
                             <div class="remove-ticket " id="ticket-remover">
+                                <hr style="color: black;">
 
                                 <!-- Remove option -->
-                                <span id="try-remove" class="not-sure" onclick="tryRemove()">
-                                    <hr style="color: black;" class="remove-button">
+                                <span id="try-remove" href="#confirmation-container" onclick="tryRemove()">
                                     remover
                                 </span>
 
                                 <!-- Confirmation buttons -->
-                                <span class="pretty-sure remove-button"
-                                    style="background-color: red; color:white; border-radius: 9%/12%; padding: 0.1cm"
-                                    id="no-remove">Remover</span>
-                                <span id="yes-remove" class="pretty-sure remove-button">Cancelar</span>
+                                <div class="ninja-wrapper" id="confirmation-container">
+                                    <div id="confirmation-box">
+                                        <!-- Remove -->
+                                        <div class="remove-button" id="yes-remove" onclick="remove()">Remover
+                                        </div>
+                                        <!-- Cancel -->
+                                        <div class="remove-button" id="no-remove" onclick="cancelRemove()">Cancelar
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

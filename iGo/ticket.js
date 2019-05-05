@@ -107,14 +107,14 @@ function selectFilter() {
     $('#filter-modal').modal();
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#filter-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () { });
+        $(".fade").fadeOut("fast", function () {});
     });
 }
 
 function changeTicketsScreen(curScreen, targetScreen) {
 
     if (targetScreen === "tickets-main") {
-        var id = window.setTimeout(function () { }, 0);
+        var id = window.setTimeout(function () {}, 0);
         while (id--) {
             window.clearTimeout(id); // will do nothing if no timeout with id is present
         }
@@ -132,7 +132,7 @@ function changeTicketsScreen(curScreen, targetScreen) {
         // Insert the right icon
         setTimeout(function () {
             $("#found-ticket").fadeIn("fast"),
-                function () { }
+                function () {}
             // ADDS TICKET
             let i = activeTickets.length;
             if (i < tickets.length) {
@@ -183,10 +183,10 @@ function checkInfo(ticketId) {
 
     $("#ticket-info-modal").attr("style", previousCss ? previousCss : "");
 
-    $('#ticket-info-modal').modal("toggle", function () { });
+    $('#ticket-info-modal').modal("toggle", function () {});
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#ticket-info-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () { });
+        $(".fade").fadeOut("fast", function () {});
     });
 
 }
@@ -205,13 +205,17 @@ function favorite(ticket) {
 }
 
 function tryRemove() {
-    console.log("asd");
-    $("#no-remove").addClass("pretty-sure").removeClass("not-sure");
-    $("#yes-remove").addClass("pretty-sure").removeClass("not-sure");
-    $("#try-remove").addClass("not-sure").removeClass("pretty-sure");
+    $("#try-remove").fadeOut("fast", function () {
+        $("#confirmation-container").fadeIn("fast");
+    });
 
 }
 
+function cancelRemove() {
+    $("#confirmation-container").fadeOut("fast", function () {
+        $("#try-remove").fadeIn("fast");
+    });
+}
 
 function remove() {
     let i = activeTickets.indexOf(active_ticket);
@@ -224,6 +228,7 @@ function remove() {
     localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
     localStorage.setItem("tickets", JSON.stringify(tickets));
     applyFilter(active_filter);
+    cancelRemove();
     $('#ticket-info-modal').modal("toggle");
 }
 
@@ -231,6 +236,6 @@ function useTicket() {
     $('#qr-code-modal').modal();
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#qr-code-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () { });
+        $(".fade").fadeOut("fast", function () {});
     });
 }
