@@ -855,7 +855,6 @@ table {
 
 .remove-ticket:hover {
   cursor: pointer;
-  box-shadow: inset 0px 0px 16px 16px rgba(112, 112, 112, 0.21);
   /*background-color: #E7E7E7;*/
 }
 
@@ -872,6 +871,10 @@ table {
 
 #try-remove {
   width: 100%;
+}
+
+#try-remove:hover {
+  box-shadow: inset 0px 0px 16px 16px rgba(112, 112, 112, 0.27);
 }
 
 #confirmation-box {
