@@ -10,23 +10,24 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <!-- Boostrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 
 
     <!-- Custom Javascript -->
+    <script language="javascript" type="text/javascript" src="main.js"></script>
     <script language="javascript" type="text/javascript" src="map.js"></script>
-    <script language="javascript" type="text/javascript" src="scripts/directive.js"></script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
@@ -52,20 +53,14 @@
 </head>
 
 <body>
-    <div class="ninja-wrapper">
-        <div class="main-container grid-container clock-border" >
-
-            <div class="zoom">
-
-                <img class="media"src="images/snazzy-image.png" usemap="#image-map" id="map" />
-                <!--<map name="image-map">
-                </map>-->
-
-            </div>
-
+    <div class="map-container clock-border">
+        <div class="zoom">
+            <img class="media" src="images/snazzy-image.png" />
+            <!--<map name="image-map">map
+                                </map>-->
         </div>
     </div>
-
+    <script type="text/javascript" src="scripts/directive.js"></script>
 </body>
 
 </html>

@@ -973,9 +973,48 @@ table {
 
 /* MAP */
 
-#range {
-  width: 400px;
-  height: 400px;
+.zoom {
+  background-color: #DDD;
+  height: 100%;
+  margin: auto;
   overflow: hidden;
-  border: 1px solid black;
+  width: 100%;
+}
+
+#container .zoom .media {
+  display: block;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.media {
+  width: 5.4cm;
+  height: 5.4cm;
+}
+
+.transition {
+  transition: -moz-transform ease 200ms;
+  transition: -ms-transform ease 200ms;
+  transition: -o-transform ease 200ms;
+  transition: -webkit-transform ease 200ms;
+  transition: transform ease 200ms;
+}
+
+.map-container {
+  width: 5.65cm;
+  height: 5.65cm;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
 }
