@@ -1095,3 +1095,23 @@ table {
   left: 0;
   overflow: hidden;
 }
+
+.map-filter-button {
+  position: absolute;
+  background-image: url("images/filter.png");
+  background-color: rgba(255, 255, 255, 0.4);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 0.9cm;
+  height: 0.87cm;
+  border-radius: 20%;
+  z-index: 10;
+  margin-top: 0.2em;
+  margin-left: 0.5em;
+}
+
+.map-filter-button:hover {
+  background-blend-mode: lighten;
+  cursor: pointer;
+}
+

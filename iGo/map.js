@@ -13,3 +13,11 @@ $(document).ready(function () {
         }
     });
 });
+
+function showFilters() {
+    $('#filter-modal').modal();
+    $('.modal-backdrop').appendTo('.map-container');
+    $("#filter-modal").on("hidden.bs.modal", function () {
+        $(".fade").fadeOut("fast", function () {});
+    });
+}
