@@ -15,9 +15,9 @@ $(document).ready(function () {
 });
 
 function showFilters() {
-    $('#filter-modal').modal();
-    $('.modal-backdrop').appendTo('.map-container');
-    $("#filter-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () {});
-    });
+    $('#filter-modal').modal({
+        backdrop: false
+    })
+    $('#filter-modal').modal('show');
+    $("#my-backdrop").fadeIn("fast");
 }

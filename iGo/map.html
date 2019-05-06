@@ -55,17 +55,19 @@
 
 <body>
     <div class="ninja-wrapper" id="map-main">
-        <div class="map-container grid-container clock-border">
+        <div class="map-container grid-container clock-border" id="find-a-better-name">
             <div class="back-button grid-top-left" onclick="window.history.back()"></div>
             <div class="map-filter-button grid-top-right" onclick="showFilters()"></div>
 
+            <div class="cool-backdrop" id="my-backdrop"></div>
+
             <!-- MODAL WINDOW FOR FILTERS -->
-            <div class="modal fade bd-example-modal-sm" id="filter-modal" tabindex="-1" role="dialog"
+            <div class="modal fade bd-example-modal-sm backdrop" id="filter-modal" tabindex="-1" role="dialog"
                 aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm modal-dialog-centered">
                     <div class="modal-content filter-modal-content">
                         <img src="images/close.png" class="filter-close-button"
-                            onclick="$('#filter-modal').modal('toggle');">
+                            onclick="$('#filter-modal').modal('hide');$('#my-backdrop').fadeOut(400);">
                         <table class="filter-table">
                             <tr>
                                 <td>
