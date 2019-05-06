@@ -71,6 +71,7 @@ var active_filter_elem = null;
 function applyFilter(filter_elem, filter) {
     if (active_filter_elem != null)
         active_filter_elem.classList.remove('selected-filter');
+
     filter_elem.classList.add('selected-filter');
     active_filter_elem = filter_elem;
 

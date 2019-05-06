@@ -798,6 +798,13 @@ table {
   opacity: 0.55;
 }
 
+.filter-all {
+  width: 1cm;
+  height: 1cm;
+  border-radius: 10%;
+  font-style: bold;
+}
+
 .filter-modal-content {
   width: 4.2cm !important;
   height: 4.2cm !important;
