@@ -30,6 +30,7 @@ function loadTickets() {
                     }
                 }
                 console.log(tickets);
+                applyFilter(document.getElementById("fav_filter", null));
             }
         });
     });
@@ -65,8 +66,15 @@ function reloadTickets(new_tickets) {
 }
 
 var active_filter = null;
+var active_filter_elem = null;
 
-function applyFilter(filter) {
+function applyFilter(filter_elem, filter) {
+    if (active_filter_elem != null)
+        active_filter_elem.classList.remove('selected-filter');
+    filter_elem.classList.add('selected-filter');
+    active_filter_elem = filter_elem;
+
+    console.log("filter:", filter)
     filtered_tickets = [];
     active_filter = filter;
 
@@ -80,8 +88,8 @@ function applyFilter(filter) {
     reloadTickets(filtered_tickets);
 }
 
-function setFilter(filter) {
-    applyFilter(filter);
+function setFilter(elem, filter) {
+    applyFilter(elem, filter);
     $('#filter-modal').modal("toggle");
 }
 
@@ -227,7 +235,7 @@ function remove() {
     console.log(activeTickets);
     localStorage.setItem("activeTickets", JSON.stringify(activeTickets));
     localStorage.setItem("tickets", JSON.stringify(tickets));
-    applyFilter(active_filter);
+    applyFilter(active_filter_elem, active_filter);
     cancelRemove();
     $('#ticket-info-modal').modal("toggle");
 }

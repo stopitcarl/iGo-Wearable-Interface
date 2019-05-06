@@ -68,41 +68,42 @@
                             <tr>
                                 <td>
                                     <img src="images/filters/transports.png" class="filter-icon"
-                                        onclick="setFilter('pub-transp')">
+                                        onclick="setFilter(this, 'pub-transp')">
                                 </td>
                                 <td>
                                     <img src="images/filters/music.png" class="filter-icon"
-                                        onclick="setFilter('music')">
+                                        onclick="setFilter(this, 'music')">
                                 </td>
                                 <td>
                                     <img src="images/filters/stadium.png" class="filter-icon"
-                                        onclick="setFilter('sports')">
+                                        onclick="setFilter(this, 'sports')">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <img src="images/filters/einfell.png" class="filter-icon"
-                                        onclick="setFilter('culture')">
+                                        onclick="setFilter(this, 'culture')">
                                 </td>
                                 <td>
                                     <img src="images/filters/cinema.png" class="filter-icon"
-                                        onclick="setFilter('cinema')">
+                                        onclick="setFilter(this, 'cinema')">
                                 </td>
                                 <td>
                                     <img src="images/filters/airplane.png" class="filter-icon"
-                                        onclick="setFilter('travel')">
+                                        onclick="setFilter(this, 'travel')">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <img src="images/filters/cocktail.png" class="filter-icon"
-                                        onclick="setFilter('social')">
+                                        onclick="setFilter(this, 'social')">
                                 </td>
                                 <td>
-                                    <img src="images/filters/star.png" class="filter-icon" onclick="setFilter('fav')">
+                                    <img src="images/filters/star.png" class="filter-icon"
+                                        onclick="setFilter(this, 'fav')">
                                 </td>
                                 <td>
-                                    <b class="filter-icon" onclick="setFilter(null)">ALL</b>
+                                    <b class="filter-icon" id="fav_filter" onclick="setFilter(this, null)">ALL</b>
                                 </td>
                             </tr>
                         </table>
