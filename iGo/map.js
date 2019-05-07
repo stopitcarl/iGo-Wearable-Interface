@@ -14,6 +14,10 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function() {
+    $('map').imageMapResize();
+});
+
 function showFilters() {
     $('#filter-modal').modal({
         backdrop: false

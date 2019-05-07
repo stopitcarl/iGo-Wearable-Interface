@@ -29,6 +29,7 @@
     <script language="javascript" type="text/javascript" src="main.js"></script>
     <script language="javascript" type="text/javascript" src="map.js"></script>
     <script language="javascript" type="text/javascript" src="ticket.js"></script>
+    <script language="javascript" type="text/javascript" src="scripts/imageMapResizer.min.js"></script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
@@ -72,43 +73,43 @@
                             <tr>
                                 <td>
                                     <img src="images/filters/transports.png" class="filter-icon"
-                                        onclick="setFilter(this, 'pub-transp')">
+                                        onclick="addFilter(this, 'pub-transp')">
                                 </td>
                                 <td>
                                     <img src="images/filters/music.png" class="filter-icon"
-                                        onclick="setFilter(this, 'music')">
+                                        onclick="addFilter(this, 'music')">
                                 </td>
                                 <td>
                                     <img src="images/filters/stadium.png" class="filter-icon"
-                                        onclick="setFilter(this, 'sports')">
+                                        onclick="addFilter(this, 'sports')">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <img src="images/filters/einfell.png" class="filter-icon"
-                                        onclick="setFilter(this, 'culture')">
+                                        onclick="addFilter(this, 'culture')">
                                 </td>
                                 <td>
                                     <img src="images/filters/cinema.png" class="filter-icon"
-                                        onclick="setFilter(this, 'cinema')">
+                                        onclick="addFilter(this, 'cinema')">
                                 </td>
                                 <td>
                                     <img src="images/filters/airplane.png" class="filter-icon"
-                                        onclick="setFilter(this, 'travel')">
+                                        onclick="addFilter(this, 'travel')">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <img src="images/filters/cocktail.png" class="filter-icon"
-                                        onclick="setFilter(this, 'social')">
+                                        onclick="addFilter(this, 'social')">
                                 </td>
                                 <td>
                                     <img src="images/filters/star.png" class="filter-icon"
-                                        onclick="setFilter(this, 'fav')">
+                                        onclick="addFilter(this, 'fav')">
                                 </td>
                                 <td>
                                     <span class="filter-icon filter-all" id="fav_filter"
-                                        onclick="setFilter(this, null)">ALL</span>
+                                        onclick="addFilter(this, null)">ALL</span>
                                 </td>
                             </tr>
                         </table>
@@ -119,9 +120,108 @@
         </div>
         <div class="map-container clock-border">
             <div class="zoom">
-                <img class="media" src="images/snazzy-image.png" />
-                <!--<map name="image-map">map
-                                    </map>-->
+                <img class="media" src="images/snazzy-image.png" usemap="#image-map">
+                <map name="image-map">
+                    <area target="" alt="Instituto Superior Técnico" title="Instituto Superior Técnico" href="educacao"
+                        coords="435,522,495,507,539,521,555,531,559,572,555,591,545,606,525,616,509,620,474,626,440,626"
+                        shape="poly">
+                    <area target="" alt="Ali Baba Kebab Haus" title="Ali Baba Kebab Haus" href="restauracao"
+                        coords="411,596,425,625" shape="rect">
+                    <area target="" alt="INESC-ID" title="INESC-ID" href="educacao" coords="421,565,401,546"
+                        shape="rect">
+                    <area target="" alt="Jardim Arco do Cego" title="Jardim Arco do Cego" href="jardim"
+                        coords="351,586,371,630,386,620,376,581" shape="poly">
+                    <area target="" alt="Don Costini" title="Don Costini" href="restauracao" coords="396,660,386,646"
+                        shape="rect">
+                    <area target="" alt="Farmácia Palma" title="Farmácia Palma" href="saude" coords="386,626,396,635"
+                        shape="rect">
+                    <area target="" alt="100 Montaditos" title="100 Montaditos" href="restauracao"
+                        coords="356,646,336,640" shape="rect">
+                    <area target="" alt="Metro Hostel" title="Metro Hostel" href="hotelaria" coords="346,660,356,675"
+                        shape="rect">
+                    <area target="" alt="Olissipo Saldanha" title="Olissipo Saldanha" href="hotelaria"
+                        coords="330,682,316,672" shape="rect">
+                    <area target="" alt="Metro Saldanha" title="Metro Saldanha" href="transporte"
+                        coords="302,682,310,696" shape="rect">
+                    <area target="" alt="MacDonald's Saldanha" title="MacDonald's Saldanha" href="restauracao"
+                        coords="292,635,276,616" shape="rect">
+                    <area target="" alt="Banco CTT" title="Banco CTT" href="monetario" coords="314,582,296,572"
+                        shape="rect">
+                    <area target="" alt="Imprensa Nacional - Casa da Moeda" title="Imprensa Nacional - Casa da Moeda"
+                        href="interesse" coords="330,578,322,537,370,532,376,572" shape="poly">
+                    <area target="" alt="Escola D. Filipa de Lencastre" title="Escola D. Filipa de Lencastre"
+                        href="educacao" coords="420,502,360,403,489,359,529,453,509,467" shape="poly">
+                    <area target="" alt="Turim Alameda" title="Turim Alameda" href="hotelaria " coords="509,638,529,632"
+                        shape="rect">
+                    <area target="" alt="Colágio Sagrado Coração de Maria" title="Colágio Sagrado Coração de Maria"
+                        href="educacao" coords="579,612,575,642,593,642,599,612" shape="poly">
+                    <area target="" alt="Metro Alameda" title="Metro Alameda" href="transporte" coords="655,538,645,552"
+                        shape="rect">
+                    <area target="" alt="Jardim da Alameda Dom Afonso Henriques"
+                        title="Jardim da Alameda Dom Afonso Henriques" href="jardim"
+                        coords="674,565,679,537,788,527,788,556" shape="poly">
+                    <area target="" alt="Fonte Luminosa" title="Fonte Luminosa" href="interesse"
+                        coords="794,528,794,552,812,552,818,542,818,537,818,528,808,528" shape="poly">
+                    <area target="" alt="Hotel A.S. Lisboa" title="Hotel A.S. Lisboa" href="hotelaria "
+                        coords="693,517,679,527" shape="rect">
+                    <area target="" alt="Insituto Nacional de Estatística" title="Insituto Nacional de Estatística"
+                        href="educacao" coords="511,491,539,471,545,491,545,507" shape="poly">
+                    <area target="" alt="Estátua de Fernão Magalhães" title="Estátua de Fernão Magalhães"
+                        href="interesse" coords="650,697,664,702,659,716,645,712" shape="poly">
+                    <area target="" alt="Hotel ibis Lisboa Centro Saldanha" title="Hotel ibis Lisboa Centro Saldanha"
+                        href="hotelaria" coords="386,797,361,778,360,803" shape="poly">
+                    <area target="" alt="Serviço de Finanças Lisboa 4" title="Serviço de Finanças Lisboa 4"
+                        href="monetario " coords="549,673,539,687,531,673,535,663" shape="poly">
+                    <area target="" alt="Igreja de São Jorge de Arroios" title="Igreja de São Jorge de Arroios"
+                        href="interesse" coords="581,763,581,739,589,743" shape="poly">
+                    <area target="" alt="Instituto Português de Fotografia" title="Instituto Português de Fotografia"
+                        href="educacao" coords="485,719,485,733,460,727,460,713" shape="poly">
+                    <area target="" alt="Cinema City Campo Pequeno" title="Cinema City Campo Pequeno" href="cinema"
+                        coords="228,349,218,270,282,260,312,329" shape="poly">
+                    <area target="" alt="Jupiter Lisboa" title="Jupiter Lisboa" href="hotelaria"
+                        coords="242,423,262,443" shape="rect">
+                    <area target="" alt="Restaurante Fogo de Chão" title="Restaurante Fogo de Chão" href="restauracao"
+                        coords="322,438,340,454" shape="rect">
+                    <area target="" alt="Hanburgueria 21" title="Hanburgueria 21" href="restauracao"
+                        coords="450,302,445,290,460,290,470,296" shape="poly">
+                    <area target="" alt="Jardim Fernando Pessoa" title="Jardim Fernando Pessoa" href="jardim"
+                        coords="525,286,521,266,535,262,589,282,585,296" shape="poly">
+                    <area target="" alt="Igreja de São João de Deus" title="Igreja de São João de Deus" href="interesse"
+                        coords="561,391,579,381,579,400,571,410" shape="poly">
+                    <area target="" alt="Domino's Pizza Areeiro" title="Domino's Pizza Areeiro" href="restauracao"
+                        coords="719,336,724,350,754,346,738,336" shape="poly">
+                    <area target="" alt="Metro Areeiro" title="Metro Areeiro" href="transportes" coords="684,316,16"
+                        shape="circle">
+                    <area target="" alt="Culturgest" title="Culturgest" href="musica"
+                        coords="340,356,356,386,376,371,366,352" shape="poly">
+                    <area target="" alt="Mercado de Arroios" title="Mercado de Arroios" href="interesse"
+                        coords="704,635,21" shape="circle">
+                    <area target="" alt="O zé do Cozido" title="O zé do Cozido" href="restauracao"
+                        coords="790,490,804,500" shape="rect">
+                    <area target="" alt="Guest House Guerra Junqueiro" title="Guest House Guerra Junqueiro"
+                        href="hotelaria" coords="595,443,619,457" shape="rect">
+                    <area target="" alt="Casa-Museu Doutor Anastácio Gonçalves"
+                        title="Casa-Museu Doutor Anastácio Gonçalves" href="interesse"
+                        coords="222,747,240,757,236,771,216,761" shape="poly">
+                    <area target="" alt="Insituto Superior de Contabilidade" title="Insituto Superior de Contabilidade"
+                        href="educacao" coords="186,546,185,518,231,507,235,537" shape="poly">
+                    <area target="" alt="Padaria Trigo Doce" title="Padaria Trigo Doce" href="restauracao"
+                        coords="734,490,744,500,734,500" shape="poly">
+                    <area target="" alt="Fórum Lisboa" title="Fórum Lisboa" href="interesse"
+                        coords="509,246,519,242,534,256,515,262" shape="poly">
+                    <area target="" alt="Hotel Roma" title="Hotel Roma" href="hotelaria"
+                        coords="440,172,434,152,400,157,400,171" shape="poly">
+                    <area target="" alt="Dom Tacho" title="Dom Tacho" href="restauracao"
+                        coords="361,242,366,252,380,248,371,238" shape="poly">
+                    <area target="" alt="Roma-Areeiro" title="Roma-Areeiro" href="transporte"
+                        coords="561,164,585,164,585,172,565,178" shape="poly">
+                    <area target="" alt="Entrecampos" title="Entrecampos" href="transporte"
+                        coords="137,213,157,204,166,218,142,228" shape="poly">
+                    <area target="" alt="Casa Museu Whisky &amp; Companhia" title="Casa Museu Whisky &amp; Companhia"
+                        href="interesse" coords="192,164,206,164,216,178,192,178" shape="poly">
+                    <area target="" alt="Museu Calouste Gulbenkian" title="Museu Calouste Gulbenkian" href="interesse"
+                        coords="23,643,3,653,3,509" shape="poly">
+                </map>
             </div>
         </div>
     </div>
