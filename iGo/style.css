@@ -1142,16 +1142,31 @@ table {
 }
 
 .map-icon-fav {
+  border-radius: 50%;
   box-shadow:
-    0 0 60px 30px #fff,
+    inset 0 0 3px 2px rgba(255, 255, 255, 0.829),
     /* inner white */
-    /* inner white */
-    0 0 100px 60px rgb(236, 233, 7),
+    0 0 1px 1px #fff,
     /* middle magenta */
-    0 0 140px 90px rgba(244, 248, 1, 0.705);
-  /* outer cyan */
+    0 0 2px 2px rgb(236, 233, 7),
+    /* outer cyan */
+    0 0 3px 3px rgb(251, 255, 0);
 }
+
+.map-icon-fav:hover {}
 
 #place-info-modal {
   overflow: hidden;
+}
+
+.place-info-table {
+  width: 4.15cm;
+  height: 1.2cm;  
+  overflow: hidden;
+}
+
+#place-title {
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
 }

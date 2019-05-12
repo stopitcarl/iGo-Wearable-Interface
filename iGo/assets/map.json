@@ -4,8 +4,8 @@
     "tag": "self-location",
     "shape": "circle",
     "text": "",
-    "img": "",
-    "isFav": "false"
+    "img": "current-location.png",
+    "isFav": false
 }, {
     "name": "Instituto Superior Técnico",
     "coords": "435,522,495,507,539,521,555,531,559,572,555,591,545,606,525,616,509,620,474,626,440,626",
@@ -13,7 +13,7 @@
     "shape": "poly",
     "text": "",
     "img": "schools.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Ali Baba Kebab Haus",
     "coords": "411,596,425,625",
@@ -21,7 +21,7 @@
     "shape": "rect",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "INESC-ID",
     "coords": "421,565,401,546",
@@ -29,7 +29,7 @@
     "shape": "rect",
     "text": "",
     "img": "schools.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Jardim Arco do Cego",
     "coords": "351,586,371,630,386,620,376,581",
@@ -37,7 +37,7 @@
     "shape": "poly",
     "text": "",
     "img": "parks.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Don Costini",
     "coords": "396,660,386,646",
@@ -45,7 +45,7 @@
     "shape": "rect",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Farmácia Palma",
     "coords": "386,626,396,635",
@@ -53,7 +53,7 @@
     "shape": "rect",
     "text": "",
     "img": "medical.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "100 Montaditos",
     "coords": "356,646,336,640",
@@ -61,7 +61,7 @@
     "shape": "rect",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Metro Hostel",
     "coords": "346,660,356,675",
@@ -69,7 +69,7 @@
     "shape": "rect",
     "text": "",
     "img": "hotels.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Olissipo Saldanha",
     "coords": "330,682,316,672",
@@ -77,7 +77,7 @@
     "shape": "rect",
     "text": "",
     "img": "hotels.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Metro Saldanha",
     "coords": "302,682,310,696",
@@ -85,7 +85,7 @@
     "shape": "rect",
     "text": "",
     "img": "transport.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "McDonald's Saldanha",
     "coords": "292,635,276,616",
@@ -93,7 +93,7 @@
     "shape": "rect",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Banco CTT",
     "coords": "314,582,296,572",
@@ -101,7 +101,7 @@
     "shape": "rect",
     "text": "",
     "img": "financial-services.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Imprensa Nacional - Casa da Moeda",
     "coords": "330,578,322,537,370,532,376,572",
@@ -109,7 +109,7 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Escola D. Filipa de Lencastre",
     "coords": "420,502,360,403,489,359,529,453,509,467",
@@ -117,7 +117,7 @@
     "shape": "poly",
     "text": "",
     "img": "schools.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Turim Alameda",
     "coords": "509,638,529,632",
@@ -125,7 +125,7 @@
     "shape": "rect",
     "text": "",
     "img": "hotels.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Colágio Sagrado Coração de Maria",
     "coords": "579,612,575,642,593,642,599,612",
@@ -133,7 +133,7 @@
     "shape": "poly",
     "text": "",
     "img": "schools.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Metro Alameda",
     "coords": "655,538,645,552",
@@ -141,7 +141,7 @@
     "shape": "rect",
     "text": "",
     "img": "transport.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Jardim da Alameda Dom Afonso Henriques",
     "coords": "674,565,679,537,788,527,788,556",
@@ -149,7 +149,7 @@
     "shape": "poly",
     "text": "",
     "img": "parks.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Fonte Luminosa",
     "coords": "794,528,794,552,812,552,818,542,818,537,818,528,808,528",
@@ -157,7 +157,7 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Hotel A.S. Lisboa",
     "coords": "693,517,679,527",
@@ -165,7 +165,7 @@
     "shape": "rect",
     "text": "",
     "img": "hotels.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Insituto Nacional de Estatística",
     "coords": "511,491,539,471,545,491,545,507",
@@ -173,7 +173,7 @@
     "shape": "poly",
     "text": "",
     "img": "schools.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Estátua de Fernão Magalhães",
     "coords": "650,697,664,702,659,716,645,712",
@@ -181,7 +181,7 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Hotel ibis Lisboa Centro Saldanha",
     "coords": "386,797,361,778,360,803",
@@ -189,7 +189,7 @@
     "shape": "poly",
     "text": "",
     "img": "hotels.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Serviço de Finanças Lisboa 4",
     "coords": "549,673,539,687,531,673,535,663",
@@ -197,7 +197,7 @@
     "shape": "poly",
     "text": "",
     "img": "financial-services.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Igreja de São Jorge de Arroios",
     "coords": "581,763,581,739,589,743",
@@ -205,7 +205,7 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Instituto Português de Fotografia",
     "coords": "485,719,485,733,460,727,460,713",
@@ -213,7 +213,7 @@
     "shape": "poly",
     "text": "",
     "img": "schools.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Cinema City Campo Pequeno",
     "coords": "228,349,218,270,282,260,312,329",
@@ -221,7 +221,7 @@
     "shape": "poly",
     "text": "",
     "img": "movies.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Jupiter Lisboa",
     "coords": "242,423,262,443",
@@ -229,7 +229,7 @@
     "shape": "rect",
     "text": "",
     "img": "hotels.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Restaurante Fogo de Chão",
     "coords": "322,438,340,454",
@@ -237,7 +237,7 @@
     "shape": "rect",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Hanburgueria 21",
     "coords": "450,302,445,290,460,290,470,296",
@@ -245,7 +245,7 @@
     "shape": "poly",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Jardim Fernando Pessoa",
     "coords": "525,286,521,266,535,262,589,282,585,296",
@@ -253,7 +253,7 @@
     "shape": "poly",
     "text": "",
     "img": "parks.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Igreja de São João de Deus",
     "coords": "561,391,579,381,579,400,571,410",
@@ -261,7 +261,7 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Domino's Pizza Areeiro",
     "coords": "719,336,724,350,754,346,738,336",
@@ -269,7 +269,7 @@
     "shape": "poly",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Metro Areeiro",
     "coords": "684,316,16",
@@ -277,7 +277,7 @@
     "shape": "circle",
     "text": "",
     "img": "transport.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Culturgest",
     "coords": "340,356,356,386,376,371,366,352",
@@ -285,7 +285,7 @@
     "shape": "poly",
     "text": "",
     "img": "concerts.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Mercado de Arroios",
     "coords": "704,635,21",
@@ -293,7 +293,7 @@
     "shape": "circle",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "O zé do Cozido",
     "coords": "790,490,804,500",
@@ -301,7 +301,7 @@
     "shape": "rect",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Guest House Guerra Junqueiro",
     "coords": "595,443,619,457",
@@ -309,7 +309,7 @@
     "shape": "rect",
     "text": "",
     "img": "hotels.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Casa-Museu Doutor Anastácio Gonçalves",
     "coords": "222,747,240,757,236,771,216,761",
@@ -317,7 +317,7 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Insituto Superior de Contabilidade",
     "coords": "186,546,185,518,231,507,235,537",
@@ -325,7 +325,7 @@
     "shape": "poly",
     "text": "",
     "img": "schools.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Padaria Trigo Doce",
     "coords": "734,490,744,500,734,500",
@@ -333,7 +333,7 @@
     "shape": "poly",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Fórum Lisboa",
     "coords": "509,246,519,242,534,256,515,262",
@@ -341,7 +341,7 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Hotel Roma",
     "coords": "440,172,434,152,400,157,400,171",
@@ -349,7 +349,7 @@
     "shape": "poly",
     "text": "",
     "img": "hotels.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Dom Tacho",
     "coords": "361,242,366,252,380,248,371,238",
@@ -357,7 +357,7 @@
     "shape": "poly",
     "text": "",
     "img": "restaurants.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Roma-Areeiro",
     "coords": "561,164,585,164,585,172,565,178",
@@ -365,7 +365,7 @@
     "shape": "poly",
     "text": "",
     "img": "transport.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Entrecampos",
     "coords": "137,213,157,204,166,218,142,228",
@@ -373,7 +373,7 @@
     "shape": "poly",
     "text": "",
     "img": "transport.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Casa Museu Whisky & Companhia",
     "coords": "192,164,206,164,216,178,192,178",
@@ -381,7 +381,7 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }, {
     "name": "Museu Calouste Gulbenkian",
     "coords": "23,643,3,653,3,509",
@@ -389,5 +389,5 @@
     "shape": "poly",
     "text": "",
     "img": "museums.png",
-    "isFav": "false"
+    "isFav": false
 }]

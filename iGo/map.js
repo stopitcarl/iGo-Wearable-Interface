@@ -28,13 +28,14 @@ function createIcons() {
         places[i].coords = areas[i].getAttribute("coords");
         let coord = center(transformCoords(places[i].coords));
         console.log(coord);
-        container.append('<img src = "images/map/' + places[i].img + '"\
-                     class = "map-icon ' + places[i].tag.split(" ")[0] +
+        container.append('<img src="images/map/' + places[i].img + '"\
+                     class = "map-icon ' + places[i].tag.split(" ")[0] + " " +
             (places[i].isFav ? "map-icon-fav" : "") + '"\
                 style = "position: absolute;\
                      top: ' + (coord[1] - 5) + 'px;\
                      left: ' + (coord[0]) + 'px;"\
-                onclick = "showInfo(' + i + ')" > ');
+                    ' + (places[i].tag != "self-location" ? 'onclick = "showInfo(' + i + ')"' : '""') +
+            'id = "place-' + i + '" > ');
     }
 
     $('area').remove();
@@ -52,8 +53,8 @@ function showInfo(index) {
 
     // Fill modal with correct info   
     active_place = places[index];
-    $('#place-title').html(active_place.name);
-    $('#place-description').html(active_place.info ? "No available info" : active_place.info);
+    $('#place-title').text(active_place.name);
+    $('#place-description').html(!active_place.info ? "No available info" : active_place.info);
     $('#place-isFav').attr("src", active_place.isFav ? "images/filters/star.png" : "images/filters/star-empty.png");
 
 
@@ -79,43 +80,77 @@ function favorite(place) {
     if (!active_place.isFav) {
         place.src = "images/filters/star.png"
         active_place.isFav = true;
+        $("#place-" + places.indexOf(active_place)).addClass("map-icon-fav");
     } else {
         place.src = "images/filters/star-empty.png";
         active_place.isFav = false;
+        $("#place-" + places.indexOf(active_place)).removeClass("map-icon-fav");
     }
 
     localStorage.setItem("places", JSON.stringify(places));
 }
 
 
-function toggleFilter(filter) {
-    var index = activeFilters.indexOf(filter);
-    // Remove filter if it exists
-    if (index > -1)
-        activeFilters.splice(index, 1);
-    // Add filter if it doesnt exist
-    else
-        activeFilters.push(filter);
 
-    // ####### Apply filter #######
+
+function toggleFilter(filter, filter_elem) {
     let areas = document.getElementsByClassName("map-icon");
-    // display all
-    if (filter == "all")
+
+    // Special case for filter "all"
+    if (filter == "all") {
+        activeFilters = ["all"];
+        let filters = document.getElementsByClassName("selected-filter");
+        for (var i = filters.length - 1; i >= 0; i--)
+            filters[i].classList.remove("selected-filter");
+        filter_elem.classList.add('selected-filter');
         for (var i = 0; i < areas.length; i++)
             areas[i].style.display = "block";
-    // apply filter 
-    else
+        return;
+    } else if (activeFilters == "all") {
+        activeFilters = [];
+        let filters = document.getElementsByClassName("selected-filter");
+        filters[0].classList.remove("selected-filter");
+        var index = activeFilters.indexOf(filter);
+        // Remove filter if it exists
+        if (index > -1) {
+            activeFilters.splice(index, 1);
+            filter_elem.classList.remove('selected-filter');
+        }
+        // Add filter if it doesnt exist
+        else {
+            activeFilters.push(filter);
+            filter_elem.classList.add('selected-filter');
+        }
+    } else {
+        var index = activeFilters.indexOf(filter);
+        // Remove filter if it exists
+        if (index > -1) {
+            activeFilters.splice(index, 1);
+            filter_elem.classList.remove('selected-filter');
+        }
+        // Add filter if it doesnt exist
+        else {
+            activeFilters.push(filter);
+            filter_elem.classList.add('selected-filter');
+        }
+    }
+
+
+
+    // ####### Apply filter #######    
+    for (var i = 0; i < areas.length; i++)
+        areas[i].style.display = "none";
+    for (var j = 0; j < activeFilters.length; j++)
+        // apply filter         
         for (var i = 0; i < areas.length; i++) {
-            if (!areas[i].classList.contains(filter))
-                areas[i].style.display = "none";
-            else
+            if (areas[i].classList.contains(activeFilters[j]))
                 areas[i].style.display = "block";
 
         }
 
     // ######### Close modal window ##########
-    $('#filter-modal').modal('hide');
-    $('#my-backdrop').fadeOut(400);
+    // $('#filter-modal').modal('hide');
+    // $('#my-backdrop').fadeOut(400);
 }
 
 function transformCoords(coords) {
@@ -145,4 +180,16 @@ function showFilters() {
     })
     $('#filter-modal').modal('show');
     $("#my-backdrop").fadeIn("fast");
+}
+
+function drawLine(coords) {
+    let canvas = document.getElementById("gps-canvas");
+    let context = canvas.getContext("2d");
+    /* Encontrar as coordenadas corretas da minha posição */
+    let coordTop = Number(document.getElementsByClassName("self-location")[0].style.top.substring(0,3));
+    let coordLeft = Number(document.getElementsByClassName("self-location")[0].style.left.substring(0,3));
+    context.beginPath();
+    context.moveTo(coordLeft , coordTop);
+    context.lineTo(coords[0], coords[1]);
+    context.stroke();
 }
