@@ -136,7 +136,7 @@ function toggleFilter(filter, filter_elem) {
         for (var i = filters.length - 1; i >= 0; i--)
             filters[i].classList.remove("selected-filter");
         filter_elem.classList.add('selected-filter');
-        for (var i = 0; i < areas.length; i++)
+        for (var i = 1; i < areas.length; i++)
             areas[i].style.display = "block";
         return;
     } else if (activeFilters == "all") {
@@ -175,11 +175,11 @@ function toggleFilter(filter, filter_elem) {
 
 
     // ####### Apply filter #######    
-    for (var i = 0; i < areas.length; i++)
+    for (var i = 1; i < areas.length; i++)
         areas[i].style.display = "none";
     for (var j = 0; j < activeFilters.length; j++)
         // apply filter         
-        for (var i = 0; i < areas.length; i++) {
+        for (var i = 1; i < areas.length; i++) {
             if (areas[i].classList.contains(activeFilters[j]))
                 areas[i].style.display = "block";
 
