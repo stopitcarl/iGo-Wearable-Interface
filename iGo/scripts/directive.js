@@ -12,7 +12,7 @@ function zoom(classNames, settings) {
     
     var C_scaleDefault = settings["scaleDefault"] || 2; // Used on doubleclick, doubletap and resize
     var C_scaleDifference = settings["scaleDifference"] || 0.5; // Used on wheel zoom
-    var C_scaleMax = settings["scaleMax"] || 10;
+    var C_scaleMax = settings["scaleMax"] || 4;
     var C_scaleMin = settings["scaleMin"] || 1;
 
     /* Selectors */
@@ -556,6 +556,8 @@ function zoom(classNames, settings) {
 
         /* @->moveScaleElement */
         moveScaleElement($element, targetOffsetX + "px", targetOffsetY + "px", targetScale);
+
+        console.log(targetScale);
     }
 }
 

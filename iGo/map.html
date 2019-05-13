@@ -10,10 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
@@ -74,11 +74,12 @@
                                         onclick="toggleFilter('transporte', this)">
                                 </td>
                                 <td>
-                                    <img src="images/filters/music.png" class="filter-icon"
-                                        onclick="toggleFilter('musica', this)">
+                                    <img src="images/filters/education.png" class="filter-icon"
+                                        onclick="toggleFilter('educacao', this)">
                                 </td>
                                 <td>
-                                    <img src="images/filters/stadium.png" class="filter-icon" onclick="">
+                                    <img src="images/filters/hotel.png" class="filter-icon"
+                                        onclick="toggleFilter('hotelaria', this)">
                                 </td>
                             </tr>
                             <tr>
@@ -91,20 +92,23 @@
                                         onclick="toggleFilter('cinema', this)">
                                 </td>
                                 <td>
-                                    <img src="images/filters/airplane.png" class="filter-icon" onclick="">
+                                    <img src="images/filters/park.png" class="filter-icon"
+                                        onclick="toggleFilter('jardim', this)">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <img src="images/filters/cocktail.png" class="filter-icon"
+                                    <img src="images/filters/restaurant.png" class="filter-icon"
                                         onclick="toggleFilter('restauracao', this)">
                                 </td>
                                 <td>
-                                    <img src="images/filters/star.png" class="filter-icon" onclick="">
+                                    <img src="images/filters/star.png" class="filter-icon"
+                                        onclick="toggleFilter('map-icon-fav', this)">
                                 </td>
                                 <td>
-                                    <span class="filter-icon filter-all" id="fav_filter"
-                                        onclick="toggleFilter('all', this)">ALL</span>
+                                    <!--TODO REMOVER ESTE ICON E POR O DE EDUCACAO-->
+                                    <span class="filter-icon filter-all" class="filter-icon"
+                                        onclick="toggleFilter('all', this)" id="all-filter">ALL</span>
                                 </td>
                             </tr>
                         </table>
@@ -129,19 +133,56 @@
                                 <td class="header-cell" id="place-title">
                                 </td>
                             </tr>
-                        </table>                        
-                        <div class="info-text">
+                            <hr style="color: black;">
+                        </table>
+                        <div class="place-info-text">
                             <!-- Place description -->
                             <div id="place-description"></div>
+                            <div id="set-gps-container">
+                                <img id="set-gps" src="images/gothere.png" onClick="showGPS()">
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+            <!-- END OF MODAL WINDOW -->
+
+            <!-- MODAL WINDOW FOR PLACE INFO -->
+            <div class="modal fade bd-example-modal-sm" id="transportation-modal" tabindex="-1" role="dialog"
+                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content filter-modal-content">
+                        <img src="images/close.png" class="filter-close-button"
+                            onclick="$('#transportation-modal').modal('hide');$('#my-backdrop').fadeOut(400);">
+                        <table class="filter-table">
+                            <tr>
+                                <td>
+                                    <img src="images/filters/walking.png" class="transportation-icon"
+                                        onclick="changeTransport('walk')">
+                                </td>
+                                <td>
+                                    <img src="images/filters/bus.png" class="transportation-icon"
+                                        onclick="changeTransport('bus')">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/filters/bicycle.png" class="transportation-icon"
+                                        onclick="changeTransport('bicycle')">
+                                </td>
+                                <td>
+                                    <img src="images/filters/car.png" class="transportation-icon"
+                                        onclick="changeTransport('car')">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF MODAL WINDOW -->
         </div>
-
-
     </div>
-
 
 
     <div class="map-container clock-border">
@@ -158,7 +199,7 @@
                     <area target="" alt="INESC-ID" title="INESC-ID" href="educacao" coords="421,565,401,546"
                         shape="rect">
                     <area target="" alt="Jardim Arco do Cego" title="Jardim Arco do Cego" href="jardim"
-                        coords="351,586,371,630,386,620,376,581" shape="poly">
+                        coords="356,585,380,581,387,619,374,633" shape="poly">
                     <area target="" alt="Don Costini" title="Don Costini" href="restauracao" coords="396,660,386,646"
                         shape="rect">
                     <area target="" alt="Farmácia Palma" title="Farmácia Palma" href="saude" coords="386,626,396,635"
@@ -218,7 +259,7 @@
                         coords="561,391,579,381,579,400,571,410" shape="poly">
                     <area target="" alt="Domino's Pizza Areeiro" title="Domino's Pizza Areeiro" href="restauracao"
                         coords="719,336,724,350,754,346,738,336" shape="poly">
-                    <area target="" alt="Metro Areeiro" title="Metro Areeiro" href="transportes" coords="684,316,16"
+                    <area target="" alt="Metro Areeiro" title="Metro Areeiro" href="transporte" coords="684,316,16"
                         shape="circle">
                     <area target="" alt="Culturgest" title="Culturgest" href="musica"
                         coords="340,356,356,386,376,371,366,352" shape="poly">
@@ -250,13 +291,64 @@
                     <area target="" alt="Museu Calouste Gulbenkian" title="Museu Calouste Gulbenkian" href="interesse"
                         coords="23,643,3,653,3,509" shape="poly">
                 </map>
-                <canvas id="gps-canvas">Your browser does not support the HTML5 canvas tag.</canvas>
             </div>
         </div>
+        <!-- GPS BAR -->
+        <div id="gps-nav" style="display:none;" class="gps-bar gps-down">
+            <img src="images/arrowup.png" id="gps-arrow" onClick="toggleGPS();">
+            <div class="progress darker-bar mt-1 mb-1" style="width:75%; margin:auto;">
+                <div class="progress-bar" role="progressbar" style="width:25%;" aria-valuenow="25" aria-valuemin="0"
+                    aria-valuemax="100"></div>
+            </div>
+            <div id="gps-scroll">
+                <table>
+                    <tr>
+                        <td>
+                            <p id="gps-time"
+                                style="margin:0cm; margin-top:0.2cm; color:rgb(78, 78, 78); vertical-align: middle;">5
+                                minutos a</p>
+                        </td>
+                        <td>
+                             <img src="images/filters/walking.png" id="transport-image" onClick="showTransportation()">
+                        </td>
+
+                    </tr>
 
 
+                </table>
+                <hr style="margin: 0.2cm 0.1cm;">
+                <p id="gps-kcal" style="margin:0cm; margin-top:0.2cm; color:rgb(78, 78, 78); vertical-align: middle;">47
+                    Kcal</p>
+                <hr style="margin: 0.2cm 0.1cm;">
+                <p id="gps-dist" style="margin:0cm; margin-top:0.2cm; color:rgb(78, 78, 78); vertical-align: middle;">
+                    287 metros</p>
+                <hr style="margin: 0.2cm 0.1cm;">
+                <!-- Remove button -->
+                <div class="remove-ticket " id="ticket-remover">
+
+                    <!-- Remove option -->
+                    <span id="try-remove" href="#confirmation-container" onclick="tryRemove()">
+                        Terminar viagem
+                    </span>
+
+                    <!-- Confirmation buttons -->
+                    <div class="ninja-wrapper" id="confirmation-container">
+                        <div id="confirmation-box">
+                            <!-- Remove -->
+                            <div class="remove-button" id="yes-remove" onclick="remove()">Terminar
+                            </div>
+                            <!-- Cancel -->
+                            <div class="remove-button" id="no-remove" onclick="cancelRemove()">Cancelar
+                            </div>
+                        </div>
+                    </div>                                        
+                </div>
+            </div>
+
+
+        </div>
+        <!-- END OF GPS BAR -->
         <!-- End of clock border -->
-    </div>
     </div>
 
     <script type="text/javascript" src="scripts/directive.js"></script>

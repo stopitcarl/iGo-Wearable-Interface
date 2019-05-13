@@ -900,10 +900,11 @@ table {
 
 #try-remove {
   width: 100%;
+  transition: 0.1s;
 }
 
-#try-remove:hover {
-  box-shadow: inset 0px 0px 16px 16px rgba(112, 112, 112, 0.27);
+#try-remove:hover {  
+  font-weight: bold;  
 }
 
 #confirmation-box {
@@ -1153,8 +1154,6 @@ table {
     0 0 3px 3px rgb(251, 255, 0);
 }
 
-.map-icon-fav:hover {}
-
 #place-info-modal {
   overflow: hidden;
 }
@@ -1169,4 +1168,161 @@ table {
   margin: 0;
   padding: 0;
   line-height: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  
 }
+
+#gps-canvas {
+  height: 5.4cm;
+  width: 5.4cm;
+  position: absolute;
+}
+
+.place-info-text {
+  padding-left: 5px;
+  margin-bottom: 2px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 70%;
+  font-size: 12px;
+}
+
+.post-author {
+  border-radius: 50%;
+  width: 0.7cm;
+  height: 0.7cm;
+  margin: 0cm;
+}
+
+.post-author-name {
+  line-height: 100%;
+  margin: 0cm;
+  padding: 0cm;
+  padding-left: 0.1cm;
+}
+
+.post-text {
+  line-height: 100%;
+  margin: 0cm;
+  padding: 0cm;
+}
+
+.gps-bar {
+  position: absolute;
+  width: 4.5cm;
+  height: 5cm;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 10;
+  border-radius: 5%;  
+  transition: 0.7s ease;
+  padding-left: 0.1cm;
+}
+
+.gps-down {
+  top: 4.4cm;
+  left: 8%;
+}
+
+.gps-center {
+  top: 1.2cm;
+  left: 8%;
+}
+
+#gps-arrow{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 2cm;
+  height: 0.3cm;
+  margin-top: 0.15cm;
+  margin-bottom: 0.15cm;
+}
+
+#gps-arrow:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.darker-bar{
+  background-color:rgb(131, 129, 129) !important;
+  border-color: rgb(104, 104, 104) !important;
+}
+
+
+.transportation-icon {
+  width: 1.2cm;
+  height: 1.2cm;
+}
+
+#transportation-modal {
+  overflow: hidden;
+}
+
+.transportation-icon:hover {
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.goToTicket {
+  display: block;
+  height: 1.7cm;
+  width: 2cm;
+  margin: auto;
+}
+
+#transport-image{  
+  margin-top: 0.1cm;
+  width: 0.9cm;
+  height: 0.9cm;
+  border-radius: 20%;
+  transition: 0.2s;
+  border: solid rgb(100, 100, 100) 2px;
+}
+#transport-image:hover{
+  cursor:pointer;
+  transform: scale(1.2);
+}
+
+#gps-cancel{
+  background-color: red;
+  text-align: center;
+  padding-left: -0.1cm;
+}
+
+#gps-cancel:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#gps-scroll{
+  padding-bottom: 0.2cm;
+  height: 3.2cm;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.progress {
+  height: 0.2cm !important;
+}
+
+#set-gps-container{
+  width: 100%;
+  margin-top: 0.1cm;
+  padding: 0cm;
+  margin-bottom: 0.1cm;
+}
+
+#set-gps{
+  display: block;
+  margin: auto;
+  width: 1cm;
+  height: 1cm;
+}
+
+#set-gps:hover{
+  cursor:pointer;
+  transform: scale(1.2);
+}
+
