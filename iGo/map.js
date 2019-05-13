@@ -239,7 +239,7 @@ function getPosts(placeName) {
     for (let i = 0; i < places.length; i++) {
         if (places[i].name === placeName) {
             if (places[i].tag === 'transporte') {
-                return '<a href="tickets.html"><img src="images/toTicket.png" class="goToTicket"></a><p style="text-align: center;">Clique na imagem pare selecionar um bilhete<p>';
+                return '<a href="tickets.html"><img src="images/toTicket.png" class="goToTicket"></a><p style="text-align: center;">Clique na imagem para selecionar um bilhete<p>';
             }
         }
     }
@@ -269,7 +269,6 @@ function getOffset(el) {
 }
 
 function connect(div1, div2, color, thickness) { // draw a line connecting elements
-
 
     var off1 = getOffset(div1);
     var off2 = getOffset(div2);
