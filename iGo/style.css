@@ -140,6 +140,12 @@ hr {
   background-color: #92df9e;
 }
 
+.self-location {
+  border-radius: 50%;
+  animation: map-pulse linear 3s infinite;
+  animation-timing-function: cubic-bezier(.35, .68, .71, .28) linear;
+}
+
 #description {
   position: absolute;
   top: 3.95cm;
@@ -244,9 +250,6 @@ span {
   grid-template-rows: 18% 6% auto 6% 18%;
   grid-template-areas: "top-left top-left header top-right top-right""top-left top-left . top-right top-right""left-main left-center main right-center-main right-main"". . . . ."". footer footer footer .";
   overflow: hidden;
-  /*-o-transition: all 2s;
-  -moz-transition: all 2s;
-  -webkit-transition: all 2s;*/
   transition: all 2s;
 }
 
@@ -300,6 +303,13 @@ span {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
+}
+
+.grid-bottom-right {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 4;
+  grid-row-end: 6;
 }
 
 .grid-footer {
@@ -903,8 +913,8 @@ table {
   transition: 0.1s;
 }
 
-#try-remove:hover {  
-  font-weight: bold;  
+#try-remove:hover {
+  font-weight: bold;
 }
 
 #confirmation-box {
@@ -1160,7 +1170,7 @@ table {
 
 .place-info-table {
   width: 4.15cm;
-  height: 1.2cm;  
+  height: 1.2cm;
   overflow: hidden;
 }
 
@@ -1170,7 +1180,7 @@ table {
   line-height: 100%;
   font-size: 12px;
   font-weight: bold;
-  
+
 }
 
 #gps-canvas {
@@ -1215,7 +1225,7 @@ table {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 10;
-  border-radius: 5%;  
+  border-radius: 5%;
   transition: 0.7s ease;
   padding-left: 0.1cm;
 }
@@ -1230,7 +1240,7 @@ table {
   left: 8%;
 }
 
-#gps-arrow{
+#gps-arrow {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1240,13 +1250,13 @@ table {
   margin-bottom: 0.15cm;
 }
 
-#gps-arrow:hover{
+#gps-arrow:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.darker-bar{
-  background-color:rgb(131, 129, 129) !important;
+.darker-bar {
+  background-color: rgb(131, 129, 129) !important;
   border-color: rgb(104, 104, 104) !important;
 }
 
@@ -1272,7 +1282,7 @@ table {
   margin: auto;
 }
 
-#transport-image{  
+#transport-image {
   margin-top: 0.1cm;
   width: 0.9cm;
   height: 0.9cm;
@@ -1280,23 +1290,24 @@ table {
   transition: 0.2s;
   border: solid rgb(100, 100, 100) 2px;
 }
-#transport-image:hover{
-  cursor:pointer;
+
+#transport-image:hover {
+  cursor: pointer;
   transform: scale(1.2);
 }
 
-#gps-cancel{
+#gps-cancel {
   background-color: red;
   text-align: center;
   padding-left: -0.1cm;
 }
 
-#gps-cancel:hover{
+#gps-cancel:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
 
-#gps-scroll{
+#gps-scroll {
   padding-bottom: 0.2cm;
   height: 3.2cm;
   overflow-y: scroll;
@@ -1307,22 +1318,65 @@ table {
   height: 0.2cm !important;
 }
 
-#set-gps-container{
+#set-gps-container {
   width: 100%;
   margin-top: 0.1cm;
   padding: 0cm;
   margin-bottom: 0.1cm;
 }
 
-#set-gps{
+#set-gps {
   display: block;
   margin: auto;
   width: 1cm;
   height: 1cm;
 }
 
-#set-gps:hover{
-  cursor:pointer;
+#set-gps:hover {
+  cursor: pointer;
   transform: scale(1.2);
 }
 
+.map-center-button {
+  background-image: url("images/map/my-location.png");
+  background-color: rgb(105, 129, 239);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 0.9cm;
+  height: 0.87cm;
+  border-radius: 20%;
+  z-index: 10;
+  margin-top: 0.7em;
+  margin-left: 0.5em;
+}
+
+.map-center-button:hover {
+  background-color: rgb(165, 180, 245);
+  cursor: pointer;
+}
+
+@keyframes map-pulse {
+  0% {
+    box-shadow: 0 0 1px 1px #ea4c89, inset 0 0 3px #ea4c89;
+  }
+
+  25% {
+    box-shadow: 0 0 2px 2px #ea4c89, inset 0 0 3px #ea4c89;
+  }
+
+  45% {
+    box-shadow: 0 0 4px 3px #ea4c89, inset 0 0 3px #ea4c89;
+  }
+
+  60% {
+    box-shadow: 0 0 4px 3px #ea4c89, inset 0 0 3px #ea4c89;
+  }
+
+  80% {
+    box-shadow: 0 0 2px 2px #ea4c89, inset 0 0 3px #ea4c89;
+  }
+
+  100% {
+    box-shadow: 0 0 1px 1px #ea4c89, inset 0 0 3px #ea4c89;
+  }
+}

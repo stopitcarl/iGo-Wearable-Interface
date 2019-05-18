@@ -3,11 +3,12 @@ var posts;
 var active_place;
 var activeFilters = []
 var myPosition;
-
-/*  TODO: 
-    GUARDAR OS FAVORITOS
-    LIGAR AOS TICKETS
- */
+var currentLocationCss = {
+    "data-scale": "4",
+    "data-translate-x": "-5.524780273437557",
+    "data-translate-y": "-90.59162394205725",
+    "style": "transition: 0.5s; transform: translate3d(-5.52478px, -90.5916px, 0px) scale3d(4, 4, 1);"
+}
 
 $(document).ready(function () {
     console.log("reloaded");
@@ -87,7 +88,7 @@ function showInfo(index) {
     $('#place-title').text(active_place.name);
     $('#place-description').html(getPosts(active_place.name));
     $('#place-isFav').attr("src", active_place.isFav ? "images/filters/star.png" : "images/filters/star-empty.png");
-    if(isGPSRunning){
+    if (isGPSRunning) {
         $("#set-gps-container").hide();
     } else {
         $("#set-gps-container").show();
@@ -104,10 +105,10 @@ function showInfo(index) {
 
     $("#place-info-modal").attr("style", previousCss ? previousCss : "");
 
-    $('#place-info-modal').modal("toggle", function () { });
+    $('#place-info-modal').modal("toggle", function () {});
     $('.modal-backdrop').appendTo('.ticket-container');
     $("#place-info-modal").on("hidden.bs.modal", function () {
-        $(".fade").fadeOut("fast", function () { });
+        $(".fade").fadeOut("fast", function () {});
     });
 
 }
@@ -236,26 +237,22 @@ function drawLine(mine, coords) {
 
 function getPosts(placeName) {
 
-    for (let i = 0; i < places.length; i++) {
-        if (places[i].name === placeName) {
-            if (places[i].tag === 'transporte') {
+    for (let i = 0; i < places.length; i++)
+        if (places[i].name === placeName)
+            if (places[i].tag === 'transporte')
                 return '<a href="tickets.html"><img src="images/toTicket.png" class="goToTicket"></a><p style="text-align: center;">Clique na imagem para selecionar um bilhete<p>';
-            }
-        }
-    }
+
+
+
 
     let res = "";
-    let gotOne = false;
-    for (let i = 0; i < posts.length; i++) {
-        if (posts[i]["place"] == placeName) {
+    for (let i = 0; i < posts.length; i++)
+        if (posts[i]["place"] == placeName)
             res += '<img src="images/profile.png" class="post-author">\
-            <b class="post-author-name">' + posts[i]["author"] + '</b><br><span class="post-text">'
-                + posts[i]["text"] + '</span> <hr style="margin:0.1cm auto; width:90%">';
-            gotOne = true;
-        }
-    }
+            <b class="post-author-name">' + posts[i]["author"] + '</b><br><span class="post-text">' +
+            posts[i]["text"] + '</span> <hr style="margin:0.1cm auto; width:90%">';
 
-    return gotOne ? res : "Não há informação disponível";
+    return res ? res : "Não há informação disponível";
 }
 
 function getOffset(el) {
@@ -305,51 +302,53 @@ function changeTransport(t) {
     console.log("changing transportation")
     let trans = "";
     if (t === 'walk') {
-    $("#transport-image").attr("src", "images/filters/walking.png");
-    trans = " a";
+        $("#transport-image").attr("src", "images/filters/walking.png");
+        trans = " a";
     }
     if (t === 'bus') {
-    $("#transport-image").attr("src", "images/filters/bus.png");
-    trans = " de";
-    }
-    if (t === 'bicycle') {
-    $("#transport-image").attr("src", "images/filters/bicycle.png");
-    trans = " de";
-    }
-    if (t === 'car') {
-    $("#transport-image").attr("src", "images/filters/car.png");
+        $("#transport-image").attr("src", "images/filters/bus.png");
         trans = " de";
     }
-    
-    $("#gps-time").text(Math.floor(2+Math.random()*45) + " minutos" + trans);
-    $("#gps-kcal").text(Math.floor(2+Math.random()*45) + " Kcal");
-    $("#gps-dist").text(Math.floor(2+Math.random()*878) + " metros");
+    if (t === 'bicycle') {
+        $("#transport-image").attr("src", "images/filters/bicycle.png");
+        trans = " de";
+    }
+    if (t === 'car') {
+        $("#transport-image").attr("src", "images/filters/car.png");
+        trans = " de";
+    }
+
+    $("#gps-time").text(Math.floor(2 + Math.random() * 45) + " minutos" + trans);
+    $("#gps-kcal").text(Math.floor(2 + Math.random() * 45) + " Kcal");
+    $("#gps-dist").text(Math.floor(2 + Math.random() * 878) + " metros");
 
     $('#transportation-modal').modal('hide');
     $('#my-backdrop').fadeOut(400);
 }
 
 var isGPSRunning = false;
-function showGPS(){
+
+function showGPS() {
     $("#gps-nav").show();
     $('#place-info-modal').modal('hide');
-    $('#my-backdrop').fadeOut(400);    
+    $('#my-backdrop').fadeOut(400);
     isGPSRunning = true;
 }
 
 var isGPSToggled = false;
+
 function toggleGPS() {
     if (!isGPSToggled) {
         $("#gps-nav").removeClass("gps-down");
         $("#gps-nav").addClass("gps-center");
-        $("#gps-arrow").attr("src","images/arrowdown.png");
+        $("#gps-arrow").attr("src", "images/arrowdown.png");
         isGPSToggled = true;
     } else {
         $("#gps-nav").removeClass("gps-center");
         $("#gps-nav").addClass("gps-down");
-        $("#gps-arrow").attr("src","images/arrowup.png");
+        $("#gps-arrow").attr("src", "images/arrowup.png");
         isGPSToggled = false;
-    }    
+    }
 }
 
 
@@ -367,9 +366,15 @@ function cancelRemove() {
     });
 }
 
-function remove(){
+function remove() {
     toggleGPS();
     $("#gps-nav").hide("fast");
     cancelRemove();
     isGPSRunning = false;
+}
+
+function centerMap() {
+    let container = $("#zoom-container");
+    for (var key in currentLocationCss)
+        container.attr(key, currentLocationCss[key]);
 }
