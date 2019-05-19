@@ -182,19 +182,19 @@ function getText(lang) {
     switch (language) {
         case "Português":
             return "Eu gostaria de um copo de água";
-        case "English":
+        case "Inglês":
             return "I would like a glass of water";
-        case "Čeština":
+        case "Checo":
             return "Chtěl bych sklenici vody";
-        case "Deutsche":
+        case "Alemão":
             return "Ich hätte gerne ein Glas Wasser";
-        case "Français":
+        case "Francês":
             return "Je voudrais un verre d'eau";
-        case "Svenska":
+        case "Sueco":
             return "Jag skulle vilja ha ett glas vatten";
         case "Swahili":
             return "Ningependa glasi ya maji";
-        case "普通话":
+        case "Chinês":
             return "我想要一杯水";
     }
 
