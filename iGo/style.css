@@ -413,14 +413,20 @@ span {
 
 #microphone-button {
   position: absolute;
-  top: 1.6cm;
-  left: 1.6cm;
-  width: 2.1cm;
-  height: 2.1cm;
+  top: 1.5cm;
+  left: 1.55cm;
+  width: 2.3cm;
+  height: 2.3cm;
   padding: 0em;
   border-radius: 50%;
   margin: auto;
   border: solid 0.15cm grey;
+  transition: 0.1s;
+}
+
+#microphone-button:hover {
+  transform: scale(1.05);
+  background-blend-mode: luminosity;
 }
 
 .language-description {
@@ -446,6 +452,8 @@ span {
 
 #translated-text {
   font-style: normal;
+  padding-right: 0.05cm;
+  padding-left: 0.05cm;
 }
 
 .background-light {
@@ -792,15 +800,17 @@ table {
 }
 
 .filter-table {
-  width: 4.2cm;
-  height: 4.2cm;
+  width: 4cm;
+  height: 4cm;
   text-align: center;
+  margin: auto;
 }
 
 .filter-icon {
   width: 1cm;
   height: 1cm;
   border-radius: 10%;
+  padding-top: 0;
 }
 
 .filter-icon:hover {
@@ -1379,4 +1389,40 @@ table {
   100% {
     box-shadow: 0 0 1px 1px #ea4c89, inset 0 0 3px #ea4c89;
   }
+}
+
+#map-filter-modal {
+  overflow: hidden;
+}
+
+.map-dialog {
+  margin-top: 0.4cm !important;
+}
+
+.map-filter-modal-content {
+  width: 4.2cm !important;
+  height: 4.6cm !important;
+}
+
+.map-filter-table {
+  width: 4cm;
+  height: 3.4cm;
+  text-align: center;
+  margin: auto;
+  margin-top: 0.15cm !important;
+  margin-bottom: 0.1cm !important;
+}
+
+.map-filter-decide {
+  width: 1.9cm;  
+  border-radius: 8% / 25%;
+  text-align: center;
+  margin: auto;
+  margin-top: 0.1cm;
+  transition: 0.1s;
+}
+
+.map-filter-decide:hover {
+  transform: scale(1.06);  
+  cursor: pointer;
 }

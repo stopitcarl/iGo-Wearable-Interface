@@ -1,7 +1,7 @@
 var places;
 var posts;
 var active_place;
-var activeFilters = []
+var activeFilters = [];
 var myPosition;
 var currentLocationCss = {
     "data-scale": "4",
@@ -72,7 +72,7 @@ function createIcons() {
     $('area').remove();
     $('map').remove();
     console.log("setting filter to all");
-    toggleFilter("all", document.getElementById("all-filter"));
+    activateFilters();
 }
 
 function showInfo(index) {
@@ -127,68 +127,76 @@ function favorite(place) {
     localStorage.setItem("places", JSON.stringify(places));
 }
 
-function toggleFilter(filter, filter_elem) {
+var temp_filters = [];
+// var temp_filters_elem = [];
+
+function prepareFilter(filter, filter_elem) {
+
+    var index = temp_filters.indexOf(filter);
+    if (index < 0) {
+        temp_filters.push(filter);
+        //temp_filters_elem.push(filter);
+        filter_elem.classList.add('selected-filter');
+
+    } else {
+        temp_filters.splice(index, 1);
+        //temp_filters_elem.splice(index, 1);
+        filter_elem.classList.remove('selected-filter');
+    }
+}
+
+function applyFilters() {
+    activeFilters = [...temp_filters];
+    activateFilters();
+
+    $('#map-filter-modal').modal('hide');
+    $('#my-backdrop').fadeOut(400);
+}
+
+function cancelFilters() {
+
+    console.log("temp", temp_filters);
+    console.log("active", activeFilters);
+
+    // Iterate activeFilter
+    temp_filters.forEach(f => {
+        let index = activeFilters.indexOf(f);
+        if (index < 0) {
+            $("#" + f).removeClass("selected-filter");
+        }
+    })
+
+    // Iterate activeFilter
+    activeFilters.forEach(f => {
+        let index = temp_filters.indexOf(f);
+        if (index < 0) {
+            $("#" + f).addClass("selected-filter");
+        }
+    })
+
+    $('#map-filter-modal').modal('hide');
+    $('#my-backdrop').fadeOut(400);
+}
+
+function activateFilters() {
     let areas = document.getElementsByClassName("map-icon");
 
-    // Special case for filter "all"
-    if (filter == "all") {
-        activeFilters = ["all"];
-        let filters = document.getElementsByClassName("selected-filter");
-        for (var i = filters.length - 1; i >= 0; i--)
-            filters[i].classList.remove("selected-filter");
-        filter_elem.classList.add('selected-filter');
+    // ####### Apply filter #######    
+    if (activeFilters.length == 0) {
         for (var i = 1; i < areas.length; i++)
             areas[i].style.display = "block";
-        return;
-    } else if (activeFilters == "all") {
-        activeFilters = [];
-        let filters = document.getElementsByClassName("selected-filter");
-        filters[0].classList.remove("selected-filter");
-        var index = activeFilters.indexOf(filter);
-        // Remove filter if it exists
-        if (index > -1) {
-            activeFilters.splice(index, 1);
-            filter_elem.classList.remove('selected-filter');
-        }
-        // Add filter if it doesnt exist
-        else {
-            activeFilters.push(filter);
-            filter_elem.classList.add('selected-filter');
-        }
+        return
     } else {
-        var index = activeFilters.indexOf(filter);
-        // Remove filter if it exists
-        if (index > -1) {
-            activeFilters.splice(index, 1);
-            filter_elem.classList.remove('selected-filter');
-            if (activeFilters.length == 0) {
-                toggleFilter("all", document.getElementById("all-filter"));
-                return;
+        for (var i = 1; i < areas.length; i++)
+            areas[i].style.display = "none";
+        for (var j = 0; j < activeFilters.length; j++)
+            // apply filter         
+            for (var i = 1; i < areas.length; i++) {
+                if (areas[i].classList.contains(activeFilters[j]))
+                    areas[i].style.display = "block";
+
             }
-        }
-        // Add filter if it doesnt exist
-        else {
-            activeFilters.push(filter);
-            filter_elem.classList.add('selected-filter');
-        }
     }
-
-
-
-    // ####### Apply filter #######    
-    for (var i = 1; i < areas.length; i++)
-        areas[i].style.display = "none";
-    for (var j = 0; j < activeFilters.length; j++)
-        // apply filter         
-        for (var i = 1; i < areas.length; i++) {
-            if (areas[i].classList.contains(activeFilters[j]))
-                areas[i].style.display = "block";
-
-        }
-
-    // ######### Close modal window ##########
-    // $('#filter-modal').modal('hide');
-    // $('#my-backdrop').fadeOut(400);
 }
 
 function transformCoords(coords) {
@@ -213,10 +221,13 @@ var center = function (arr) {
 }
 
 function showFilters() {
-    $('#filter-modal').modal({
+
+    temp_filters = [...activeFilters];
+
+    $('#map-filter-modal').modal({
         backdrop: false
     })
-    $('#filter-modal').modal('show');
+    $('#map-filter-modal').modal('show');
     $("#my-backdrop").fadeIn("fast");
 }
 
@@ -350,8 +361,6 @@ function toggleGPS() {
         isGPSToggled = false;
     }
 }
-
-
 
 function tryRemove() {
     $("#try-remove").fadeOut("fast", function () {

@@ -10,10 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    </script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
@@ -62,54 +62,66 @@
             <div class="cool-backdrop" id="my-backdrop"></div>
 
             <!-- MODAL WINDOW FOR FILTERS -->
-            <div class="modal fade bd-example-modal-sm backdrop" id="filter-modal" tabindex="-1" role="dialog"
+            <div class="modal fade bd-example-modal-sm backdrop" id="map-filter-modal" tabindex="-1" role="dialog"
                 aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm modal-dialog-centered">
-                    <div class="modal-content filter-modal-content">
-                        <img src="images/close.png" class="filter-close-button"
-                            onclick="$('#filter-modal').modal('hide');$('#my-backdrop').fadeOut(400);">
-                        <table class="filter-table">
+                <div class="modal-dialog modal-dialog-centered modal-sm map-dialog">
+                    <div class="modal-content map-filter-modal-content">
+                        <table class="map-filter-table">
                             <tr>
                                 <td>
                                     <img src="images/filters/transports.png" class="filter-icon"
-                                        onclick="toggleFilter('transporte', this)">
+                                        onclick="prepareFilter('transporte', this)" id="transporte">
                                 </td>
                                 <td>
                                     <img src="images/filters/education.png" class="filter-icon"
-                                        onclick="toggleFilter('educacao', this)">
+                                        onclick="prepareFilter('educacao', this)" id="educacao">
                                 </td>
                                 <td>
                                     <img src="images/filters/hotel.png" class="filter-icon"
-                                        onclick="toggleFilter('hotelaria', this)">
+                                        onclick="prepareFilter('hotelaria', this)" id="hotelaria">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <img src="images/filters/einfell.png" class="filter-icon"
-                                        onclick="toggleFilter('interesse', this)">
+                                        onclick="prepareFilter('interesse', this)" id="interesse">
                                 </td>
                                 <td>
                                     <img src="images/filters/cinema.png" class="filter-icon"
-                                        onclick="toggleFilter('cinema', this)">
+                                        onclick="prepareFilter('cinema', this)" id="cinema">
                                 </td>
                                 <td>
                                     <img src="images/filters/park.png" class="filter-icon"
-                                        onclick="toggleFilter('jardim', this)">
+                                        onclick="prepareFilter('jardim', this)" id="jardim">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <img src="images/filters/restaurant.png" class="filter-icon"
-                                        onclick="toggleFilter('restauracao', this)">
+                                        onclick="prepareFilter('restauracao', this)" id="restauracao">
+                                </td>
+                                <td>
+                                    <img src="images/filters/music.png" class="filter-icon"
+                                        onclick="prepareFilter('musica', this)" id="musica">
                                 </td>
                                 <td>
                                     <img src="images/filters/star.png" class="filter-icon"
-                                        onclick="toggleFilter('map-icon-fav', this)">
+                                        onclick="prepareFilter('map-icon-fav', this)" id="map-icon-fav">
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="map-filter-decide" style="background-color: rgb(143, 199, 106);"
+                                        onclick="applyFilters();">
+                                        Aplicar</div>
                                 </td>
                                 <td>
-                                    <!--TODO REMOVER ESTE ICON E POR O DE EDUCACAO-->
-                                    <span class="filter-icon filter-all" class="filter-icon"
-                                        onclick="toggleFilter('all', this)" id="all-filter">ALL</span>
+                                    <div class="map-filter-decide" style="background-color: rgb(231, 98, 98);"
+                                        onclick="cancelFilters();">
+                                        Cancelar</div>
+
                                 </td>
                             </tr>
                         </table>
@@ -149,7 +161,7 @@
             </div>
             <!-- END OF MODAL WINDOW -->
 
-            <!-- MODAL WINDOW FOR PLACE INFO -->
+            <!-- MODAL WINDOW FOR TRANSPORT SELECTION -->
             <div class="modal fade bd-example-modal-sm" id="transportation-modal" tabindex="-1" role="dialog"
                 aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm modal-dialog-centered">
@@ -310,12 +322,10 @@
                                 minutos a</p>
                         </td>
                         <td>
-                             <img src="images/filters/walking.png" id="transport-image" onClick="showTransportation()">
+                            <img src="images/filters/walking.png" id="transport-image" onClick="showTransportation()">
                         </td>
 
                     </tr>
-
-
                 </table>
                 <hr style="margin: 0.2cm 0.1cm;">
                 <p id="gps-kcal" style="margin:0cm; margin-top:0.2cm; color:rgb(78, 78, 78); vertical-align: middle;">47
@@ -342,7 +352,7 @@
                             <div class="remove-button" id="no-remove" onclick="cancelRemove()">Cancelar
                             </div>
                         </div>
-                    </div>                                        
+                    </div>
                 </div>
             </div>
 
